@@ -41,7 +41,7 @@ export function SiteFooter() {
         <div className="footer-cta">
           <h3>Нужна помощь?</h3>
           <p>Оставьте заявку, и мы поможем выбрать нужное исследование.</p>
-          <AppointmentDialog label="Оставить заявку" />
+          <AppointmentDialog icon="message" label="Оставить заявку" />
         </div>
       </div>
       <div className="container footer-bottom">

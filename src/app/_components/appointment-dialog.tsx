@@ -1,20 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import { CalendarPlus, Send, X } from "lucide-react";
+import {
+  CalendarPlus,
+  MessageCircle,
+  Send,
+  X,
+  type LucideIcon,
+} from "lucide-react";
 
 type AppointmentDialogProps = {
   className?: string;
+  icon?: "calendar" | "message";
   label?: string;
   variant?: "primary" | "ghost" | "dark";
 };
 
 export function AppointmentDialog({
   className,
+  icon = "calendar",
   label = "Записаться",
   variant = "primary",
 }: AppointmentDialogProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const Icon: LucideIcon = icon === "message" ? MessageCircle : CalendarPlus;
 
   return (
     <>
@@ -24,7 +33,7 @@ export function AppointmentDialog({
         onClick={() => setIsOpen(true)}
       >
         <span className="button-icon" aria-hidden="true">
-          <CalendarPlus size={15} strokeWidth={2.6} />
+          <Icon size={15} strokeWidth={2.6} />
         </span>
         <span>{label}</span>
       </button>

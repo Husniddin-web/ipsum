@@ -1225,6 +1225,93 @@ h3 {
   line-height: 1.65;
 }
 
+.about-route-section {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.94)),
+    url("/Picture1.jpg");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-route-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 44px;
+  align-items: center;
+}
+
+.about-route-copy h2 {
+  max-width: 560px;
+}
+
+.about-route-copy p:not(.eyebrow) {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.about-route-cards {
+  display: grid;
+  gap: 14px;
+}
+
+.about-route-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 10px 18px;
+  border: 1px solid rgba(237, 50, 55, 0.16);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.86);
+  padding: 20px;
+  box-shadow: 0 16px 36px rgba(53, 55, 75, 0.08);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.about-route-card:hover {
+  border-color: rgba(237, 50, 55, 0.36);
+  box-shadow: 0 20px 44px rgba(237, 50, 55, 0.12);
+  transform: translateY(-2px);
+}
+
+.about-route-number {
+  color: rgba(237, 50, 55, 0.24);
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.about-route-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: var(--radius);
+  background: rgba(237, 50, 55, 0.1);
+  color: var(--ipsum-red);
+}
+
+.about-route-card h3 {
+  grid-column: 2;
+  margin-bottom: 0;
+  font-size: 21px;
+}
+
+.about-route-card p {
+  grid-column: 2;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
 .about-cta-section {
   background: var(--ipsum-soft);
   padding-block: 72px;
@@ -2002,8 +2089,35 @@ h3 {
 
   .about-stats-grid,
   .about-values-grid,
+  .about-route-grid,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-route-grid {
+    gap: 26px;
+  }
+
+  .about-route-copy p:not(.eyebrow) {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .about-route-card {
+    grid-template-columns: 44px minmax(0, 1fr);
+    padding: 18px;
+  }
+
+  .about-route-number {
+    font-size: 28px;
+  }
+
+  .about-route-card h3 {
+    font-size: 19px;
+  }
+
+  .about-route-card p {
+    font-size: 14px;
   }
 
   .about-cta {

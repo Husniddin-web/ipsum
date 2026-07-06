@@ -77,6 +77,7 @@ export function SiteHeader() {
             </a>
             <AppointmentDialog
               className="header-callback"
+              icon="message"
               label="Вам перезвонить?"
               variant="ghost"
             />

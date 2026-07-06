@@ -52,7 +52,11 @@ export function TrustSection() {
               </li>
             ))}
           </ul>
-          <AppointmentDialog label="Получить консультацию" variant="dark" />
+          <AppointmentDialog
+            icon="message"
+            label="Получить консультацию"
+            variant="dark"
+          />
         </div>
       </div>
     </section>
