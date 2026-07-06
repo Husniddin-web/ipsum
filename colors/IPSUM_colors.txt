@@ -1,0 +1,69 @@
+IPSUM brand colors
+==================
+
+Sources checked:
+- colors/pdf/IPSUM_colors.pdf
+- colors/png/IPSUM_colors.png
+- ipsum_brand_refresh.pdf, first rendered page
+
+Official palette from IPSUM_colors.pdf / IPSUM_colors.png:
+
+1. Primary red
+   CMYK: 0 100 100 0
+   RGB: 237 50 55
+   HEX: #ed3237
+   Pantone: 2034 C
+   Usage note: Main brand accent/background color. Used as the dominant cover color in ipsum_brand_refresh.pdf.
+
+2. Light pink
+   CMYK: 0 40 20 0
+   RGB: 247 173 175
+   HEX: #f7adaf
+   Pantone: 700 C
+   Usage note: Soft supporting color, suitable for light backgrounds, highlights, and secondary brand surfaces.
+
+3. Dark blue-gray
+   CMYK: 90 85 45 50
+   RGB: 53 55 75
+   HEX: #35374b
+   Pantone: 2380 C
+   Usage note: Primary dark color for text, logo contrast, and deep sections. Used for large cover typography in ipsum_brand_refresh.pdf.
+
+4. Blue-gray
+   CMYK: 50 35 25 0
+   RGB: 140 154 171
+   HEX: #8c9aab
+   Pantone: 2177 C
+   Usage note: Muted secondary color for supporting text, dividers, and interface elements.
+
+5. Neutral gray
+   CMYK: 0 0 0 40
+   RGB: 169 171 174
+   HEX: #a9abae
+   Pantone: 429 C
+   Usage note: Neutral supporting gray for quiet text, inactive states, borders, and background details.
+
+Implementation notes:
+- Use #ed3237 and #35374b as the main brand pair.
+- Use #f7adaf, #8c9aab, and #a9abae as supporting colors.
+- For web UI, prefer HEX/RGB values.
+- For print or design handoff, use CMYK and Pantone values.
+
+Brand typography found in ipsum_brand_refresh.pdf:
+
+Primary font family:
+- TT Norms
+
+Detected embedded font styles:
+- TTNorms-Bold
+- TTNorms-Medium
+- TTNorms-Regular
+- TTNorms-BoldItalic
+- TTNorms-MediumItalic
+
+Secondary / decorative font:
+- Floripa
+
+Typography note:
+- The brand logobook cover uses TT Norms for the main structured typography.
+- Floripa appears as an additional embedded font and should be treated as decorative unless the brand guide specifies broader usage.
