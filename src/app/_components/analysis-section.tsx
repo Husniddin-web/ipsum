@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Search } from "lucide-react";
 import { ServiceCards } from "./service-cards";
 
@@ -25,6 +26,12 @@ export function AnalysisSection() {
         </div>
 
         <ServiceCards />
+
+        <div className="analysis-more">
+          <Link className="button button-primary" href="/services">
+            Все услуги
+          </Link>
+        </div>
       </div>
     </section>
   );
