@@ -1152,6 +1152,81 @@ h3 {
   object-fit: cover;
 }
 
+.about-corporate-section {
+  background: linear-gradient(180deg, #ffffff 0%, var(--ipsum-soft) 100%);
+}
+
+.about-corporate-list {
+  display: grid;
+  gap: 34px;
+}
+
+.about-corporate-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 44px;
+  align-items: center;
+}
+
+.about-corporate-row.reversed {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.about-corporate-row.reversed .about-corporate-image {
+  order: 2;
+}
+
+.about-corporate-row.reversed .about-corporate-copy {
+  order: 1;
+}
+
+.about-corporate-image {
+  position: relative;
+  min-height: 390px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-corporate-image::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(53, 55, 75, 0.06),
+    rgba(237, 50, 55, 0.08)
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.about-corporate-image img {
+  object-fit: cover;
+}
+
+.about-corporate-copy {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.84);
+  padding: 34px;
+  box-shadow: 0 18px 42px rgba(53, 55, 75, 0.08);
+}
+
+.about-corporate-copy h2 {
+  max-width: 560px;
+  margin-bottom: 18px;
+  font-size: 40px;
+  line-height: 1.12;
+}
+
+.about-corporate-copy p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.72;
+}
+
 .about-stats-section {
   background: var(--ipsum-ink);
   padding-block: 42px;
@@ -1694,8 +1769,15 @@ h3 {
   }
 
   .about-story-grid,
+  .about-corporate-row,
+  .about-corporate-row.reversed,
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+
+  .about-corporate-row.reversed .about-corporate-image,
+  .about-corporate-row.reversed .about-corporate-copy {
+    order: initial;
   }
 
   .about-stats-grid,
@@ -2087,6 +2169,31 @@ h3 {
     min-height: 300px;
   }
 
+  .about-corporate-list {
+    gap: 24px;
+  }
+
+  .about-corporate-row {
+    gap: 18px;
+  }
+
+  .about-corporate-image {
+    min-height: 270px;
+  }
+
+  .about-corporate-copy {
+    padding: 22px;
+  }
+
+  .about-corporate-copy h2 {
+    font-size: 28px;
+  }
+
+  .about-corporate-copy p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 1.62;
+  }
+
   .about-stats-grid,
   .about-values-grid,
   .about-route-grid,
@@ -2263,6 +2370,18 @@ h3 {
 
   .about-story-image {
     min-height: 260px;
+  }
+
+  .about-corporate-image {
+    min-height: 230px;
+  }
+
+  .about-corporate-copy {
+    padding: 18px;
+  }
+
+  .about-corporate-copy h2 {
+    font-size: 25px;
   }
 
   .contact-info-card > span {

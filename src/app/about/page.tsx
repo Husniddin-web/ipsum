@@ -37,6 +37,22 @@ const labProcess = [
     icon: Workflow,
   },
 ];
+const corporateStories = [
+  {
+    eyebrow: "Сервис",
+    title: "Пациент видит понятный путь с первого контакта",
+    text: "Мы уделяем внимание не только анализам, но и коммуникации: администратор помогает с записью, подготовкой и удобным форматом получения результата.",
+    image: "/g-5.jpeg",
+    alt: "Администратор IPSUM Pathology принимает пациента",
+  },
+  {
+    eyebrow: "Лаборатория",
+    title: "Технологичная среда для надежной диагностики",
+    text: "Исследования проходят в лабораторной среде с современным оборудованием, где важны порядок, контроль и внимательная работа специалистов.",
+    image: "/g-2.jpeg",
+    alt: "Специалист IPSUM Pathology работает с лабораторным оборудованием",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -70,6 +86,33 @@ export default function AboutPage() {
               src="/g-1.jpeg"
             />
           </figure>
+        </div>
+      </section>
+
+      <section className="section about-corporate-section">
+        <div className="container about-corporate-list">
+          {corporateStories.map((story, index) => (
+            <article
+              className={`about-corporate-row${
+                index % 2 === 1 ? " reversed" : ""
+              }`}
+              key={story.title}
+            >
+              <figure className="about-corporate-image">
+                <Image
+                  alt={story.alt}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 48vw"
+                  src={story.image}
+                />
+              </figure>
+              <div className="about-corporate-copy">
+                <p className="eyebrow">{story.eyebrow}</p>
+                <h2>{story.title}</h2>
+                <p>{story.text}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
