@@ -24,12 +24,14 @@ type ServiceCardsProps = {
 export function ServiceCards({ linkHref = "/contact" }: ServiceCardsProps) {
   return (
     <div className="analysis-grid">
-      {analysisCategories.map((category) => {
+      {analysisCategories.map((category, index) => {
         const Icon = icons[category.icon as keyof typeof icons];
 
         return (
           <article
             className={`analysis-card tone-${category.tone}`}
+            data-aos="fade-up"
+            data-aos-delay={(index % 3) * 90}
             key={category.title}
           >
             <div className="analysis-card-top">

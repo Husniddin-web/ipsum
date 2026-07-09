@@ -63,7 +63,7 @@ export default function AboutPage() {
     >
       <section className="section about-story-section">
         <div className="container about-story-grid">
-          <div className="about-story-copy">
+          <div className="about-story-copy" data-aos="fade-right">
             <p className="eyebrow">Миссия</p>
             <h2>Точность, которая помогает принимать решения</h2>
             <p>
@@ -78,7 +78,7 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-          <figure className="about-story-image">
+          <figure className="about-story-image" data-aos="fade-left">
             <Image
               alt="Сотрудник IPSUM Pathology в лаборатории"
               fill
@@ -96,6 +96,8 @@ export default function AboutPage() {
               className={`about-corporate-row${
                 index % 2 === 1 ? " reversed" : ""
               }`}
+              data-aos={index % 2 === 1 ? "fade-left" : "fade-right"}
+              data-aos-delay={index * 90}
               key={story.title}
             >
               <figure className="about-corporate-image">
@@ -118,8 +120,13 @@ export default function AboutPage() {
 
       <section className="about-stats-section">
         <div className="container about-stats-grid">
-          {aboutStats.map((stat) => (
-            <div className="about-stat" key={stat.value}>
+          {aboutStats.map((stat, index) => (
+            <div
+              className="about-stat"
+              data-aos="zoom-in"
+              data-aos-delay={index * 70}
+              key={stat.value}
+            >
               <strong>{stat.value}</strong>
               <span>{stat.label}</span>
             </div>
@@ -129,7 +136,7 @@ export default function AboutPage() {
 
       <section className="section about-values-section">
         <div className="container">
-          <div className="section-heading">
+          <div className="section-heading" data-aos="fade-up">
             <p className="eyebrow">Подход</p>
             <h2>На чем держится доверие</h2>
           </div>
@@ -138,7 +145,12 @@ export default function AboutPage() {
               const Icon = valueIcons[index] ?? Award;
 
               return (
-                <article className="about-value-card" key={value.title}>
+                <article
+                  className="about-value-card"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 90}
+                  key={value.title}
+                >
                   <span aria-hidden="true">
                     <Icon size={25} strokeWidth={2.2} />
                   </span>
@@ -153,7 +165,7 @@ export default function AboutPage() {
 
       <section className="section about-route-section">
         <div className="container about-route-grid">
-          <div className="about-route-copy">
+          <div className="about-route-copy" data-aos="fade-right">
             <p className="eyebrow">Как мы работаем</p>
             <h2>От записи до результата без лишней сложности</h2>
             <p>
@@ -167,7 +179,12 @@ export default function AboutPage() {
               const Icon = item.icon;
 
               return (
-                <article className="about-route-card" key={item.title}>
+                <article
+                  className="about-route-card"
+                  data-aos="fade-left"
+                  data-aos-delay={index * 90}
+                  key={item.title}
+                >
                   <span className="about-route-number">
                     {String(index + 1).padStart(2, "0")}
                   </span>

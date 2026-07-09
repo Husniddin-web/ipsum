@@ -12,7 +12,7 @@ export const contactInfo = {
   email: "info@ipsumpathology.uz",
   emailHref: "mailto:info@ipsumpathology.uz",
   address: "Узбекистан, Ташкент",
-  hours: "Ежедневно: 08:00 - 20:00",
+  hours: "Ежедневно: 08:30 - 17:30",
   mapTitle: "IPSUM Pathology location map",
   mapSrc:
     "https://www.google.com/maps?q=Tashkent%2C%20Uzbekistan&output=embed",

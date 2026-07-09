@@ -5,7 +5,7 @@ export function HeroSection() {
     <section className="hero-section" id="home">
       <div className="hero-bg" />
       <div className="container hero-content">
-        <div className="hero-copy">
+        <div className="hero-copy" data-aos="fade-right">
           <p className="hero-kicker">IPSUM PATHOLOGY</p>
           <h1>Диагностика, которой доверяют.</h1>
           <p className="hero-lead">

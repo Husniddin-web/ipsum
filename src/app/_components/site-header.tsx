@@ -32,6 +32,19 @@ export function SiteHeader() {
             />
           </Link>
 
+          <div className="header-actions">
+            <a className="phone-link" href={contactInfo.phoneHref}>
+              <Phone aria-hidden="true" size={18} strokeWidth={2.4} />
+              {contactInfo.phone}
+            </a>
+            <AppointmentDialog
+              className="header-callback"
+              icon="message"
+              label="Вам перезвонить?"
+              variant="ghost"
+            />
+          </div>
+
           <button
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
@@ -69,19 +82,6 @@ export function SiteHeader() {
               );
             })}
           </nav>
-
-          <div className="header-actions">
-            <a className="phone-link" href={contactInfo.phoneHref}>
-              <Phone aria-hidden="true" size={18} strokeWidth={2.4} />
-              {contactInfo.phone}
-            </a>
-            <AppointmentDialog
-              className="header-callback"
-              icon="message"
-              label="Вам перезвонить?"
-              variant="ghost"
-            />
-          </div>
         </div>
       </div>
     </header>

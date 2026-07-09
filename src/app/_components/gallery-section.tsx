@@ -37,7 +37,7 @@ export function GallerySection() {
   return (
     <section className="section lab-section" id="lab">
       <div className="container">
-        <div className="section-heading align-left">
+        <div className="section-heading align-left" data-aos="fade-up">
           <p className="eyebrow">Лаборатория</p>
           <h2>Технологичная среда для точных лабораторных исследований</h2>
           <p>
@@ -47,7 +47,12 @@ export function GallerySection() {
         </div>
         <div className="gallery-grid">
           {galleryItems.map((item, index) => (
-            <figure className={`gallery-item ${item.className}`} key={item.src}>
+            <figure
+              className={`gallery-item ${item.className}`}
+              data-aos="zoom-in"
+              data-aos-delay={index * 70}
+              key={item.src}
+            >
               <Image
                 alt={item.title}
                 fill
@@ -59,7 +64,6 @@ export function GallerySection() {
                 src={item.src}
               />
               <figcaption>
-                <span>{String(index + 1).padStart(2, "0")}</span>
                 <p>{item.label}</p>
                 <h3>{item.title}</h3>
               </figcaption>

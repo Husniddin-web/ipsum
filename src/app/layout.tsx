@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AosProvider } from "./_components/aos-provider";
 
 export const metadata: Metadata = {
   title: "IPSUM Pathology | Laboratory & Diagnostic Center",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className="h-full scroll-smooth">
-      <body>{children}</body>
+      <body>
+        <AosProvider />
+        {children}
+      </body>
     </html>
   );
 }

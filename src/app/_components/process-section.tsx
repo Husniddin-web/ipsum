@@ -9,7 +9,7 @@ export function ProcessSection() {
       <div className="process-decoration top-left" aria-hidden="true" />
       <div className="process-decoration bottom-right" aria-hidden="true" />
       <div className="container">
-        <div className="section-heading process-heading">
+        <div className="section-heading process-heading" data-aos="fade-up">
           <p className="eyebrow">Как это работает</p>
           <h2>Сдать анализы просто</h2>
           <p>
@@ -21,7 +21,12 @@ export function ProcessSection() {
             const Icon = stepIcons[index];
 
             return (
-              <article className="step-card" key={step.number}>
+              <article
+                className="step-card"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                key={step.number}
+              >
                 <div className="step-card-head">
                   <span className="step-number">{step.number}</span>
                   <span className="step-icon" aria-hidden="true">

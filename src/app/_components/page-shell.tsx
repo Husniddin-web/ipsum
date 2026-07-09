@@ -21,7 +21,7 @@ export function PageShell({
       <SiteHeader />
       <main>
         <section className={`subpage-hero subpage-hero-${heroVariant}`}>
-          <div className="container subpage-hero-inner">
+          <div className="container subpage-hero-inner" data-aos="fade-right">
             <p className="eyebrow">{eyebrow}</p>
             <h1>{title}</h1>
             <p>{text}</p>
