@@ -1,4 +1,3 @@
-import { AnalysisSection } from "./_components/analysis-section";
 import { GallerySection } from "./_components/gallery-section";
 import { HeroSection } from "./_components/hero-section";
 import { ProcessSection } from "./_components/process-section";
@@ -12,7 +11,6 @@ export default function Home() {
       <SiteHeader />
       <main>
         <HeroSection />
-        <AnalysisSection />
         <TrustSection />
         <ProcessSection />
         <GallerySection />
