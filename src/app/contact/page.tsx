@@ -1,36 +1,35 @@
-import type { Metadata } from "next";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import { ContactForm } from "../_components/contact-form";
-import { PageShell } from "../_components/page-shell";
-import { contactInfo } from "../_data/content";
+import type { Metadata } from 'next';
+import { Clock, Mail, MapPin, Phone } from 'lucide-react';
+import { ContactForm } from '../_components/contact-form';
+import { PageShell } from '../_components/page-shell';
+import { contactInfo } from '../_data/content';
 
 export const metadata: Metadata = {
-  title: "Контакты | IPSUM Pathology",
-  description:
-    "Свяжитесь с IPSUM Pathology: телефон, email, адрес, форма записи и карта.",
+  title: 'Контакты | IPSUM Pathology',
+  description: 'Свяжитесь с IPSUM Pathology: телефон, email, адрес, форма записи и карта.',
 };
 
 const contactCards = [
   {
     icon: Phone,
-    label: "Телефон",
+    label: 'Телефон',
     value: contactInfo.phone,
     href: contactInfo.phoneHref,
   },
   {
     icon: Mail,
-    label: "Email",
+    label: 'Email',
     value: contactInfo.email,
     href: contactInfo.emailHref,
   },
   {
     icon: MapPin,
-    label: "Адрес",
+    label: 'Адрес',
     value: contactInfo.address,
   },
   {
     icon: Clock,
-    label: "Время работы",
+    label: 'Время работы',
     value: contactInfo.hours,
   },
 ];
@@ -75,8 +74,8 @@ export default function ContactPage() {
               <p className="eyebrow">Форма связи</p>
               <h2>Оставьте заявку</h2>
               <p>
-                Мы свяжемся с вами, уточним направление диагностики и удобное
-                время для сдачи анализа.
+                Мы свяжемся с вами, уточним направление диагностики и удобное время для сдачи
+                анализа.
               </p>
             </div>
             <ContactForm />

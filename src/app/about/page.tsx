@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import Image from "next/image";
+import type { Metadata } from 'next';
+import Image from 'next/image';
 import {
   Award,
   ClipboardCheck,
@@ -8,49 +8,49 @@ import {
   ShieldCheck,
   TestTube2,
   Workflow,
-} from "lucide-react";
-import { PageShell } from "../_components/page-shell";
-import { AppointmentDialog } from "../_components/appointment-dialog";
-import { aboutStats, aboutValues, labHighlights } from "../_data/content";
+} from 'lucide-react';
+import { PageShell } from '../_components/page-shell';
+import { AppointmentDialog } from '../_components/appointment-dialog';
+import { aboutStats, aboutValues, labHighlights } from '../_data/content';
 
 export const metadata: Metadata = {
-  title: "О нас | IPSUM Pathology",
+  title: 'О нас | IPSUM Pathology',
   description:
-    "IPSUM Pathology - лаборатория и диагностический центр в Ташкенте с современными направлениями исследований.",
+    'IPSUM Pathology - лаборатория и диагностический центр в Ташкенте с современными направлениями исследований.',
 };
 
 const valueIcons = [ShieldCheck, HeartPulse, Microscope];
 const labProcess = [
   {
-    title: "Маршрут пациента",
-    text: "Администратор помогает выбрать направление, формат сдачи и удобное время.",
+    title: 'Маршрут пациента',
+    text: 'Администратор помогает выбрать направление, формат сдачи и удобное время.',
     icon: ClipboardCheck,
   },
   {
-    title: "Лабораторная обработка",
-    text: "Биоматериал проходит подготовку и исследование в контролируемой среде.",
+    title: 'Лабораторная обработка',
+    text: 'Биоматериал проходит подготовку и исследование в контролируемой среде.',
     icon: TestTube2,
   },
   {
-    title: "Понятный результат",
-    text: "Ответы передаются онлайн или в филиале, чтобы врач и пациент могли быстро принять решение.",
+    title: 'Понятный результат',
+    text: 'Ответы передаются онлайн или в филиале, чтобы врач и пациент могли быстро принять решение.',
     icon: Workflow,
   },
 ];
 const corporateStories = [
   {
-    eyebrow: "Сервис",
-    title: "Пациент видит понятный путь с первого контакта",
-    text: "Мы уделяем внимание не только анализам, но и коммуникации: администратор помогает с записью, подготовкой и удобным форматом получения результата.",
-    image: "/g-5.jpeg",
-    alt: "Администратор IPSUM Pathology принимает пациента",
+    eyebrow: 'Сервис',
+    title: 'Пациент видит понятный путь с первого контакта',
+    text: 'Мы уделяем внимание не только анализам, но и коммуникации: администратор помогает с записью, подготовкой и удобным форматом получения результата.',
+    image: '/g-5.jpeg',
+    alt: 'Администратор IPSUM Pathology принимает пациента',
   },
   {
-    eyebrow: "Лаборатория",
-    title: "Технологичная среда для надежной диагностики",
-    text: "Исследования проходят в лабораторной среде с современным оборудованием, где важны порядок, контроль и внимательная работа специалистов.",
-    image: "/g-2.jpeg",
-    alt: "Специалист IPSUM Pathology работает с лабораторным оборудованием",
+    eyebrow: 'Лаборатория',
+    title: 'Технологичная среда для надежной диагностики',
+    text: 'Исследования проходят в лабораторной среде с современным оборудованием, где важны порядок, контроль и внимательная работа специалистов.',
+    image: '/g-2.jpeg',
+    alt: 'Специалист IPSUM Pathology работает с лабораторным оборудованием',
   },
 ];
 
@@ -67,10 +67,9 @@ export default function AboutPage() {
             <p className="eyebrow">Миссия</p>
             <h2>Точность, которая помогает принимать решения</h2>
             <p>
-              IPSUM Pathology создана для пациентов и врачей, которым важны
-              надежные лабораторные данные, спокойный сервис и быстрый доступ к
-              результатам. Мы делаем путь от записи до результата понятным и
-              удобным.
+              IPSUM Pathology создана для пациентов и врачей, которым важны надежные лабораторные
+              данные, спокойный сервис и быстрый доступ к результатам. Мы делаем путь от записи до
+              результата понятным и удобным.
             </p>
             <div className="about-highlights">
               {labHighlights.map((item) => (
@@ -93,10 +92,8 @@ export default function AboutPage() {
         <div className="container about-corporate-list">
           {corporateStories.map((story, index) => (
             <article
-              className={`about-corporate-row${
-                index % 2 === 1 ? " reversed" : ""
-              }`}
-              data-aos={index % 2 === 1 ? "fade-left" : "fade-right"}
+              className={`about-corporate-row${index % 2 === 1 ? ' reversed' : ''}`}
+              data-aos={index % 2 === 1 ? 'fade-left' : 'fade-right'}
               data-aos-delay={index * 90}
               key={story.title}
             >
@@ -169,9 +166,8 @@ export default function AboutPage() {
             <p className="eyebrow">Как мы работаем</p>
             <h2>От записи до результата без лишней сложности</h2>
             <p>
-              Мы строим сервис вокруг понятного пути пациента: минимум
-              неопределенности, аккуратная коммуникация и прозрачные этапы
-              лабораторной диагностики.
+              Мы строим сервис вокруг понятного пути пациента: минимум неопределенности, аккуратная
+              коммуникация и прозрачные этапы лабораторной диагностики.
             </p>
           </div>
           <div className="about-route-cards">
@@ -185,9 +181,7 @@ export default function AboutPage() {
                   data-aos-delay={index * 90}
                   key={item.title}
                 >
-                  <span className="about-route-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                  <span className="about-route-number">{String(index + 1).padStart(2, '0')}</span>
                   <span className="about-route-icon" aria-hidden="true">
                     <Icon size={22} strokeWidth={2.3} />
                   </span>

@@ -1,30 +1,31 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { createPortal } from "react-dom";
-import {
-  CalendarPlus,
-  MessageCircle,
-  Send,
-  X,
-  type LucideIcon,
-} from "lucide-react";
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
+import { CalendarPlus, MessageCircle, Send, X, type LucideIcon } from 'lucide-react';
+import { publicApi } from '@/lib/api/services';
+import type { LabService } from '@/lib/api/types';
+import { useSelectionStore } from '@/lib/store/selection-store';
 
 type AppointmentDialogProps = {
   className?: string;
-  icon?: "calendar" | "message";
+  icon?: 'calendar' | 'message';
   label?: string;
-  variant?: "primary" | "ghost" | "dark";
+  variant?: 'primary' | 'ghost' | 'dark';
+  selectedServices?: LabService[];
 };
 
 export function AppointmentDialog({
   className,
-  icon = "calendar",
-  label = "Записаться",
-  variant = "primary",
+  icon = 'calendar',
+  label = 'Записаться',
+  variant = 'primary',
+  selectedServices = [],
 }: AppointmentDialogProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const Icon: LucideIcon = icon === "message" ? MessageCircle : CalendarPlus;
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const clearSelection = useSelectionStore((state) => state.clear);
+  const Icon: LucideIcon = icon === 'message' ? MessageCircle : CalendarPlus;
 
   const dialog = isOpen ? (
     <div
@@ -52,40 +53,67 @@ export function AppointmentDialog({
         </button>
         <p className="eyebrow">IPSUM PATHOLOGY</p>
         <h2 id="appointment-title">Запишитесь на анализ</h2>
-        <p>
-          Оставьте контакты, и администратор поможет выбрать анализ, филиал или
-          выездной забор.
-        </p>
-        <form className="appointment-form">
+        <p>Оставьте контакты, и администратор поможет выбрать анализ, филиал или выездной забор.</p>
+        <form
+          className="appointment-form"
+          onSubmit={async (event) => {
+            event.preventDefault();
+            setStatus('sending');
+            const form = new FormData(event.currentTarget);
+            try {
+              await publicApi.appointment({
+                fullName: String(form.get('fullName') || ''),
+                phone: String(form.get('phone') || ''),
+                message: String(form.get('message') || ''),
+                serviceIds: selectedServices.map((service) => service._id),
+              });
+              setStatus('sent');
+              clearSelection();
+              event.currentTarget.reset();
+            } catch {
+              setStatus('error');
+            }
+          }}
+        >
+          {selectedServices.length > 0 && (
+            <div className="appointment-selection">
+              <strong>Выбрано услуг: {selectedServices.length}</strong>
+              <span>
+                {selectedServices
+                  .slice(0, 3)
+                  .map((service) => service.name)
+                  .join(', ')}
+                {selectedServices.length > 3 ? ` и ещё ${selectedServices.length - 3}` : ''}
+              </span>
+            </div>
+          )}
           <label>
             <span>ФИО</span>
-            <input name="name" placeholder="Ваше имя" type="text" />
+            <input name="fullName" placeholder="Ваше имя" type="text" required minLength={2} />
           </label>
           <label>
             <span>Телефон</span>
-            <input
-              name="phone"
-              placeholder="+998 (__) ___-__-__"
-              type="tel"
-            />
+            <input name="phone" placeholder="+998 (__) ___-__-__" type="tel" />
           </label>
           <label>
-            <span>Интересующая услуга</span>
-            <select name="service" defaultValue="">
-              <option disabled value="">
-                Выберите направление
-              </option>
-              <option>Клинические анализы</option>
-              <option>Молекулярная генетика</option>
-              <option>Иммуногистохимия</option>
-              <option>Выездной забор</option>
-            </select>
+            <span>Комментарий</span>
+            <textarea
+              name="message"
+              placeholder="Удобное время или вопрос по подготовке"
+              rows={3}
+            />
           </label>
-          <button className="button button-primary" type="button">
+          {status === 'sent' && (
+            <p className="form-success">Заявка отправлена. Администратор свяжется с вами.</p>
+          )}
+          {status === 'error' && (
+            <p className="form-error">Не удалось отправить. Проверьте данные и повторите.</p>
+          )}
+          <button className="button button-primary" type="submit" disabled={status === 'sending'}>
             <span className="button-icon" aria-hidden="true">
               <Send size={15} strokeWidth={2.6} />
             </span>
-            Отправить заявку
+            {status === 'sending' ? 'Отправляем...' : 'Отправить заявку'}
           </button>
         </form>
       </section>
@@ -95,7 +123,7 @@ export function AppointmentDialog({
   return (
     <>
       <button
-        className={`button button-${variant}${className ? ` ${className}` : ""}`}
+        className={`button button-${variant}${className ? ` ${className}` : ''}`}
         type="button"
         onClick={() => setIsOpen(true)}
       >
@@ -105,9 +133,7 @@ export function AppointmentDialog({
         <span>{label}</span>
       </button>
 
-      {isOpen && typeof document !== "undefined"
-        ? createPortal(dialog, document.body)
-        : null}
+      {isOpen && typeof document !== 'undefined' ? createPortal(dialog, document.body) : null}
     </>
   );
 }

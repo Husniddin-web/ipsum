@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { AosProvider } from "./_components/aos-provider";
+import type { Metadata } from 'next';
+import './globals.css';
+import { AosProvider } from './_components/aos-provider';
+import { AppProviders } from './providers';
 
 export const metadata: Metadata = {
-  title: "IPSUM Pathology | Laboratory & Diagnostic Center",
+  title: 'IPSUM Pathology | Laboratory & Diagnostic Center',
   description:
-    "IPSUM Pathology laboratory and diagnostic center for reliable analysis, pathology, and molecular diagnostics.",
+    'IPSUM Pathology laboratory and diagnostic center for reliable analysis, pathology, and molecular diagnostics.',
 };
 
 export default function RootLayout({
@@ -16,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="ru" className="h-full scroll-smooth">
       <body>
-        <AosProvider />
-        {children}
+        <AppProviders>
+          <AosProvider />
+          {children}
+        </AppProviders>
       </body>
     </html>
   );

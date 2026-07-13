@@ -1,12 +1,5 @@
-import {
-  ClipboardCheck,
-  Dna,
-  FlaskConical,
-  Home,
-  Microscope,
-  Sparkles,
-} from "lucide-react";
-import { analysisCategories } from "../_data/content";
+import { ClipboardCheck, Dna, FlaskConical, Home, Microscope, Sparkles } from 'lucide-react';
+import { analysisCategories } from '../_data/content';
 
 const icons = {
   cells: Sparkles,
@@ -21,7 +14,7 @@ type ServiceCardsProps = {
   linkHref?: string;
 };
 
-export function ServiceCards({ linkHref = "/contact" }: ServiceCardsProps) {
+export function ServiceCards({ linkHref = '/contact' }: ServiceCardsProps) {
   return (
     <div className="analysis-grid">
       {analysisCategories.map((category, index) => {

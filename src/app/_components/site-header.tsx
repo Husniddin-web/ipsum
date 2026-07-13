@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, Phone, X } from "lucide-react";
-import { useState } from "react";
-import { contactInfo, navigation } from "../_data/content";
-import { AppointmentDialog } from "./appointment-dialog";
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Menu, Phone, X } from 'lucide-react';
+import { useState } from 'react';
+import { contactInfo, navigation } from '../_data/content';
+import { AppointmentDialog } from './appointment-dialog';
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -47,7 +47,7 @@ export function SiteHeader() {
 
           <button
             aria-expanded={isMenuOpen}
-            aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
+            aria-label={isMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
             className="mobile-menu-toggle"
             type="button"
             onClick={() => setIsMenuOpen((current) => !current)}
@@ -60,19 +60,17 @@ export function SiteHeader() {
           </button>
         </div>
 
-        <div className={`header-menu${isMenuOpen ? " open" : ""}`}>
+        <div className={`header-menu${isMenuOpen ? ' open' : ''}`}>
           <nav aria-label="Основная навигация" className="desktop-nav">
             {navigation.map((item) => {
-              const isHashLink = item.href.includes("#");
+              const isHashLink = item.href.includes('#');
               const isActive =
                 !isHashLink &&
-                (item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href));
+                (item.href === '/' ? pathname === '/' : pathname.startsWith(item.href));
 
               return (
                 <Link
-                  className={isActive ? "active" : undefined}
+                  className={isActive ? 'active' : undefined}
                   href={item.href}
                   key={item.href}
                   onClick={() => setIsMenuOpen(false)}

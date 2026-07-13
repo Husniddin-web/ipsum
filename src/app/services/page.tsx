@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import { Search } from "lucide-react";
-import { PageShell } from "../_components/page-shell";
-import { ServiceCards } from "../_components/service-cards";
+import type { Metadata } from 'next';
+import { Suspense } from 'react';
+import { PageShell } from '../_components/page-shell';
+import { ServiceCatalog } from '../_components/catalog/service-catalog';
 
 export const metadata: Metadata = {
-  title: "Услуги | IPSUM Pathology",
+  title: 'Услуги | IPSUM Pathology',
   description:
-    "Лабораторные анализы, биохимия, молекулярная генетика, цитогенетика и выездной забор в IPSUM Pathology.",
+    'Лабораторные анализы, биохимия, молекулярная генетика, цитогенетика и выездной забор в IPSUM Pathology.',
 };
 
 export default function ServicesPage() {
@@ -19,16 +19,9 @@ export default function ServicesPage() {
     >
       <section className="section services-page-section">
         <div className="container">
-          <div className="search-strip services-search" role="search">
-            <Search aria-hidden="true" size={22} strokeWidth={2.4} />
-            <input
-              aria-label="Поиск услуги"
-              placeholder="Найдите анализ или направление"
-              type="search"
-            />
-            <button type="button">Найти</button>
-          </div>
-          <ServiceCards linkHref="/contact" />
+          <Suspense fallback={<div className="catalog-empty">Загружаем каталог...</div>}>
+            <ServiceCatalog />
+          </Suspense>
         </div>
       </section>
     </PageShell>

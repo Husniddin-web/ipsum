@@ -1,10 +1,10 @@
-import { SiteFooter } from "./site-footer";
-import { SiteHeader } from "./site-header";
+import { SiteFooter } from './site-footer';
+import { SiteHeader } from './site-header';
 
 type PageShellProps = {
   children: React.ReactNode;
   eyebrow: string;
-  heroVariant?: "default" | "services" | "contact";
+  heroVariant?: 'default' | 'services' | 'contact';
   title: string;
   text: string;
 };
@@ -12,7 +12,7 @@ type PageShellProps = {
 export function PageShell({
   children,
   eyebrow,
-  heroVariant = "default",
+  heroVariant = 'default',
   title,
   text,
 }: PageShellProps) {

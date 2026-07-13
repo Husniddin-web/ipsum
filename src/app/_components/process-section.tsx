@@ -1,5 +1,5 @@
-import { ClipboardList, FileCheck2, MapPin } from "lucide-react";
-import { processSteps } from "../_data/content";
+import { ClipboardList, FileCheck2, MapPin } from 'lucide-react';
+import { processSteps } from '../_data/content';
 
 const stepIcons = [ClipboardList, MapPin, FileCheck2];
 
@@ -12,9 +12,7 @@ export function ProcessSection() {
         <div className="section-heading process-heading" data-aos="fade-up">
           <p className="eyebrow">Как это работает</p>
           <h2>Сдать анализы просто</h2>
-          <p>
-            От заявки до результата - понятный путь без лишних действий.
-          </p>
+          <p>От заявки до результата - понятный путь без лишних действий.</p>
         </div>
         <div className="steps-grid">
           {processSteps.map((step, index) => {

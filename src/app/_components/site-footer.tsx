@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { contactInfo, navigation } from "../_data/content";
-import { AppointmentDialog } from "./appointment-dialog";
+import Image from 'next/image';
+import { contactInfo, navigation } from '../_data/content';
+import { AppointmentDialog } from './appointment-dialog';
 
 export function SiteFooter() {
   return (
@@ -15,8 +15,8 @@ export function SiteFooter() {
             width={190}
           />
           <p>
-            Лаборатория и диагностический центр в Ташкенте. Анализы,
-            патологические исследования и выездной забор.
+            Лаборатория и диагностический центр в Ташкенте. Анализы, патологические исследования и
+            выездной забор.
           </p>
         </div>
         <div>
