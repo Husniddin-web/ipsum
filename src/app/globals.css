@@ -577,7 +577,8 @@ textarea {
   border-radius: 6px;
   padding: 3px 8px;
   font-weight: 500;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.4;
 }
 .svc-meta-tag svg {
   color: var(--ipsum-blue-gray);
