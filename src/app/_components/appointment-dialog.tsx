@@ -6,6 +6,7 @@ import { CalendarPlus, MessageCircle, Send, X, type LucideIcon } from 'lucide-re
 import { publicApi } from '@/lib/api/services';
 import type { LabService } from '@/lib/api/types';
 import { useSelectionStore } from '@/lib/store/selection-store';
+import { toast } from 'sonner';
 
 type AppointmentDialogProps = {
   className?: string;
@@ -23,9 +24,49 @@ export function AppointmentDialog({
   selectedServices = [],
 }: AppointmentDialogProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle');
+  const [phone, setPhone] = useState('+998 ');
   const clearSelection = useSelectionStore((state) => state.clear);
   const Icon: LucideIcon = icon === 'message' ? MessageCircle : CalendarPlus;
+
+  const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let value = event.target.value;
+
+    // Force prefix +998
+    if (!value.startsWith('+998')) {
+      value = '+998';
+    }
+
+    // Keep only digits after +998
+    const digits = value.substring(4).replace(/[^\d]/g, '');
+
+    // Format: +998 (XX) XXX-XX-XX
+    let formatted = '+998';
+    if (digits.length > 0) {
+      formatted += ' (' + digits.substring(0, 2);
+    }
+    if (digits.length > 2) {
+      formatted += ') ' + digits.substring(2, 5);
+    }
+    if (digits.length > 5) {
+      formatted += '-' + digits.substring(5, 7);
+    }
+    if (digits.length > 7) {
+      formatted += '-' + digits.substring(7, 9);
+    }
+
+    setPhone(formatted);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    // Prevent deleting prefix +998 (length 4)
+    if (
+      (event.key === 'Backspace' || event.key === 'Delete') &&
+      (event.currentTarget.selectionStart ?? 0) <= 4
+    ) {
+      event.preventDefault();
+    }
+  };
 
   const dialog = isOpen ? (
     <div
@@ -63,15 +104,19 @@ export function AppointmentDialog({
             try {
               await publicApi.appointment({
                 fullName: String(form.get('fullName') || ''),
-                phone: String(form.get('phone') || ''),
+                phone: phone.trim(),
                 message: String(form.get('message') || ''),
                 serviceIds: selectedServices.map((service) => service._id),
               });
-              setStatus('sent');
+              toast.success('Заявка успешно отправлена! Администратор свяжется с вами.');
+              setStatus('idle');
               clearSelection();
+              setPhone('+998 ');
+              setIsOpen(false);
               event.currentTarget.reset();
             } catch {
               setStatus('error');
+              toast.error('Не удалось отправить. Проверьте данные и повторите.');
             }
           }}
         >
@@ -93,7 +138,17 @@ export function AppointmentDialog({
           </label>
           <label>
             <span>Телефон</span>
-            <input name="phone" placeholder="+998 (__) ___-__-__" type="tel" />
+            <input
+              name="phone"
+              value={phone}
+              onChange={handlePhoneChange}
+              onKeyDown={handleKeyDown}
+              placeholder="+998 (__) ___-__-__"
+              type="tel"
+              required
+              minLength={19}
+              maxLength={19}
+            />
           </label>
           <label>
             <span>Комментарий</span>
@@ -103,12 +158,6 @@ export function AppointmentDialog({
               rows={3}
             />
           </label>
-          {status === 'sent' && (
-            <p className="form-success">Заявка отправлена. Администратор свяжется с вами.</p>
-          )}
-          {status === 'error' && (
-            <p className="form-error">Не удалось отправить. Проверьте данные и повторите.</p>
-          )}
           <button className="button button-primary" type="submit" disabled={status === 'sending'}>
             <span className="button-icon" aria-hidden="true">
               <Send size={15} strokeWidth={2.6} />
@@ -125,7 +174,10 @@ export function AppointmentDialog({
       <button
         className={`button button-${variant}${className ? ` ${className}` : ''}`}
         type="button"
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          setPhone('+998 ');
+          setIsOpen(true);
+        }}
       >
         <span className="button-icon" aria-hidden="true">
           <Icon size={15} strokeWidth={2.6} />
