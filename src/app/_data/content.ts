@@ -14,7 +14,8 @@ export const contactInfo = {
   address: 'Узбекистан, Ташкент',
   hours: 'Ежедневно: 08:30 - 17:30',
   mapTitle: 'IPSUM Pathology location map',
-  mapSrc: 'https://www.google.com/maps?q=Tashkent%2C%20Uzbekistan&output=embed',
+  mapSrc:
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4998.926784706079!2d69.19713882494895!3d41.30010909015793!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8c121cf1b9fb%3A0x8bf789ecd03e426c!2sIpsum%20Diagnostika!5e1!3m2!1sen!2s!4v1784884795595!5m2!1sen!2s',
 };
 
 export const analysisCategories = [
@@ -97,6 +98,36 @@ export const processSteps = [
     title: 'Получите результат',
     text: 'Готовые результаты доступны онлайн, в Telegram-боте или в филиале.',
   },
+];
+
+export const partners = [
+  {
+    name: 'Hoffmann-La Roche',
+    country: 'Швейцария',
+    image: '/hoffman.png',
+    text: 'Мировой лидер в диагностике и фармацевтике. Совместная работа помогает развивать иммуногистохимические исследования и внедрять международные стандарты качества.',
+  },
+  {
+    name: 'CENTOGENE',
+    country: 'Германия',
+    image: '/centogene.png',
+    text: 'Эксперт в генетической диагностике редких заболеваний. Партнерство усиливает наши возможности в молекулярно-генетическом анализе.',
+  },
+  {
+    name: 'Core Diagnostics',
+    country: 'Индия',
+    image: '/core.png',
+    text: 'Клиническая лаборатория нового поколения. Обмен опытом помогает внедрять современные диагностические решения и лучшие практики.',
+  },
+];
+
+export const partnerMentions = [
+  'Cleveland Clinic',
+  'ONECELL AI',
+  'Foundation Medicine',
+  'НМИЦ ДГОИ им. Дмитрия Рогачева',
+  'Кирилл Ляпичев',
+  'Professor Abbas Agaimy',
 ];
 
 export const labHighlights = [

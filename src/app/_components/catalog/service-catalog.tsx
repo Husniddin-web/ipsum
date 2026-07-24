@@ -341,10 +341,7 @@ export function ServiceCatalog() {
 
             {visibleDirections.map((direction) => {
               const isActive = directionId === direction._id;
-              const totalCount = direction.categories.reduce(
-                (s, c) => s + (c.serviceCount ?? 0),
-                0,
-              );
+              const totalCount = direction.categories.length;
               return (
                 <div key={direction._id} className="svc-dir-group">
                   <button

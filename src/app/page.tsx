@@ -1,5 +1,6 @@
 import { GallerySection } from './_components/gallery-section';
 import { HeroSection } from './_components/hero-section';
+import { PartnersSection } from './_components/partners-section';
 import { ProcessSection } from './_components/process-section';
 import { SiteFooter } from './_components/site-footer';
 import { SiteHeader } from './_components/site-header';
@@ -13,6 +14,7 @@ export default function Home() {
         <HeroSection />
         <TrustSection />
         <ProcessSection />
+        <PartnersSection />
         <GallerySection />
       </main>
       <SiteFooter />

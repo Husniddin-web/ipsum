@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { PageShell } from '../_components/page-shell';
 import { AppointmentDialog } from '../_components/appointment-dialog';
+import { LicensesGallery } from '../_components/licenses-gallery';
 import { aboutStats, aboutValues, labHighlights } from '../_data/content';
 
 export const metadata: Metadata = {
@@ -49,7 +50,7 @@ const corporateStories = [
     eyebrow: 'Лаборатория',
     title: 'Технологичная среда для надежной диагностики',
     text: 'Исследования проходят в лабораторной среде с современным оборудованием, где важны порядок, контроль и внимательная работа специалистов.',
-    image: '/g-2.jpeg',
+    image: '/lab2.jpg',
     alt: 'Специалист IPSUM Pathology работает с лабораторным оборудованием',
   },
 ];
@@ -82,7 +83,7 @@ export default function AboutPage() {
               alt="Сотрудник IPSUM Pathology в лаборатории"
               fill
               sizes="(max-width: 900px) 100vw, 48vw"
-              src="/g-1.jpeg"
+              src="/our_mission.jpg"
             />
           </figure>
         </div>
@@ -193,6 +194,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <LicensesGallery />
 
       <section className="about-cta-section">
         <div className="container about-cta">

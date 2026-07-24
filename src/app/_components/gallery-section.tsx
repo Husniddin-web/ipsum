@@ -2,19 +2,19 @@ import Image from 'next/image';
 
 const galleryItems = [
   {
-    src: '/g-1.jpeg',
+    src: '/g-14.jpeg',
     title: 'Современное оборудование',
     label: 'Лаборатория',
     className: 'featured',
   },
   {
-    src: '/g-5.jpeg',
-    title: 'Комфортная регистрация',
-    label: 'Сервис',
+    src: '/lab5.jpg',
+    title: 'Патоморфологическая лаборатория IPSUM',
+    label: 'Локация',
     className: 'wide',
   },
   {
-    src: '/g-2.jpeg',
+    src: '/g-17.jpeg',
     title: 'Контроль процесса',
     label: 'Диагностика',
     className: 'tall',
