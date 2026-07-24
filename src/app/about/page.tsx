@@ -12,6 +12,7 @@ import {
 import { PageShell } from '../_components/page-shell';
 import { AppointmentDialog } from '../_components/appointment-dialog';
 import { LicensesGallery } from '../_components/licenses-gallery';
+import { PartnersSection } from '../_components/partners-section';
 import { aboutStats, aboutValues, labHighlights } from '../_data/content';
 
 export const metadata: Metadata = {
@@ -194,6 +195,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <PartnersSection />
 
       <LicensesGallery />
 

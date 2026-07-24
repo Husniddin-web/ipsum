@@ -2163,6 +2163,262 @@ h3 {
   font-weight: 800;
 }
 
+.education-section {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(237, 50, 55, 0.08), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #fffafa 100%);
+}
+
+.education-shell {
+  display: grid;
+  gap: 28px;
+}
+
+.education-intro-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 34px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #ffffff;
+  padding: 30px;
+  box-shadow: 0 24px 58px rgba(53, 55, 75, 0.1);
+}
+
+.education-intro-card h2 {
+  max-width: 760px;
+  margin-bottom: 18px;
+  font-size: clamp(34px, 4vw, 54px);
+  letter-spacing: -0.04em;
+}
+
+.education-intro-card p:not(.eyebrow) {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.72;
+}
+
+.education-intro-card figure {
+  position: relative;
+  min-height: 310px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--ipsum-soft);
+}
+
+.education-intro-card img {
+  object-fit: cover;
+}
+
+.education-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.education-feature-grid article {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 18px;
+  color: var(--ipsum-ink);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.education-feature-grid svg {
+  flex: 0 0 auto;
+  color: var(--ipsum-red);
+}
+
+.education-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 22px;
+}
+
+.education-panel,
+.education-exam,
+.education-contact {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #ffffff;
+  padding: 30px;
+  box-shadow: 0 18px 44px rgba(53, 55, 75, 0.07);
+}
+
+.education-panel-red {
+  border-color: rgba(237, 50, 55, 0.24);
+  background: #ffffff;
+  box-shadow: 0 22px 54px rgba(237, 50, 55, 0.1);
+}
+
+.education-panel-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 22px;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(237, 50, 55, 0.1);
+  color: var(--ipsum-red);
+}
+
+.education-panel-red .education-panel-icon {
+  background: var(--ipsum-red);
+  color: #ffffff;
+}
+
+.education-panel h2,
+.education-exam h2,
+.education-contact h2 {
+  margin-bottom: 16px;
+  font-size: clamp(28px, 3vw, 38px);
+  letter-spacing: -0.03em;
+}
+
+.education-panel p {
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.68;
+}
+
+.education-panel-red p {
+  color: var(--muted);
+}
+
+.education-panel-red strong {
+  display: block;
+  margin-top: 18px;
+  border-radius: 14px;
+  background: var(--ipsum-soft);
+  color: var(--ipsum-red);
+  padding: 14px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.education-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.education-facts div {
+  border-radius: 14px;
+  background: var(--ipsum-soft);
+  padding: 14px;
+}
+
+.education-facts span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.education-facts strong {
+  color: var(--ipsum-ink);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.education-exam-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 22px;
+}
+
+.education-exam-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.education-exam-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 999px;
+  background: rgba(53, 55, 75, 0.05);
+  color: var(--ipsum-red);
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.education-table-wrap {
+  overflow-x: auto;
+}
+
+.education-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.education-table th,
+.education-table td {
+  border: 1px solid var(--line);
+  padding: 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.education-table th {
+  background: rgba(53, 55, 75, 0.04);
+  color: var(--ipsum-ink);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.education-table td {
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.education-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--ipsum-ink);
+  color: #ffffff;
+}
+
+.education-contact h2 {
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+.education-contact a {
+  display: inline-flex;
+  border-radius: 999px;
+  background: var(--ipsum-red);
+  color: #ffffff;
+  padding: 14px 18px;
+  font-weight: 900;
+}
+
 .lab-section {
   background: #ffffff;
 }
@@ -3445,11 +3701,18 @@ h3 {
   .about-corporate-row,
   .about-corporate-row.reversed,
   .partners-heading,
+  .education-intro-card,
+  .education-two-col,
+  .education-exam-head,
   .contact-main-grid {
     grid-template-columns: 1fr;
   }
 
   .partners-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education-feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -3604,6 +3867,7 @@ h3 {
   .direction-grid,
   .hero-direction-grid,
   .partners-grid,
+  .education-feature-grid,
   .trust-features,
   .footer-grid {
     grid-template-columns: 1fr;
@@ -3627,6 +3891,30 @@ h3 {
   }
 
   .partners-mentions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .education-intro-card,
+  .education-panel,
+  .education-exam,
+  .education-contact {
+    padding: 22px;
+  }
+
+  .education-intro-card figure {
+    min-height: 260px;
+  }
+
+  .education-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .education-exam-meta {
+    justify-content: flex-start;
+  }
+
+  .education-contact {
     align-items: flex-start;
     flex-direction: column;
   }

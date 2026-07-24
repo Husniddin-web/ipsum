@@ -1,7 +1,7 @@
 export const navigation = [
   { label: 'Главная', href: '/' },
   { label: 'О нас', href: '/about' },
-  { label: 'Обучение', href: '/#process' },
+  { label: 'Обучение', href: '/education' },
   { label: 'Услуги', href: '/services' },
   { label: 'Контакты', href: '/contact' },
 ];
