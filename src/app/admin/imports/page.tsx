@@ -1,9 +1,19 @@
 'use client';
 
-import { FileSpreadsheet, Upload } from 'lucide-react';
+import { CheckCircle2, FileSpreadsheet, Upload, XCircle } from 'lucide-react';
 import { AdminPagination } from '../_components/admin-pagination';
 import { useAdminDirections, useAdminImports, useImportServices } from '@/lib/api/admin-hooks';
 import { useAdminUrlPagination } from '@/lib/admin/url-pagination';
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleString('ru-RU', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+}
 
 export default function ImportsPage() {
   const pagination = useAdminUrlPagination();
@@ -65,28 +75,46 @@ export default function ImportsPage() {
           {importMutation.isPending ? 'Импортируем...' : 'Начать импорт'}
         </button>
       </form>
-      <div className="admin-section-title">
-        <h2>История импорта</h2>
+
+      <div className="admin-section-title" style={{ marginTop: 32, marginBottom: 0 }}>
+        <h2>
+          <FileSpreadsheet size={16} />
+          История импорта
+        </h2>
       </div>
+
       <div className="admin-list compact">
         {importsQuery.isLoading && <div className="admin-empty">Загружаем историю...</div>}
-        {history.map((item) => (
-          <article key={String(item._id)}>
-            <span className="admin-list-icon">
-              <FileSpreadsheet />
-            </span>
-            <div>
-              <h2>{String(item.fileName)}</h2>
-              <p>
-                Создано услуг: {String(item.createdServices ?? 0)} · Обновлено:{' '}
-                {String(item.updatedServices ?? 0)}
-              </p>
-            </div>
-            <span className={`admin-status ${item.status === 'success' ? 'active' : ''}`}>
-              {item.status === 'success' ? 'Готово' : String(item.status)}
-            </span>
-          </article>
-        ))}
+        {history.length === 0 && !importsQuery.isLoading && (
+          <div className="admin-empty">История пуста</div>
+        )}
+        {history.map((item) => {
+          const isSuccess = item.status === 'success';
+          return (
+            <article key={String(item._id)} className="import-history-row">
+              <span className={`admin-list-icon ${isSuccess ? '' : 'error-icon'}`}>
+                {isSuccess ? <CheckCircle2 /> : <XCircle />}
+              </span>
+              <div>
+                <h2>{String(item.fileName)}</h2>
+                <p>
+                  {String(item.createdAt ? formatDate(String(item.createdAt)) : '—')}
+                </p>
+              </div>
+              <div className="import-counts">
+                <span className="import-count created">
+                  +{String(item.createdServices ?? 0)} создано
+                </span>
+                <span className="import-count updated">
+                  ↻{String(item.updatedServices ?? 0)} обновлено
+                </span>
+              </div>
+              <span className={`admin-status ${isSuccess ? 'active' : 'error'}`}>
+                {isSuccess ? 'Готово' : String(item.status)}
+              </span>
+            </article>
+          );
+        })}
       </div>
       {importsQuery.data && (
         <AdminPagination
