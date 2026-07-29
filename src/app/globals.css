@@ -346,6 +346,34 @@ textarea {
   background: var(--ipsum-soft);
   color: var(--ipsum-red);
 }
+
+/* ── Instant tooltip ─────────────────────────────────── */
+[data-tooltip] {
+  position: relative;
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--ipsum-ink);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(53,55,75,0.18);
+}
+[data-tooltip]:hover::after {
+  opacity: 1;
+}
 .svc-dir-icon {
   width: 28px;
   height: 28px;
