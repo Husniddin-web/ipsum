@@ -332,6 +332,7 @@ export function ServiceCatalog() {
             <button
               className={`svc-dir-btn${!directionId ? ' active' : ''}`}
               onClick={clearFilters}
+              title="Все направления"
             >
               <span className="svc-dir-icon">
                 <Microscope size={14} />
@@ -346,6 +347,7 @@ export function ServiceCatalog() {
                 <div key={direction._id} className="svc-dir-group">
                   <button
                     className={`svc-dir-btn${isActive ? ' active' : ''}`}
+                    title={direction.name}
                     onClick={() => {
                       setDirectionId(direction._id);
                       setCategoryId('');
