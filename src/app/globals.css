@@ -2519,12 +2519,267 @@ h3 {
   letter-spacing: -0.2px;
 }
 
+.education-info-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(13, 34, 64, 0.08);
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(13, 34, 64, 0.04);
+}
+
+.education-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.education-card-icon {
+  color: var(--ipsum-red);
+  background: rgba(227, 30, 36, 0.08);
+  padding: 8px;
+  border-radius: 12px;
+  box-sizing: content-box;
+}
+
+.education-card-header h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ipsum-navy);
+}
+
+.education-info-card p {
+  color: var(--ipsum-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.education-faculties {
+  margin: 18px 0;
+  padding: 16px;
+  background: rgba(13, 34, 64, 0.03);
+  border-radius: 16px;
+}
+
+.education-sublabel {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ipsum-navy);
+  margin-bottom: 10px;
+}
+
+.education-faculties ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.education-faculties li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ipsum-navy);
+}
+
+.education-faculties svg {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.education-apply-link-box {
+  margin: 16px 0;
+}
+
+.education-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background: #ffffff;
+  color: var(--ipsum-red);
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.education-apply-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.education-oneid-note {
+  font-size: 14px;
+  opacity: 0.95;
+  margin-bottom: 12px;
+}
+
+.education-warning-box {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border-left: 4px solid #ffffff;
+  margin-bottom: 16px;
+}
+
+.education-warning-box strong {
+  font-size: 13px;
+  line-height: 1.4;
+  display: block;
+}
+
+.education-deadline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.education-legal-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f1f5f9;
+  border-left: 4px solid var(--ipsum-navy);
+  padding: 18px 24px;
+  border-radius: 16px;
+  color: var(--ipsum-navy);
+}
+
+.education-legal-bar svg {
+  color: var(--ipsum-navy);
+  flex-shrink: 0;
+}
+
+.education-legal-bar p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.education-exam-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.education-exam-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(13, 34, 64, 0.08);
+}
+
+.education-exam-detail-item svg {
+  color: var(--ipsum-red);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.education-exam-detail-item strong {
+  display: block;
+  font-size: 14px;
+  color: var(--ipsum-navy);
+  margin-bottom: 4px;
+}
+
+.education-exam-detail-item p {
+  font-size: 13px;
+  color: var(--ipsum-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.education-table-section {
+  margin-top: 28px;
+}
+
+.education-table-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ipsum-navy);
+  margin-bottom: 14px;
+}
+
+.education-table-title svg {
+  color: var(--ipsum-red);
+}
+
+.education-table-total {
+  background: rgba(13, 34, 64, 0.04);
+}
+
+.education-contact-sub {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.education-contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.education-phone-btn,
+.education-telegram-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 15px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.education-phone-btn {
+  background: var(--ipsum-red);
+  color: #ffffff;
+}
+
+.education-telegram-btn {
+  background: #0088cc;
+  color: #ffffff;
+}
+
+.education-phone-btn:hover,
+.education-telegram-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
 @media (max-width: 900px) {
-  .education-gallery-grid {
+  .education-exam-details-grid {
     grid-template-columns: 1fr;
   }
-  .education-gallery-card {
-    height: 220px;
+  .education-legal-bar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
