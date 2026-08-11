@@ -2,31 +2,31 @@ import Image from 'next/image';
 
 const galleryItems = [
   {
-    src: '/g-14.jpeg',
+    src: '/new_gallery_featured.jpg',
     title: 'Современное оборудование',
     label: 'Лаборатория',
     className: 'featured',
   },
   {
-    src: '/lab5.jpg',
+    src: '/new_gallery_wide.jpg',
     title: 'Патоморфологическая лаборатория IPSUM',
     label: 'Локация',
     className: 'wide',
   },
   {
-    src: '/g-17.jpeg',
+    src: '/new_gallery_tall.jpg',
     title: 'Контроль процесса',
     label: 'Диагностика',
     className: 'tall',
   },
   {
-    src: '/g-4.jpeg',
+    src: '/new_gallery_small1.jpg',
     title: 'Забота о пациентах',
     label: 'Пациенты',
     className: 'small top',
   },
   {
-    src: '/g-3.jpeg',
+    src: '/new_gallery_small2.jpg',
     title: 'Точные результаты',
     label: 'Анализ',
     className: 'small bottom',
