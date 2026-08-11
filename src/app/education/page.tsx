@@ -54,7 +54,7 @@ export default function EducationPage() {
                 alt="Специалисты IPSUM Pathology в лаборатории"
                 fill
                 sizes="(max-width: 900px) 100vw, 34vw"
-                src="/g-14.jpeg"
+                src="/edu_main.jpg"
               />
             </figure>
           </div>
@@ -67,6 +67,43 @@ export default function EducationPage() {
               </article>
             ))}
           </div>
+
+          <section className="education-gallery-section" data-aos="fade-up">
+            <div className="education-gallery-head">
+              <p className="eyebrow">Практическое обучение</p>
+              <h2>Современная лабораторно-клиническая база</h2>
+              <p>Ординаторы участвуют в реальных исследованиях, осваивают гистологическое, иммуногистохимическое и молекулярное оборудование высшего класса.</p>
+            </div>
+            <div className="education-gallery-grid">
+              <figure className="education-gallery-card">
+                <Image
+                  alt="Консилиум и разбор клинических случаев"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  src="/edu_gallery_1.jpg"
+                />
+                <figcaption>Разбор сложной патоморфологической диагностики</figcaption>
+              </figure>
+              <figure className="education-gallery-card">
+                <Image
+                  alt="Совместная работа ординаторов и врачей"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  src="/edu_gallery_2.jpg"
+                />
+                <figcaption>Междисциплинарная работа специалистов</figcaption>
+              </figure>
+              <figure className="education-gallery-card">
+                <Image
+                  alt="Работа на цифровых анализаторах"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  src="/edu_gallery_3.jpg"
+                />
+                <figcaption>Автоматизированная цифровая диагностика</figcaption>
+              </figure>
+            </div>
+          </section>
 
           <div className="education-two-col">
             <article className="education-panel" data-aos="fade-right">
