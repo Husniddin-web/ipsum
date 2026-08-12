@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ArrowUpRight, Handshake } from 'lucide-react';
+import { Handshake } from 'lucide-react';
 import { partnerMentions, partners } from '../_data/content';
 
 export function PartnersSection() {
@@ -23,17 +23,26 @@ export function PartnersSection() {
             <article
               className="partner-card"
               data-aos="fade-up"
-              data-aos-delay={index * 90}
+              data-aos-delay={index * 70}
               key={partner.name}
             >
               <div className="partner-logo-wrap">
-                <Image
-                  alt={partner.name}
-                  className="partner-logo"
-                  fill
-                  sizes="(max-width: 760px) 100vw, 30vw"
-                  src={partner.image}
-                />
+                {partner.image ? (
+                  <Image
+                    alt={partner.name}
+                    className="partner-logo"
+                    fill
+                    sizes="(max-width: 760px) 100vw, 30vw"
+                    src={partner.image}
+                  />
+                ) : (
+                  <div
+                    className="partner-logo-abbr"
+                    style={{ background: partner.color ?? '#0d2240' }}
+                  >
+                    <span>{partner.abbr}</span>
+                  </div>
+                )}
               </div>
               <div className="partner-card-body">
                 <span>
@@ -47,17 +56,16 @@ export function PartnersSection() {
           ))}
         </div>
 
-        <div className="partners-mentions" data-aos="fade-up">
-          <span className="partners-mentions-title">
-            <ArrowUpRight size={16} />
-            Также сотрудничаем
-          </span>
-          <div>
-            {partnerMentions.map((name) => (
-              <span key={name}>{name}</span>
-            ))}
+        {partnerMentions.length > 0 && (
+          <div className="partners-mentions" data-aos="fade-up">
+            <span className="partners-mentions-title">Экспертные консультанты</span>
+            <div>
+              {partnerMentions.map((name) => (
+                <span key={name}>{name}</span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

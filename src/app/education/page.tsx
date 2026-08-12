@@ -69,7 +69,7 @@ export default function EducationPage() {
           {/* Main Intro Card */}
           <div className="education-intro-card" data-aos="fade-up">
             <div>
-              <p className="eyebrow">IPSUM Pathology</p>
+              <p className="eyebrow">IPSUM PATHOLOGY</p>
               <h2>Подготовка специалистов для точной лабораторной диагностики</h2>
               <p>
                 Программа ориентирована на врачей, которые хотят освоить современные лабораторные
@@ -360,7 +360,7 @@ export default function EducationPage() {
           <section className="education-contact" data-aos="fade-up">
             <div>
               <p className="eyebrow">Приёмная комиссия</p>
-              <h2>Call-центр ООО «IPSUM PATHOLOGY»</h2>
+              <h2>Call-центр приёмной комиссии</h2>
               <p className="education-contact-sub">
                 Режим работы: Понедельник – Суббота (09:00 – 18:00), обед: 13:00 – 14:00
               </p>

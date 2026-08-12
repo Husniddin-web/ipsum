@@ -61,6 +61,26 @@ export function SiteFooter() {
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
               </svg>
             </a>
+            <a
+              href="https://t.me/ipsumuz_bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram бот @ipsumuz_bot"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 6.666a2.25 2.25 0 0 0 .126 4.238l3.423 1.018 2.04 6.386a.998.998 0 0 0 1.7.38l2.498-2.607 4.861 3.595a2.25 2.25 0 0 0 3.484-1.39l2.96-17.5a2.25 2.25 0 0 0-3.57-2.001z" />
+              </svg>
+            </a>
           </div>
         </div>
         <div>
