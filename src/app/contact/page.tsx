@@ -65,7 +65,7 @@ export default function ContactPage() {
       eyebrow="Контакты"
       heroVariant="contact"
       text="Запишитесь на анализ, уточните услугу или задайте вопрос администратору."
-      title="Свяжитесь с IPSUM Pathology"
+      title="Свяжитесь с IPSUM PATHOLOGY"
     >
       <section className="section contact-page-section">
         <div className="container contact-stack">

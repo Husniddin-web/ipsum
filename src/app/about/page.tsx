@@ -61,7 +61,7 @@ export default function AboutPage() {
     <PageShell
       eyebrow="О нас"
       text="Мы объединяем лабораторную точность, технологичную среду и понятную коммуникацию с пациентом."
-      title="IPSUM Pathology"
+      title="IPSUM PATHOLOGY"
     >
       <section className="section about-story-section">
         <div className="container about-story-grid">
