@@ -37,6 +37,17 @@ const defaultDirections = [
   },
 ];
 
+function formatImageUrl(imagePath?: string | null, fallbackPath?: string): string {
+  if (!imagePath || typeof imagePath !== 'string' || !imagePath.trim()) {
+    return fallbackPath || '/g-pathology.jpg';
+  }
+  let src = imagePath.trim();
+  if (typeof window !== 'undefined' && window.location.protocol === 'https:' && src.startsWith('http://')) {
+    src = src.replace('http://', 'https://');
+  }
+  return src;
+}
+
 export function HeroSection() {
   const { data: catalogData } = usePublicCatalog();
 
@@ -45,7 +56,7 @@ export function HeroSection() {
       ? catalogData.map((item, index) => ({
           title: item.name,
           text: item.shortDescription || item.description || '',
-          image: item.image || defaultDirections[index % defaultDirections.length].image,
+          image: formatImageUrl(item.image, defaultDirections[index % defaultDirections.length].image),
         }))
       : defaultDirections;
 
@@ -79,6 +90,7 @@ export function HeroSection() {
                   priority={index < 3}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   src={direction.image}
+                  unoptimized
                 />
               </figure>
               <div className="hero-direction-body">
