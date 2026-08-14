@@ -1,7 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePublicCatalog } from '@/lib/api/public-hooks';
 
-const heroDirections = [
+const defaultDirections = [
   {
     title: 'Патоморфологическая лаборатория',
     text: 'Полный цикл морфологической диагностики: гистология, цитология, интраоперационная экспресс-диагностика, иммуногистохимические исследования, молекулярная диагностика, цифровая патология.',
@@ -35,6 +38,17 @@ const heroDirections = [
 ];
 
 export function HeroSection() {
+  const { data: catalogData } = usePublicCatalog();
+
+  const heroDirections =
+    catalogData && catalogData.length > 0
+      ? catalogData.map((item, index) => ({
+          title: item.name,
+          text: item.shortDescription || item.description || '',
+          image: item.image || defaultDirections[index % defaultDirections.length].image,
+        }))
+      : defaultDirections;
+
   return (
     <section className="hero-section" id="home">
       <div className="container hero-content">
