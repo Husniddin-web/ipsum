@@ -133,10 +133,13 @@ export function ServiceCatalog() {
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
   const selection = useSelectionStore();
 
-  // Reset page to 1 when filters change
+  // Sync state with URL searchParams on navigation
   useEffect(() => {
-    setPage(1);
-  }, [query, directionId, categoryId]);
+    setQuery(searchParams.get('search') || '');
+    setDirectionId(searchParams.get('directionId') || '');
+    setCategoryId(searchParams.get('categoryId') || '');
+    setPage(Number(searchParams.get('page') || '1'));
+  }, [searchParams]);
 
   const setUrlParams = useCallback(
     (updates: Record<string, string | undefined>) => {

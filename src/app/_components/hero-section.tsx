@@ -54,11 +54,16 @@ export function HeroSection() {
   const heroDirections =
     catalogData && catalogData.length > 0
       ? catalogData.map((item, index) => ({
+          id: item._id,
           title: item.name,
           text: item.shortDescription || item.description || '',
           image: formatImageUrl(item.image, defaultDirections[index % defaultDirections.length].image),
+          href: `/services?directionId=${item._id}`,
         }))
-      : defaultDirections;
+      : defaultDirections.map((dir) => ({
+          ...dir,
+          href: `/services?search=${encodeURIComponent(dir.title)}`,
+        }));
 
   return (
     <section className="hero-section" id="home">
@@ -84,20 +89,26 @@ export function HeroSection() {
               key={direction.title}
             >
               <figure>
-                <Image
-                  alt={direction.title}
-                  fill
-                  priority={index < 3}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  src={direction.image}
-                  unoptimized
-                />
+                <Link href={direction.href} style={{ display: 'block', width: '100%', height: '100%' }}>
+                  <Image
+                    alt={direction.title}
+                    fill
+                    priority={index < 3}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    src={direction.image}
+                    unoptimized
+                  />
+                </Link>
               </figure>
               <div className="hero-direction-body">
                 <span>Лабораторное направление</span>
-                <h2>{direction.title}</h2>
+                <h2>
+                  <Link href={direction.href} style={{ color: 'inherit', textDecoration: 'none' }}>
+                    {direction.title}
+                  </Link>
+                </h2>
                 <p>{direction.text}</p>
-                <Link href="/services">Подробнее &rarr;</Link>
+                <Link href={direction.href}>Подробнее &rarr;</Link>
               </div>
             </article>
           ))}
