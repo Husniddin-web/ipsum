@@ -11,52 +11,49 @@ export function PartnersSection() {
     {
       key: 'cleveland',
       name: 'Cleveland Clinic',
-      image: '/partner_cleveland_clinic.png',
+      image: '/claudeclinic.jpg',
       country: t('partners.items.cleveland.country'),
       text: t('partners.items.cleveland.text'),
     },
     {
       key: 'roche',
       name: 'Hoffmann-La Roche',
-      image: '/partner_roche.png',
+      image: '/roche.png',
       country: t('partners.items.roche.country'),
       text: t('partners.items.roche.text'),
     },
     {
       key: 'centogene',
       name: 'CENTOGENE',
-      image: '/partner_centogene.png',
+      image: '/centgene.jpg',
       country: t('partners.items.centogene.country'),
       text: t('partners.items.centogene.text'),
     },
     {
       key: 'core',
       name: 'Core Diagnostics',
-      image: '/partner_core_diagnostics.png',
+      image: '/coredg.png',
       country: t('partners.items.core.country'),
       text: t('partners.items.core.text'),
     },
     {
       key: 'foundation',
       name: 'Foundation Medicine',
-      abbr: 'FMI',
-      color: '#1a365d',
+      image: '/foundtaion-medicne.jpg',
       country: t('partners.items.foundation.country'),
       text: t('partners.items.foundation.text'),
     },
     {
       key: 'onecell',
       name: 'OneCell',
-      abbr: 'OneCell',
-      color: '#0d5c75',
+      image: '/onecell.png',
       country: t('partners.items.onecell.country'),
       text: t('partners.items.onecell.text'),
     },
     {
       key: 'memorial',
       name: 'Memorial',
-      abbr: 'Memorial',
-      color: '#8b0000',
+      image: '/memorial.jpg',
       country: t('partners.items.memorial.country'),
       text: t('partners.items.memorial.text'),
     },
@@ -82,22 +79,14 @@ export function PartnersSection() {
               key={partner.name}
             >
               <div className="partner-logo-wrap">
-                {partner.image ? (
-                  <Image
-                    alt={partner.name}
-                    className="partner-logo"
-                    fill
-                    sizes="(max-width: 760px) 100vw, 30vw"
-                    src={partner.image}
-                  />
-                ) : (
-                  <div
-                    className="partner-logo-abbr"
-                    style={{ background: partner.color ?? '#0d2240' }}
-                  >
-                    <span>{partner.abbr}</span>
-                  </div>
-                )}
+                <Image
+                  alt={partner.name}
+                  className="partner-logo"
+                  fill
+                  sizes="(max-width: 760px) 100vw, 30vw"
+                  src={partner.image}
+                  unoptimized
+                />
               </div>
               <div className="partner-card-body">
                 <span>
