@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: 'IPSUM Pathology | Laboratory & Diagnostic Center',
   description:
     'IPSUM Pathology laboratory and diagnostic center for reliable analysis, pathology, and molecular diagnostics.',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
 };
 
 export default function RootLayout({
