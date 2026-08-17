@@ -104,7 +104,7 @@ export const partners = [
   {
     name: 'Cleveland Clinic',
     country: 'США',
-    image: null,
+    image: '/claudeclinic.jpg',
     abbr: 'CC',
     color: '#003595',
     text: 'Один из ведущих медицинских центров мира. Партнёрство обеспечивает доступ к передовым протоколам диагностики и международным стандартам медицинской практики.',
@@ -112,7 +112,7 @@ export const partners = [
   {
     name: 'Hoffmann-La Roche',
     country: 'Швейцария',
-    image: '/hoffman.png',
+    image: '/roche.png',
     abbr: 'Roche',
     color: '#0066b3',
     text: 'Мировой лидер в диагностике и фармацевтике. Совместная работа помогает развивать иммуногистохимические исследования и внедрять международные стандарты качества.',
@@ -120,7 +120,7 @@ export const partners = [
   {
     name: 'CENTOGENE',
     country: 'Германия',
-    image: '/centogene.png',
+    image: '/centgene.jpg',
     abbr: 'CG',
     color: '#5b2d8e',
     text: 'Эксперт в генетической диагностике редких заболеваний. Партнёрство усиливает наши возможности в молекулярно-генетическом анализе и редких патологиях.',
@@ -128,7 +128,7 @@ export const partners = [
   {
     name: 'Core Diagnostics',
     country: 'Индия',
-    image: '/core.png',
+    image: '/coredg.png',
     abbr: 'CD',
     color: '#e84118',
     text: 'Клиническая лаборатория нового поколения. Обмен опытом помогает внедрять современные диагностические решения и лучшие азиатские практики.',
@@ -136,7 +136,7 @@ export const partners = [
   {
     name: 'Foundation Medicine',
     country: 'США',
-    image: null,
+    image: '/foundtaion-medicne.jpg',
     abbr: 'FM',
     color: '#00a651',
     text: 'Лидер в молекулярной онкодиагностике. Сотрудничество позволяет применять комплексный геномный профайлинг для персонализированной онкологической терапии.',
@@ -144,7 +144,7 @@ export const partners = [
   {
     name: 'OneCell',
     country: 'США',
-    image: null,
+    image: '/onecell.png',
     abbr: 'OC',
     color: '#ff6b35',
     text: 'Инновационная компания в области одноклеточного анализа и жидкостной биопсии. Расширяет возможности ранней диагностики онкологических заболеваний.',
@@ -152,7 +152,7 @@ export const partners = [
   {
     name: 'Memorial',
     country: 'Турция',
-    image: null,
+    image: '/memorial.jpg',
     abbr: 'M',
     color: '#c0392b',
     text: 'Ведущая сеть медицинских центров в Турции. Совместная экспертиза в онкологической диагностике и лечении на международном уровне.',
