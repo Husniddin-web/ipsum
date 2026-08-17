@@ -9,7 +9,7 @@
       "contact": "Aloqa"
     },
     "header": {
-      "callback": "Qayta qo'ng'iroq?",
+      "callback": "Qayta qo'ng'iroq",
       "openMenu": "Menyuni ochish",
       "closeMenu": "Menyuni yopish",
       "mainNav": "Asosiy navigatsiya",
@@ -17,14 +17,14 @@
       "chooseLanguage": "Tilni tanlash"
     },
     "footer": {
-      "desc": "Toshkentdagi laboratoriya va diagnostika markazi. Tahlillar, patologik tekshiruvlar va uyga borib biomaterial olish xizmati.",
+      "desc": "Toshkentdagi yuqori aniqlikdagi laboratoriya va diagnostika markazi. Patomorfologiya, molekulyar tahlillar va uyga borib biomaterial olish xizmati.",
       "navTitle": "Navigatsiya",
-      "contactsTitle": "Kontaktlar",
+      "contactsTitle": "Aloqa",
       "helpTitle": "Yordam kerakmi?",
-      "helpDesc": "Ariza qoldiring va biz sizga kerakli tahlilni tanlashda yordam beramiz.",
+      "helpDesc": "Murojaat qoldiring va mutaxassislarimiz sizga kerakli tahlilni tanlashda yordam berishadi.",
       "ctaBtn": "Ariza qoldirish",
       "copyright": "IPSUM Pathology, 2026",
-      "subline": "Laboratoriya va diagnostika"
+      "subline": "Laboratoriya va diagnostika markazi"
     },
     "notFound": {
       "title": "404",
@@ -41,66 +41,66 @@
   "home": {
     "hero": {
       "kicker": "IPSUM PATHOLOGY",
-      "title": "Qaror qabul qilishda aniqlik yordam beradigan laboratoriya",
-      "desc": "IPSUM Pathology bemor uchun navbatdan natijagacha bo'lgan yo'lni tushunarli, tez va ishonchli qilish uchun patomorfologiya, klinik-diagnostika tadqiqotlari va zamonaviy xizmatni birlashtiradi.",
+      "title": "Aniq natijalari bilan to'g'ri qaror qabul qilishga yordam beruvchi laboratoriya",
+      "desc": "IPSUM Pathology tahlilga yozilishdan to tayyor natijagacha bo'lgan yo'lni tushunarli, tez va ishonchli qilish maqsadida patomorfologiya, klinik-diagnostika tadqiqotlari va zamonaviy servisni birlashtiradi.",
       "badge": "Laboratoriya yo'nalishi",
-      "more": "Batafsil →",
+      "more": "Batafsil ma'lumot →",
       "defaultDirections": {
         "pathomorphology": {
           "title": "Patomorfologik laboratoriya",
-          "text": "Morfologik diagnostikaning to'liq sikli: gistologiya, sitologiya, intraoperatsion tezkor diagnostika, immunogistoximik tahlillar, molekulyar diagnostika, raqamli patologiya."
+          "text": "Morfologik diagnostikaning to'liq sikli: gistologiya, sitologiya, intraoperatsion tezkor diagnostika, immunogistoximik tahlillar, molekulyar diagnostika va raqamli patologiya."
         },
         "clinical": {
           "title": "Klinik-diagnostika laboratoriyasi",
-          "text": "Zamonaviy laboratoriya tahlillari majmuasi: umumiy klinik, biokimyoviy, gematologik, koagulologik, immunologik, bakteriologik, gormonal, molekulyar-genetik tekshiruvlar, onkomarkerlar va boshqa turdagi laboratoriya diagnostikasi."
+          "text": "Zamonaviy laboratoriya tahlillari majmuasi: umumiy klinik, biokimyoviy, gematologik, koagulologik, immunologik, bakteriologik, gormonal, molekulyar-genetik tekshiruvlar va onkomarkerlar."
         },
         "ngs": {
-          "title": "NGS",
-          "text": "Yuqori unumli sekvenirlashning to'liq sikli: maqsadli va to'liq genomli panellar, ekzom va transkriptom sekvenirlash, suyuqlik biopsiyasi, bioinformatik tahlil va variantlarni interpretatsiya qilish, klinik xulosalar tayyorlash."
+          "title": "NGS (Keyingi avlod sekvenirlashi)",
+          "text": "Yuqori unumli sekvenirlashning to'liq sikli: maqsadli va to'liq genomli panellar, ekzom va transkriptom sekvenirlash, suyuqlik biopsiyasi, bioinformatik tahlil va klinik xulosalar."
         },
         "pcr": {
-          "title": "RT-PCR",
-          "text": "Real vaqt rejimidagi PZR diagnostikasining to'liq sikli: mutatsiyalar va translokatsiyalarni miqdoriy va sifatli aniqlash, genlar ekspressiyasini baholash, minimal qoldiq kasallikni monitoring qilish, infeksion va virusli agentlar diagnostikasi, namunalar sifatini nazorat qilish."
+          "title": "RT-PCR (Real vaqtdagi PZR)",
+          "text": "Real vaqt rejimidagi PZR diagnostikasining to'liq sikli: mutatsiyalar va translokatsiyalarni aniqlash, genlar ekspressiyasini baholash, minimal qoldiq kasallik monitoringi va infeksiyalar diagnostikasi."
         },
         "cytogenetics": {
           "title": "Sitogenetika va FISH",
-          "text": "Sitogenetik diagnostikaning to'liq sikli: klassik kariotiplash, nativ va kerosin namunalarida FISH tekshiruvlari, xromosoma translokatsiyalari, delyatsiyalari va amplifikatsiyalarini aniqlash, gematologik va qattiq o'smalar diagnostikasi."
+          "text": "Sitogenetik diagnostikaning to'liq sikli: klassik kariotiplash, nativ va parafin namunalarida FISH tekshiruvlari, xromosoma anomaliyalarini aniqlash hamda o'smalar diagnostikasi."
         },
         "cytometry": {
-          "title": "Sitometriya",
-          "text": "Oqimli sitometriyaning to'liq sikli: gematologik hosilalarni immunofenotiplash, minimal qoldiq kasallikni baholash, hujayra sikli va DNK-ploidlik tahlili, leykoz va limfomalar diagnostikasi, ko'p rangli panelli testlash."
+          "title": "Oqimli sitometriya",
+          "text": "Oqimli sitometriyaning to'liq sikli: gematologik hosilalarni immunofenotiplash, minimal qoldiq kasallikni baholash, hujayra sikli tahlili hamda leykoz va limfomalar diagnostikasi."
         }
       }
     },
     "trust": {
-      "eyebrow": "Nega IPSUM",
+      "eyebrow": "Nega aynan IPSUM",
       "title": "Aniqlik, tezlik va ishonch",
-      "text": "IPSUM Pathology natijalar shifokor uchun foydali va bemor uchun tushunarli bo'lishi uchun laboratoriya diagnostikasi, patologiya va zamonaviy molekulyar usullarni birlashtiradi.",
-      "cta": "Konsultatsiya olish",
+      "text": "IPSUM Pathology tekshiruv natijalari shifokor uchun klinik ahamiyatga ega, bemor uchun esa tushunarli bo'lishi uchun laboratoriya diagnostikasi, patomorfologiya va molekulyar usullarni yagona standart asosida birlashtiradi.",
+      "cta": "Mutaxassis konsultatsiyasi",
       "f1_title": "Patologiya va diagnostika",
-      "f1_text": "Klinik, patologik va molekulyar tahlillar yagona tizimda.",
+      "f1_text": "Klinik, patologik va molekulyar tahlillar yagona tizimda amalga oshiriladi.",
       "f2_title": "Zamonaviy uskunalar",
-      "f2_text": "Barqaror va takrorlanadigan natijalar uchun laboratoriya muhiti.",
-      "f3_title": "Sifat nazorati",
-      "f3_text": "Har bir bosqichga alohida e'tibor: biomaterial olishdan natijani taqdim etishgacha.",
-      "f4_title": "Bemor bilan aloqa",
-      "f4_text": "Tushunarli ro'yxatdan o'tish, administrator maslahati va natijalarni olishning qulay usuli."
+      "f2_text": "Barqaror, aniq va takrorlanuvchan natijalar uchun yuqori texnologik laboratoriya muhiti.",
+      "f3_title": "Xalqaro sifat nazorati",
+      "f3_text": "Har bir bosqichda sinchkovlik: biomaterial olishdan to natijani taqdim etishgacha.",
+      "f4_title": "Bemor bilan ochiq muloqot",
+      "f4_text": "Qulay ro'yxatdan o'tish, administrator yordami va natijalarni onlayn olish imkoniyati."
     },
     "process": {
-      "eyebrow": "Bu qanday ishlaydi",
-      "title": "Tahlil topshirish oson",
-      "subtitle": "Arizadan natijagacha — ortiqcha harakatlarsiz tushunarli yo'l.",
+      "eyebrow": "Jarayon qanday kechadi",
+      "title": "Tahlil topshirish oson va qulay",
+      "subtitle": "Murojaatdan tayyor natijagacha — ortiqcha tashvishsiz oson va tushunarli yo'l.",
       "s1_title": "Ariza qoldiring",
-      "s1_text": "Tahlilni tanlang yoki kontaktlaringizni qoldiring, operator tafsilotlar va qulay vaqtni aniqlashtiradi.",
+      "s1_text": "Kerakli tahlilni tanlang yoki kontaktlaringizni qoldiring, operatorimiz tafsilotlar va qulay vaqtni aniqlashtiradi.",
       "s2_title": "Biomaterial topshiring",
-      "s2_text": "Filialimizga tashrif buyuring yoki kerakli manzilga mutaxassis chaqirishni rasmiylashtiring.",
+      "s2_text": "Filialimizga tashrif buyuring yoki kerakli manzilga mutaxassisimizni chaqiring.",
       "s3_title": "Natijani oling",
-      "s3_text": "Tayyor natijalar onlayn, Telegram botda yoki filialda taqdim etiladi."
+      "s3_text": "Tayyor natijalar shaxsiy kabinetda onlayn, Telegram bot orqali yoki filialda taqdim etiladi."
     },
     "partners": {
       "eyebrow": "Bizning hamkorlarimiz",
       "title": "Aniq diagnostika uchun xalqaro ekspertiza",
-      "desc": "IPSUM Pathology tibbiyot, biotexnologiya va laboratoriya diagnostikasi sohasidagi yetakchi kompaniyalar va ekspertlar bilan hamkorlik qiladi. Bu ilg'or usullarni joriy etish, tadqiqotlar sifatini oshirish va kundalik faoliyatda eng yaxshi jahon tajribalarini qo'llashga yordam beradi.",
+      "desc": "IPSUM Pathology tibbiyot, biotexnologiya va laboratoriya diagnostikasi sohasidagi yetakchi xalqaro markazlar va ekspertlar bilan hamkorlik qiladi. Bu ilg'or usullarni joriy etish, tadqiqotlar sifatini oshirish va kundalik faoliyatda eng yaxshi jahon tajribalarini qo'llashga xizmat qiladi.",
       "mentionsTitle": "Ekspert maslahatchilar",
       "items": {
         "cleveland": {
@@ -134,130 +134,130 @@
           "text": "Yagona hujayrali tahlil va suyuqlik biopsiyasi sohasidagi innovatsion kompaniya. Onkologik kasalliklarni erta aniqlash imkoniyatlarini kengaytiradi."
         },
         "memorial": {
-          "name": "Memorial",
+          "name": "Memorial Health Group",
           "country": "Turkiya",
           "text": "Turkiyaning yetakchi tibbiyot markazlari tarmog'i. Xalqaro miqyosda onkologik diagnostika va davolash bo'yicha hamkorlikdagi ekspertiza."
         }
       }
     },
     "gallery": {
-      "eyebrow": "Laboratoriya",
-      "title": "Aniq laboratoriya tadqiqotlari uchun texnologik muhit",
-      "desc": "Zamonaviy diagnostika biomaterial bilan ehtiyotkorlik bilan ishlash, sifat nazorati va bemor bilan tushunarli muloqotni talab qiladi.",
+      "eyebrow": "Laboratoriyamiz",
+      "title": "Aniq laboratoriya tadqiqotlari uchun yuqori texnologik muhit",
+      "desc": "Zamonaviy diagnostika biomaterial bilan ehtiyotkorlik bilan ishlash, qat'iy sifat nazorati va bemor bilan ochiq muloqotni talab qiladi.",
       "i1_label": "Laboratoriya",
       "i1_title": "Zamonaviy uskunalar",
       "i2_label": "Lokatsiya",
       "i2_title": "IPSUM patomorfologik laboratoriyasi",
       "i3_label": "Diagnostika",
-      "i3_title": "Jarayon nazorati",
+      "i3_title": "Tahlil jarayoni nazorati",
       "i4_label": "Bemorlar",
       "i4_title": "Bemorlar haqida g'amxo'rlik",
       "i5_label": "Tahlil",
-      "i5_title": "Aniq natijalar"
+      "i5_title": "Ishonchli va aniq natijalar"
     }
   },
   "about": {
     "eyebrow": "Biz haqimizda",
     "title": "IPSUM PATHOLOGY",
-    "text": "Biz laboratoriya aniqligi, texnologik muhit va bemor bilan tushunarli muloqotni birlashtiramiz.",
+    "text": "Biz laboratoriya aniqligi, yuqori texnologik baza va bemor bilan samimiy muloqotni birlashtiramiz.",
     "mission": {
-      "eyebrow": "Missiya",
-      "title": "Qaror qabul qilishga yordam beradigan aniqlik",
-      "text": "IPSUM Pathology ishonchli laboratoriya ma'lumotlari, xotirjam xizmat va natijalarga tezkor kirish muhim bo'lgan bemorlar va shifokorlar uchun tashkil etilgan. Biz ro'yxatdan o'tishdan tortib natijagacha bo'lgan yo'lni tushunarli va qulay qilamiz.",
+      "eyebrow": "Missiyamiz",
+      "title": "Tibbiy qarorlar qabul qilishga yordam beruvchi yuqori aniqlik",
+      "text": "IPSUM Pathology ishonchli laboratoriya ma'lumotlari, xotirjam servis va natijalarga tezkor kirish muhim bo'lgan bemorlar va shifokorlar uchun tashkil etilgan. Biz ro'yxatdan o'tishdan tortib natijagacha bo'lgan yo'lni tushunarli va qulay qilamiz.",
       "h1": "Patologiya va laboratoriya diagnostikasi",
-      "h2": "Zamonaviy uskunalar",
-      "h3": "Har bir bosqichda sifat nazorati",
-      "h4": "Bemor bilan tezkor aloqa"
+      "h2": "Zamonaviy avtomatlashtirilgan uskunalar",
+      "h3": "Har bir bosqichda ko'p pog'onali sifat nazorati",
+      "h4": "Bemor bilan tezkor va qulay aloqa"
     },
     "corporate": {
-      "s1_eyebrow": "Servis",
-      "s1_title": "Bemor birinchi aloqadanoq tushunarli yo'lni ko'radi",
-      "s1_text": "Biz nafaqat tahlillarga, balki muloqotga ham e'tibor qaratamiz: administrator yozilish, tayyorgarlik va natijalarni olishning qulay shakli bo'yicha yordam beradi.",
-      "s2_eyebrow": "Laboratoriya",
-      "s2_title": "Ishonchli diagnostika uchun texnologik muhit",
-      "s2_text": "Tadqiqotlar tartib, nazorat va mutaxassislarning sinchkovlik bilan ishlashi muhim bo'lgan zamonaviy uskunalar bilan jihozlangan laboratoriya muhitida o'tkaziladi."
+      "s1_eyebrow": "Xizmat ko'rsatish",
+      "s1_title": "Bemor birinchi aloqadanoq tushunarli va qulay yo'lni ko'radi",
+      "s1_text": "Biz nafaqat tahlillarga, balki muloqotga ham katta e'tibor qaratamiz: administratorimiz yozilish, tahlilga tayyorgarlik va natijalarni olish shakli bo'yicha to'liq ko'maklashadi.",
+      "s2_eyebrow": "Laboratoriya muhiti",
+      "s2_title": "Ishonchli diagnostika uchun ilg'or texnologik baza",
+      "s2_text": "Tadqiqotlar tartib, doimiy nazorat va tajribali mutaxassislarning sinchkovlik bilan ishlashi ta'minlangan zamonaviy uskunalar bilan jihozlangan laboratoriyada o'tkaziladi."
     },
     "stats": {
       "s1_label": "mamnun bemorlar",
       "s2_label": "diagnostika yo'nalishlari",
-      "s3_label": "natijalarga kirish",
-      "s4_label": "natijagacha tushunarli qadam"
+      "s3_label": "natijalarga kirish imkoniyati",
+      "s4_label": "natijagacha bo'lgan aniq bosqich"
     },
     "values": {
-      "eyebrow": "Yondashuv",
-      "title": "Ishonch nimalarga tayanadi",
-      "v1_title": "Aniqlik",
-      "v1_text": "Nazorat, takrorlanuvchanlik va detallarga e'tibor muhim bo'lgan laboratoriya jarayonlari bilan ishlaymiz.",
-      "v2_title": "G'amxo'rlik",
-      "v2_text": "Bemor tushunarli marshrutga ega bo'ladi: ro'yxatdan o'tish, biomaterial topshirish va qulay formatdagi natija.",
-      "v3_title": "Texnologiklik",
-      "v3_text": "Klinik, molekulyar va patologik tekshiruvlar uchun zamonaviy laboratoriya muhitidan foydalanamiz."
+      "eyebrow": "Yondashuvimiz",
+      "title": "Ishonchimiz nimalarga tayanadi",
+      "v1_title": "Mutlaq aniqlik",
+      "v1_text": "Doimiy nazorat, takrorlanuvchanlik va har bir detalga e'tibor talab qilinadigan laboratoriya jarayonlari bilan ishlaymiz.",
+      "v2_title": "G'amxo'rlik va e'tibor",
+      "v2_text": "Bemor tushunarli marshrutga ega bo'ladi: oson ro'yxatdan o'tish, qulay sharoitda biomaterial topshirish va natijalarni tezkor olish.",
+      "v3_title": "Ilg'or texnologiyalar",
+      "v3_text": "Klinik, molekulyar va patomorfologik tekshiruvlar uchun jahon andozalaridagi eng so'nggi laboratoriya uskunalaridan foydalanamiz."
     },
     "route": {
       "eyebrow": "Biz qanday ishlaymiz",
       "title": "Ro'yxatdan o'tishdan natijagacha ortiqcha qiyinchiliksiz",
-      "desc": "Biz xizmatni bemorning tushunarli yo'li atrofida quramiz: minimal noaniqlik, ehtiyotkor muloqot va laboratoriya diagnostikasining shaffof bosqichlari.",
-      "step1_title": "Bemor marshruti",
-      "step1_text": "Administrator yo'nalish, topshirish formati va qulay vaqtni tanlashda yordam beradi.",
-      "step2_title": "Laboratoriya ishlovi",
-      "step2_text": "Biomaterial nazorat qilinadigan muhitda tayyorgarlik va tekshiruvdan o'tadi.",
+      "desc": "Biz butun jarayonni bemor uchun oson va qulay qilib quramiz: minimal noaniqlik, ehtiyotkor muloqot va laboratoriya tekshiruvining shaffof bosqichlari.",
+      "step1_title": "Bemor yo'nalishi",
+      "step1_text": "Administrator tahlil yo'nalishi, topshirish formati va qulay vaqtni tanlashda to'liq yordam beradi.",
+      "step2_title": "Laboratoriya tahlili",
+      "step2_text": "Biomaterial qat'iy nazorat qilinadigan muhitda qayta ishlanadi va tekshiruvdan o'tkaziladi.",
       "step3_title": "Tushunarli natija",
-      "step3_text": "Natijalar shifokor va bemor tezda qaror qabul qilishi uchun onlayn yoki filialda taqdim etiladi."
+      "step3_text": "Xulosalar shifokor va bemor tezda to'g'ri qaror qabul qilishi uchun onlayn yoki filialda taqdim etiladi."
     },
     "licenses": {
-      "eyebrow": "Hujjatlar",
+      "eyebrow": "Rasmiy hujjatlar",
       "title": "Litsenziyalar va sertifikatlar",
-      "desc": "IPSUM Pathology faoliyati to'liq litsenziyalangan. Biz muntazam ravishda tashqi sifat nazoratidan o'tamiz va tekshiruvlar aniqligini tasdiqlaymiz.",
+      "desc": "IPSUM Pathology faoliyati to'liq litsenziyalangan. Biz muntazam ravishda xalqaro sifat nazoratidan o'tamiz va tahlillar aniqligini tasdiqlaymiz.",
       "l1_title": "Davlat litsenziyasi",
-      "l1_desc": "O'zbekiston Respublikasi Sog'liqni saqlash vazirligining tibbiy faoliyat uchun litsenziyasi",
-      "l2_title": "Guvohnoma / Ro'yxatdan o'tish to'g'risida",
-      "l2_desc": "Yuridik shaxsni davlat ro'yxatidan o'tkazilganligi to'g'risidagi guvohnoma",
+      "l1_desc": "O'zbekiston Respublikasi Sog'liqni saqlash vazirligining tibbiy faoliyat uchun bergan litsenziyasi",
+      "l2_title": "Davlat ro'yxatidan o'tganlik to'g'risida guvohnoma",
+      "l2_desc": "Yuridik shaxsning davlat ro'yxatidan o'tkazilganligi to'g'risidagi rasmiy guvohnomasi",
       "l3_title": "Muvofiqlik sertifikati",
-      "l3_desc": "ISO sifat menejmenti standartlariga muvofiqlik sertifikati",
+      "l3_desc": "ISO xalqaro sifat menejmenti standartlariga muvofiqlik sertifikati",
       "prev": "Oldingi",
       "next": "Keyingi",
       "close": "Yopish"
     },
     "cta": {
-      "eyebrow": "Ro'yxatdan o'tish",
+      "eyebrow": "Tahlilga yozilish",
       "title": "Tahlil topshirishga tayyormisiz?",
       "btn": "Yozilish"
     }
   },
   "education": {
-    "eyebrow": "Ta'lim",
+    "eyebrow": "Ta'lim dasturi",
     "title": "Klinik ordinatura dasturi",
-    "text": "2026/2027 o'quv yili uchun «Patologik anatomiya» yo'nalishi bo'yicha klinik ordinatura.",
+    "text": "2026/2027 o'quv yili uchun «Patologik anatomiya» mutaxassisligi bo'yicha klinik ordinatura.",
     "intro": {
       "eyebrow": "IPSUM PATHOLOGY",
-      "title": "Aniq laboratoriya diagnostikasi uchun mutaxassislarni tayyorlash",
-      "desc": "Dastur zamonaviy laboratoriya usullarini, klinik ma'lumotlarni talqin qilishni va yuqori darajadagi patomorfologik diagnostika bo'yicha amaliy ko'nikmalarni o'rganmoqchi bo'lgan shifokorlar uchun mo'ljallangan."
+      "title": "Aniq laboratoriya diagnostikasi uchun yuqori malakali mutaxassislar tayyorlash",
+      "desc": "Dastur zamonaviy laboratoriya usullarini, klinik ma'lumotlarni tahlil qilishni va patomorfologik diagnostika bo'yicha yuqori amaliy ko'nikmalarni egallashni maqsad qilgan shifokorlar uchun mo'ljallangan."
     },
     "features": {
-      "f1": "Tajribali patomorfologlar rahbarligida amaliy tayyorgarlik",
-      "f2": "Immunogistoximiya, molekulyar diagnostika va raqamli patologiya",
-      "f3": "Turli mutaxassislikdagi shifokorlar bilan fanlararo hamkorlik"
+      "f1": "Yetakchi va tajribali patomorfologlar rahbarligida amaliy tayyorgarlik",
+      "f2": "Immunogistoximiya, molekulyar diagnostika va raqamli patologiyani chuqur o'rganish",
+      "f3": "Turli mutaxassislikdagi shifokorlar bilan fanlararo jamoaviy tahlillar"
     },
     "gallery": {
       "eyebrow": "Amaliy ta'lim",
       "title": "Zamonaviy laboratoriya-klinik baza",
-      "desc": "Ordinatorlar real tadqiqotlarda qatnashadilar, yangi avlod gistologik, immunogistoximik va molekulyar uskunalarini o'rganadilar.",
-      "g1": "Murakkab patomorfologik diagnostika tahlili",
+      "desc": "Ordinatorlar real tadqiqot jarayonlarida qatnashadilar hamda yangi avlod gistologik, immunogistoximik va molekulyar uskunalarida ishlashni o'rganadilar.",
+      "g1": "Murakkab patomorfologik holatlar tahlili",
       "g2": "Mutaxassislarning fanlararo jamoaviy ishi",
       "g3": "Avtomatlashtirilgan raqamli diagnostika"
     },
     "international": {
-      "title": "Xalqaro hamkorlik",
-      "desc": "Laboratoriyamiz patologiya, gistologiya va molekulyar diagnostika sohasida AQSh, Turkiya va Hindistonning yetakchi tibbiyot muassasalari va ilmiy markazlari bilan faol hamkorlik qiladi. Bu ordinatorlarga xalqaro darajadagi bilimlarni egallash imkonini beradi."
+      "title": "Xalqaro ilmiy hamkorlik",
+      "desc": "Laboratoriyamiz patologiya, gistologiya va molekulyar diagnostika sohalarida AQSh, Turkiya va Hindistonning nufuzli tibbiyot muassasalari va ilmiy markazlari bilan faol hamkorlik qiladi. Bu ordinatorlarga jahon darajasidagi bilimlarni egallash imkonini beradi."
     },
     "diploma": {
-      "title": "Diplom va ishga joylashish",
-      "desc": "Klinik ordinaturani tamomlagandan so'ng davlat namunasidagi guvohnoma beriladi. Bitiruvchilar mamlakatimizning yetakchi laboratoriyalarida hamda xalqaro diagnostika markazlarida muvaffaqiyatli ishga joylashish imkoniyatiga ega bo'ladilar."
+      "title": "Diplom va ish bilan ta'minlanish",
+      "desc": "Klinik ordinaturani muvaffaqiyatli tamomlaganlarga davlat namunasidagi rasmiy guvohnoma beriladi. Bitiruvchilar mamlakatimizning yetakchi laboratoriyalarida hamda xalqaro diagnostika markazlarida ishga joylashish imkoniyatiga ega bo'ladilar."
     },
     "admission": {
       "title": "Qabul shartlari",
-      "directionLabel": "Yo'nalish: «Patologik anatomiya» (2026/2027 o'quv yili).",
-      "facultiesTitle": "Kimlar topshirishi mumkin:",
+      "directionLabel": "Mutaxassislik: «Patologik anatomiya» (2026/2027 o'quv yili).",
+      "facultiesTitle": "Kimlar hujjat topshirishi mumkin:",
       "f1": "Davolash ishi",
       "f2": "Kasbiy ta'lim (Davolash ishi)",
       "f3": "Pediatriya",
@@ -265,37 +265,37 @@
       "durationVal": "2 yil",
       "form": "Ta'lim shakli",
       "formVal": "Kunduzgi to'lov-kontrakt asosida",
-      "fee": "O'qish narxi",
+      "fee": "O'qish to'lovi",
       "feeVal": "1 o'quv yili uchun 30 000 000 so'm",
       "stipend": "Stipendiya miqdori",
       "stipendVal": "2 500 000 so'm"
     },
     "onlineApply": {
       "title": "Hujjatlarni onlayn topshirish",
-      "desc": "Hujjatlarni topshirish mustaqil ravishda rasmiy portal orqali onlayn amalga oshiriladi:",
+      "desc": "Hujjatlar mustaqil ravishda rasmiy portal orqali onlayn qabul qilinadi:",
       "btnText": "medtoifa.ssv.uz portaliga o'tish",
-      "oneidNote": "Tizimga kirish uchun yagona identifikatsiya tizimi OneID ishlatiladi.",
-      "warning": "Muhim! Bir vaqtning o'zida klinik ordinaturaning bir nechta yo'nalishlari bo'yicha ariza topshirish TAQIQLANADI.",
+      "oneidNote": "Portalga kirish uchun yagona identifikatsiya tizimi OneID ishlatiladi.",
+      "warning": "Muhim eslatma! Bir vaqtning o'zida klinik ordinaturaning bir nechta yo'nalishiga ariza topshirish QAT'IYAN TAQIQLANADI.",
       "deadline": "Hujjat topshirish muddati: 2026-yil 20-avgust, soat 23:59 gacha"
     },
-    "legalNote": "Qabul O'zbekiston Respublikasi Vazirlar Mahkamasining 2009-yil 18-dekabrdagi 319-son qarori hamda Sog'liqni saqlash vazirligining 2026-yil 20-iyuldagi 232-son «2026/2027 o'quv yilida klinik ordinaturaga qabulni tashkil etish chora-tadbirlari to'g'risida»gi buyrug'iga muvofiq amalga oshiriladi.",
+    "legalNote": "Qabul O'zbekiston Respublikasi Vazirlar Mahkamasining 2009-yil 18-dekabrdagi 319-son qarori hamda Sog'liqni saqlash vazirligining 2026-yil 20-iyuldagi 232-son «2026/2027 o'quv yilida klinik ordinaturaga qabulni tashkil etish chora-tadbirlari to'g'risida»gi buyrug'i asosida amalga oshiriladi.",
     "exam": {
-      "eyebrow": "Imtihon",
+      "eyebrow": "Kirish imtihonlari",
       "title": "Test sinovlari formati va dasturi",
       "duration": "50 daqiqa",
       "questions": "50 ta savol",
-      "passScore": "O'tish bali: 30% dan (16,5 b.)",
+      "passScore": "O'tish bali: kamida 30% (16,5 ball)",
       "periodLabel": "O'tkazilish davri:",
       "periodVal": "2026-yil 25-avgustdan 30-avgustgacha (bir bosqichli test sinovi)",
       "locationLabel": "O'tkazilish joyi:",
       "locationVal": "Tibbiyot xodimlarining kasbiy malakasini baholash markazi va uning filiallari",
-      "idLabel": "O'zi bilan olib kelish:",
+      "idLabel": "Taqdim etilishi kerak bo'lgan hujjatlar:",
       "idVal": "Pasport / ID-karta / Xorijga chiqish pasporti / Haydovchilik guvohnomasi",
       "table1Title": "1. «Davolash ishi» va «Kasbiy ta'lim (Davolash ishi)» fakultetlari uchun fanlar majmuasi",
       "table2Title": "2. «Pediatriya ishi» fakulteti uchun fanlar majmuasi",
       "colSubject": "Fanlar nomi",
-      "colTasks": "Topshiriqlar soni",
-      "colCriteria": "Baholash mezonlari",
+      "colTasks": "Savollar soni",
+      "colCriteria": "Baholash mezoni",
       "colMax": "Maksimal ball",
       "therapy": "Terapiya",
       "surgery": "Xirurgiya",
@@ -314,16 +314,16 @@
     }
   },
   "services": {
-    "eyebrow": "Xizmatlar",
+    "eyebrow": "Xizmatlar katalogi",
     "heroTitle": "Laboratoriya xizmatlari",
-    "heroText": "Diagnostika yo'nalishini tanlang, tayyorgarlikni aniqlashtiring va qulay vaqtga ariza qoldiring.",
+    "heroText": "Kerakli diagnostika yo'nalishini tanlang, tahlilga tayyorgarlik talablarini ko'ring va qulay vaqtga ariza qoldiring.",
     "loading": "Katalog yuklanmoqda...",
     "searchPlaceholder": "Nomi, kodi yoki biomaterial bo'yicha qidiruv…",
     "clearSearch": "Qidiruvni tozalash",
     "filtersBtn": "Filtrlar",
     "allDirections": "Barcha yo'nalishlar",
     "sidebarTitle": "Yo'nalishlar",
-    "resetAll": "Hammasini tozalash",
+    "resetAll": "Filtrlarni tozalash",
     "removeFilter": "Filtrni olib tashlash",
     "catalogEyebrow": "Laboratoriya katalogi",
     "defaultResultsTitle": "Barcha tekshiruvlar",
@@ -338,76 +338,76 @@
     "nextPage": "Keyingi sahifa",
     "pageAria": "{page}-sahifa",
     "emptyTitle": "Hech narsa topilmadi",
-    "emptyText": "Qidiruv so'rovini o'zgartiring yoki filtrlarni tozalang",
+    "emptyText": "Qidiruv so'rovini o'zgartirib ko'ring yoki filtrlarni tozalang",
     "resetFilters": "Filtrlarni tozalash",
     "errorText": "Katalogni yuklab bo'lmadi.",
     "retry": "Qayta urinib ko'rish",
     "selectedCount": "Tanlangan xizmatlar: {count}",
-    "selectionHint": "Operator tafsilotlarni aniqlashtiradi",
+    "selectionHint": "Operator narx va tafsilotlarni aniqlashtiradi",
     "selectionClear": "Tozalash",
     "selectionApply": "Ariza qoldirish"
   },
   "contact": {
-    "eyebrow": "Aloqa",
+    "eyebrow": "Bog'lanish",
     "heroTitle": "IPSUM PATHOLOGY bilan bog'laning",
-    "heroText": "Tahlilga yoziling, xizmat haqida ma'lumot oling yoki administratorga savol bering.",
-    "emailLabel": "Bizga yozing",
-    "emailAction": "Email yuborish",
-    "phoneLabel": "Bizga qo'ng'iroq qiling",
+    "heroText": "Tahlilga yoziling, xizmatlar haqida to'liq ma'lumot oling yoki administratorga savolingizni yo'llang.",
+    "emailLabel": "Email orqali",
+    "emailAction": "Xat yozish",
+    "phoneLabel": "Telefon orqali",
     "phoneAction": "Qo'ng'iroq qilish",
     "telegramLabel": "Telegram bot",
-    "telegramAction": "Botga yozish",
+    "telegramAction": "Botga o'tish",
     "addressLabel": "Bizning manzilimiz",
-    "formEyebrow": "Aloqa formasi",
+    "formEyebrow": "Murojaat shakli",
     "formTitle": "Ariza qoldiring",
-    "formDesc": "Biz siz bilan bog'lanamiz, diagnostika yo'nalishi va tahlil topshirish uchun qulay vaqtni aniqlashtiramiz.",
+    "formDesc": "Biz siz bilan tez orada bog'lanamiz, kerakli diagnostika yo'nalishi va qulay vaqtni belgilaymiz.",
     "formName": "F.I.SH.",
-    "formNamePlaceholder": "Ismingiz",
-    "formPhone": "Telefon",
-    "formEmail": "Email",
-    "formEmailPlaceholder": "name@example.com",
-    "formService": "Xizmat",
+    "formNamePlaceholder": "To'liq ismingiz",
+    "formPhone": "Telefon raqami",
+    "formEmail": "Elektron pochta",
+    "formEmailPlaceholder": "ismingiz@example.com",
+    "formService": "Tahlil turi",
     "formServiceSelect": "Xizmatni tanlang",
     "serviceOptions": {
       "clinical": "Klinik tahlillar",
       "biochemistry": "Biokimyo",
       "genetics": "Molekulyar genetika",
       "pathology": "Patomorfologiya",
-      "mobile": "Uyga borib tahlil olish"
+      "mobile": "Uyga borib tahlil olish xizmati"
     },
-    "formMessage": "Xabar",
+    "formMessage": "Xabaringiz",
     "formMessagePlaceholder": "Savolingizni yoki bog'lanish uchun qulay vaqtni yozing",
     "formSubmit": "Yuborish",
     "formSending": "Yuborilmoqda...",
-    "formSuccessToast": "Ariza yuborildi. Administrator tez orada siz bilan bog'lanadi.",
+    "formSuccessToast": "Arizangiz muvaffaqiyatli qabul qilindi. Administratorimiz tez orada siz bilan bog'lanadi.",
     "formErrorToast": "Arizani yuborib bo'lmadi. Ma'lumotlarni tekshiring va qaytadan urinib ko'ring.",
-    "branchesEyebrow": "Filiallar",
-    "branchesTitle": "Bizning tibbiyot markazlarimiz",
-    "branchesDesc": "IPSUM Pathology Toshkentning ikkita ixtisoslashtirilgan tibbiyot markazida faoliyat yuritib, yuqori sifatli laboratoriya diagnostikasini ta'minlaydi.",
-    "showOnMap": "Xaritada ko'rsatish",
+    "branchesEyebrow": "Filiallarimiz",
+    "branchesTitle": "Bizning tibbiy markazlarimiz",
+    "branchesDesc": "IPSUM Pathology Toshkent shahridagi ikkita ixtisoslashtirilgan tibbiyot markazida faoliyat yuritib, eng yuqori sifatdagi laboratoriya diagnostikasini ta'minlaydi.",
+    "showOnMap": "Xaritada ko'rish",
     "branch1_name": "Toshkent shahar filiali",
-    "branch1_fullName": "Respublika ixtisoslashtirilgan onkologiya va radiologiya ilmiy-amaliy tibbiyot markazi",
+    "branch1_fullName": "Respublika ixtisoslashtirilgan onkologiya va radiologiya ilmiy-amaliy tibbiyot markazi Toshkent shahar filiali",
     "branch1_address": "Toshkent sh., Chilonzor tumani, Bog'iston ko'chasi, 1",
-    "branch2_name": "Ilmiy-amaliy tibbiyot markazi",
-    "branch2_fullName": "bolalar onkologiyasi, gematologiyasi va immunologiyasi",
+    "branch2_name": "Respublika markazi",
+    "branch2_fullName": "Bolalar onkologiyasi, gematologiyasi va immunologiyasi ilmiy-amaliy tibbiyot markazi",
     "branch2_address": "Toshkent sh., Chilonzor tumani, Arnasoy ko'chasi, 17"
   },
   "appointment": {
     "eyebrow": "IPSUM PATHOLOGY",
     "title": "Tahlilga yoziling",
-    "desc": "Kontaktlaringizni qoldiring va administrator tahlil, filial yoki uyga chaqirish xizmatini tanlashda yordam beradi.",
+    "desc": "Kontakt ma'lumotlaringizni qoldiring va administratorimiz tahlil, filial yoki uyga mutaxassis chaqirish xizmatini tanlashda yordam beradi.",
     "selectedServices": "Tanlangan xizmatlar: {count}",
     "moreServices": "va yana {count} ta",
     "nameLabel": "F.I.SH.",
-    "namePlaceholder": "Ismingiz",
-    "phoneLabel": "Telefon",
-    "commentLabel": "Izoh",
-    "commentPlaceholder": "Qulay vaqt yoki tayyorgarlik bo'yicha savol",
+    "namePlaceholder": "To'liq ismingiz",
+    "phoneLabel": "Telefon raqami",
+    "commentLabel": "Izoh yoki savol",
+    "commentPlaceholder": "Qulay vaqt yoki tahlilga tayyorgarlik bo'yicha savolingiz",
     "submitBtn": "Arizani yuborish",
     "sendingBtn": "Yuborilmoqda...",
-    "successToast": "Ariza muvaffaqiyatli yuborildi! Administrator tez orada siz bilan bog'lanadi.",
-    "errorToast": "Yuborib bo'lmadi. Ma'lumotlarni tekshiring va qayta urinib ko'ring.",
-    "closeAria": "Formani yopish",
+    "successToast": "Arizangiz muvaffaqiyatli yuborildi! Administrator tez orada siz bilan bog'lanadi.",
+    "errorToast": "Arizani yuborib bo'lmadi. Ma'lumotlarni tekshiring va qayta urinib ko'ring.",
+    "closeAria": "Oynani yopish",
     "defaultTriggerLabel": "Yozilish"
   }
 }
