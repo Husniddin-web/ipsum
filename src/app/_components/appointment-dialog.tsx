@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { CalendarPlus, MessageCircle, Send, X, type LucideIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { publicApi } from '@/lib/api/services';
 import type { LabService } from '@/lib/api/types';
 import { useSelectionStore } from '@/lib/store/selection-store';
@@ -19,15 +20,18 @@ type AppointmentDialogProps = {
 export function AppointmentDialog({
   className,
   icon = 'calendar',
-  label = 'Записаться',
+  label,
   variant = 'primary',
   selectedServices = [],
 }: AppointmentDialogProps) {
+  const t = useTranslations('appointment');
   const [isOpen, setIsOpen] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle');
   const [phone, setPhone] = useState('+998 ');
   const clearSelection = useSelectionStore((state) => state.clear);
   const Icon: LucideIcon = icon === 'message' ? MessageCircle : CalendarPlus;
+
+  const displayLabel = label || t('defaultTriggerLabel');
 
   const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let value = event.target.value;
@@ -85,16 +89,16 @@ export function AppointmentDialog({
         role="dialog"
       >
         <button
-          aria-label="Закрыть форму"
+          aria-label={t('closeAria')}
           className="dialog-close"
           type="button"
           onClick={() => setIsOpen(false)}
         >
           <X size={18} strokeWidth={2.8} />
         </button>
-        <p className="eyebrow">IPSUM PATHOLOGY</p>
-        <h2 id="appointment-title">Запишитесь на анализ</h2>
-        <p>Оставьте контакты, и администратор поможет выбрать анализ, филиал или выездной забор.</p>
+        <p className="eyebrow">{t('eyebrow')}</p>
+        <h2 id="appointment-title">{t('title')}</h2>
+        <p>{t('desc')}</p>
         <form
           className="appointment-form"
           onSubmit={async (event) => {
@@ -108,7 +112,7 @@ export function AppointmentDialog({
                 message: String(form.get('message') || ''),
                 serviceIds: selectedServices.map((service) => service._id),
               });
-              toast.success('Заявка успешно отправлена! Администратор свяжется с вами.');
+              toast.success(t('successToast'));
               setStatus('idle');
               clearSelection();
               setPhone('+998 ');
@@ -116,28 +120,30 @@ export function AppointmentDialog({
               event.currentTarget.reset();
             } catch {
               setStatus('error');
-              toast.error('Не удалось отправить. Проверьте данные и повторите.');
+              toast.error(t('errorToast'));
             }
           }}
         >
           {selectedServices.length > 0 && (
             <div className="appointment-selection">
-              <strong>Выбрано услуг: {selectedServices.length}</strong>
+              <strong>{t('selectedServices', { count: selectedServices.length })}</strong>
               <span>
                 {selectedServices
                   .slice(0, 3)
                   .map((service) => service.name)
                   .join(', ')}
-                {selectedServices.length > 3 ? ` и ещё ${selectedServices.length - 3}` : ''}
+                {selectedServices.length > 3
+                  ? ` ${t('moreServices', { count: selectedServices.length - 3 })}`
+                  : ''}
               </span>
             </div>
           )}
           <label>
-            <span>ФИО</span>
-            <input name="fullName" placeholder="Ваше имя" type="text" required minLength={2} />
+            <span>{t('nameLabel')}</span>
+            <input name="fullName" placeholder={t('namePlaceholder')} type="text" required minLength={2} />
           </label>
           <label>
-            <span>Телефон</span>
+            <span>{t('phoneLabel')}</span>
             <input
               name="phone"
               value={phone}
@@ -151,10 +157,10 @@ export function AppointmentDialog({
             />
           </label>
           <label>
-            <span>Комментарий</span>
+            <span>{t('commentLabel')}</span>
             <textarea
               name="message"
-              placeholder="Удобное время или вопрос по подготовке"
+              placeholder={t('commentPlaceholder')}
               rows={3}
             />
           </label>
@@ -162,7 +168,7 @@ export function AppointmentDialog({
             <span className="button-icon" aria-hidden="true">
               <Send size={15} strokeWidth={2.6} />
             </span>
-            {status === 'sending' ? 'Отправляем...' : 'Отправить заявку'}
+            {status === 'sending' ? t('sendingBtn') : t('submitBtn')}
           </button>
         </form>
       </section>
@@ -182,7 +188,7 @@ export function AppointmentDialog({
         <span className="button-icon" aria-hidden="true">
           <Icon size={15} strokeWidth={2.6} />
         </span>
-        <span>{label}</span>
+        <span>{displayLabel}</span>
       </button>
 
       {isOpen && typeof document !== 'undefined' ? createPortal(dialog, document.body) : null}

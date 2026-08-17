@@ -1,41 +1,9 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { usePublicCatalog } from '@/lib/api/public-hooks';
-
-const defaultDirections = [
-  {
-    title: 'Патоморфологическая лаборатория',
-    text: 'Полный цикл морфологической диагностики: гистология, цитология, интраоперационная экспресс-диагностика, иммуногистохимические исследования, молекулярная диагностика, цифровая патология.',
-    image: '/g-pathology.jpg',
-  },
-  {
-    title: 'Клинико-диагностическая лаборатория',
-    text: 'Комплекс современных лабораторных исследований: общеклинические, биохимические, гематологические, коагулологические, иммунологические, бактериологические, гормональные, молекулярно-генетические исследования, онкомаркеры и другие виды лабораторной диагностики.',
-    image: '/g-clinical.jpg',
-  },
-  {
-    title: 'NGS',
-    text: 'Полный цикл высокопроизводительного секвенирования: таргетные и полногеномные панели, секвенирование экзома и транскриптома, жидкостная биопсия, биоинформатический анализ и интерпретация вариантов, подготовка клинических заключений.',
-    image: '/g-ngs.jpg',
-  },
-  {
-    title: 'RT-PCR',
-    text: 'Полный цикл ПЦР-диагностики в реальном времени: количественная и качественная детекция мутаций и транслокаций, оценка экспрессии генов, мониторинг минимальной остаточной болезни, диагностика инфекционных и вирусных агентов, контроль качества образцов.',
-    image: '/g-pcr.jpg',
-  },
-  {
-    title: 'Цитогенетика и FISH',
-    text: 'Полный цикл цитогенетической диагностики: классическое кариотипирование, FISH-исследования на нативных и парафиновых образцах, выявление хромосомных транслокаций, делеций и амплификаций, диагностика гематологических и солидных опухолей.',
-    image: '/g-cytogenetics.jpg',
-  },
-  {
-    title: 'Цитометрия',
-    text: 'Полный цикл проточной цитометрии: иммунофенотипирование гематологических образований, оценка минимальной остаточной болезни, анализ клеточного цикла и ДНК-плоидности, диагностика лейкозов и лимфом, многоцветное панельное тестирование.',
-    image: '/g-cytometry.jpg',
-  },
-];
 
 function formatImageUrl(imagePath?: string | null, fallbackPath?: string): string {
   if (!imagePath || typeof imagePath !== 'string' || !imagePath.trim()) {
@@ -49,7 +17,41 @@ function formatImageUrl(imagePath?: string | null, fallbackPath?: string): strin
 }
 
 export function HeroSection() {
+  const t = useTranslations('home');
   const { data: catalogData } = usePublicCatalog();
+
+  const defaultDirections = [
+    {
+      title: t('hero.defaultDirections.pathomorphology.title'),
+      text: t('hero.defaultDirections.pathomorphology.text'),
+      image: '/g-pathology.jpg',
+    },
+    {
+      title: t('hero.defaultDirections.clinical.title'),
+      text: t('hero.defaultDirections.clinical.text'),
+      image: '/g-clinical.jpg',
+    },
+    {
+      title: t('hero.defaultDirections.ngs.title'),
+      text: t('hero.defaultDirections.ngs.text'),
+      image: '/g-ngs.jpg',
+    },
+    {
+      title: t('hero.defaultDirections.pcr.title'),
+      text: t('hero.defaultDirections.pcr.text'),
+      image: '/g-pcr.jpg',
+    },
+    {
+      title: t('hero.defaultDirections.cytogenetics.title'),
+      text: t('hero.defaultDirections.cytogenetics.text'),
+      image: '/g-cytogenetics.jpg',
+    },
+    {
+      title: t('hero.defaultDirections.cytometry.title'),
+      text: t('hero.defaultDirections.cytometry.text'),
+      image: '/g-cytometry.jpg',
+    },
+  ];
 
   const heroDirections =
     catalogData && catalogData.length > 0
@@ -70,13 +72,9 @@ export function HeroSection() {
       <div className="container hero-content">
         <div className="hero-info-card" data-aos="fade-up">
           <div>
-            <p className="hero-kicker">IPSUM PATHOLOGY</p>
-            <h1>Лаборатория, где точность помогает принимать решения</h1>
-            <p>
-              IPSUM Pathology объединяет патоморфологию, клинико-диагностические исследования и
-              современный сервис, чтобы путь от записи до результата был понятным, быстрым и
-              надежным.
-            </p>
+            <p className="hero-kicker">{t('hero.kicker')}</p>
+            <h1>{t('hero.title')}</h1>
+            <p>{t('hero.desc')}</p>
           </div>
         </div>
 
@@ -101,14 +99,14 @@ export function HeroSection() {
                 </Link>
               </figure>
               <div className="hero-direction-body">
-                <span>Лабораторное направление</span>
+                <span>{t('hero.badge')}</span>
                 <h2>
                   <Link href={direction.href} style={{ color: 'inherit', textDecoration: 'none' }}>
                     {direction.title}
                   </Link>
                 </h2>
                 <p>{direction.text}</p>
-                <Link href={direction.href}>Подробнее &rarr;</Link>
+                <Link href={direction.href}>{t('hero.more')}</Link>
               </div>
             </article>
           ))}

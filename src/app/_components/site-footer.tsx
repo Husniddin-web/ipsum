@@ -1,8 +1,20 @@
 import Image from 'next/image';
-import { contactInfo, navigation } from '../_data/content';
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
+import { contactInfo } from '../_data/content';
 import { AppointmentDialog } from './appointment-dialog';
 
 export function SiteFooter() {
+  const t = useTranslations('common');
+
+  const navigationItems = [
+    { label: t('navigation.home'), href: '/' },
+    { label: t('navigation.about'), href: '/about' },
+    { label: t('navigation.education'), href: '/education' },
+    { label: t('navigation.services'), href: '/services' },
+    { label: t('navigation.contact'), href: '/contact' },
+  ];
+
   return (
     <footer className="site-footer" id="contacts">
       <div className="container footer-grid">
@@ -14,10 +26,7 @@ export function SiteFooter() {
             src="/logo.png"
             width={190}
           />
-          <p>
-            Лаборатория и диагностический центр в Ташкенте. Анализы, патологические исследования и
-            выездной забор.
-          </p>
+          <p>{t('footer.desc')}</p>
           <div className="footer-socials">
             <a
               href="https://www.facebook.com/ipsumpathology/"
@@ -65,7 +74,7 @@ export function SiteFooter() {
               href="https://t.me/ipsumuz_bot"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Telegram бот @ipsumuz_bot"
+              aria-label="Telegram bot @ipsumuz_bot"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,33 +93,33 @@ export function SiteFooter() {
           </div>
         </div>
         <div>
-          <h3>Навигация</h3>
-          <nav aria-label="Навигация в подвале">
-            {navigation.map((item) => (
-              <a href={item.href} key={item.href}>
+          <h3>{t('footer.navTitle')}</h3>
+          <nav aria-label={t('footer.navTitle')}>
+            {navigationItems.map((item) => (
+              <Link href={item.href} key={item.href}>
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
         <div>
-          <h3>Контакты</h3>
+          <h3>{t('footer.contactsTitle')}</h3>
           <address>
             <a href={contactInfo.phoneHref}>{contactInfo.phone}</a>
             <a href={contactInfo.emailHref}>{contactInfo.email}</a>
-            <span>{contactInfo.address}</span>
-            <span>{contactInfo.hours}</span>
+            <span>{t('contactInfo.address')}</span>
+            <span>{t('contactInfo.hours')}</span>
           </address>
         </div>
         <div className="footer-cta">
-          <h3>Нужна помощь?</h3>
-          <p>Оставьте заявку, и мы поможем выбрать нужное исследование.</p>
-          <AppointmentDialog icon="message" label="Оставить заявку" />
+          <h3>{t('footer.helpTitle')}</h3>
+          <p>{t('footer.helpDesc')}</p>
+          <AppointmentDialog icon="message" label={t('footer.ctaBtn')} />
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>IPSUM Pathology, 2026</span>
-        <span>Лаборатория и диагностика</span>
+        <span>{t('footer.copyright')}</span>
+        <span>{t('footer.subline')}</span>
       </div>
     </footer>
   );

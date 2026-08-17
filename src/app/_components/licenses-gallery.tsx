@@ -3,27 +3,29 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
-
-const licenses = [
-  {
-    src: '/cert-3.jpg',
-    title: 'Государственная лицензия',
-    description: 'Лицензия Минздрава РУз на осуществление медицинской деятельности',
-  },
-  {
-    src: '/cert-guvohnoma.jpg',
-    title: 'Гувоҳнома / Свидетельство о регистрации',
-    description: 'Юридик шахсни давлат рўйхатидан ўтказилганлиги тўғрисидаги гувоҳнома',
-  },
-  {
-    src: '/cert-1.jpg',
-    title: 'Сертификат соответствия',
-    description: 'Сертификат соответствия стандартам менеджмента качества ISO',
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export function LicensesGallery() {
+  const t = useTranslations('about');
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const licenses = [
+    {
+      src: '/cert-3.jpg',
+      title: t('licenses.l1_title'),
+      description: t('licenses.l1_desc'),
+    },
+    {
+      src: '/cert-guvohnoma.jpg',
+      title: t('licenses.l2_title'),
+      description: t('licenses.l2_desc'),
+    },
+    {
+      src: '/cert-1.jpg',
+      title: t('licenses.l3_title'),
+      description: t('licenses.l3_desc'),
+    },
+  ];
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -43,12 +45,9 @@ export function LicensesGallery() {
     <section className="section licenses-section">
       <div className="container">
         <div className="section-heading" data-aos="fade-up">
-          <p className="eyebrow">Документы</p>
-          <h2>Лицензии и сертификаты</h2>
-          <p>
-            Деятельность IPSUM Pathology полностью лицензирована. Мы регулярно проходим внешний
-            контроль качества и подтверждаем точность исследований.
-          </p>
+          <p className="eyebrow">{t('licenses.eyebrow')}</p>
+          <h2>{t('licenses.title')}</h2>
+          <p>{t('licenses.desc')}</p>
         </div>
 
         <div className="licenses-grid">
@@ -91,12 +90,12 @@ export function LicensesGallery() {
           <button
             className="lightbox-close"
             onClick={() => setActiveIndex(null)}
-            aria-label="Закрыть"
+            aria-label={t('licenses.close')}
           >
             <X size={24} />
           </button>
 
-          <button className="lightbox-nav prev" onClick={handlePrev} aria-label="Предыдущий">
+          <button className="lightbox-nav prev" onClick={handlePrev} aria-label={t('licenses.prev')}>
             <ChevronLeft size={32} />
           </button>
 
@@ -119,7 +118,7 @@ export function LicensesGallery() {
             </figure>
           </div>
 
-          <button className="lightbox-nav next" onClick={handleNext} aria-label="Следующий">
+          <button className="lightbox-nav next" onClick={handleNext} aria-label={t('licenses.next')}>
             <ChevronRight size={32} />
           </button>
         </div>

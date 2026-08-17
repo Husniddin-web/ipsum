@@ -1,0 +1,413 @@
+{
+  "common": {
+    "brand": "IPSUM Pathology",
+    "navigation": {
+      "home": "Home",
+      "about": "About Us",
+      "education": "Education",
+      "services": "Services",
+      "contact": "Contacts"
+    },
+    "header": {
+      "callback": "Callback request?",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "mainNav": "Main navigation",
+      "language": "Language",
+      "chooseLanguage": "Select language"
+    },
+    "footer": {
+      "desc": "Laboratory and diagnostic center in Tashkent. Advanced pathology, clinical diagnostics, and home sample collection.",
+      "navTitle": "Navigation",
+      "contactsTitle": "Contacts",
+      "helpTitle": "Need Help?",
+      "helpDesc": "Submit a request, and our specialists will help you choose the right test.",
+      "ctaBtn": "Submit request",
+      "copyright": "IPSUM Pathology, 2026",
+      "subline": "Laboratory and Diagnostics"
+    },
+    "notFound": {
+      "title": "404",
+      "heading": "Page not found",
+      "homeBtn": "Back to Home"
+    },
+    "contactInfo": {
+      "address": "Tashkent, Uzbekistan",
+      "hours": "Daily: 08:30 - 17:30",
+      "phone": "+998 (71) 203-93-00",
+      "email": "info@ipsumpathology.uz"
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "IPSUM PATHOLOGY",
+      "title": "A laboratory where precision guides decisions",
+      "desc": "IPSUM Pathology combines pathomorphology, clinical diagnostic testing, and modern service to make the journey from booking to results seamless, fast, and reliable.",
+      "badge": "Diagnostic Specialty",
+      "more": "Learn more →",
+      "defaultDirections": {
+        "pathomorphology": {
+          "title": "Pathomorphology Laboratory",
+          "text": "Full cycle of morphological diagnostics: histology, cytology, intraoperative express diagnostics, immunohistochemistry, molecular diagnostics, digital pathology."
+        },
+        "clinical": {
+          "title": "Clinical Diagnostic Laboratory",
+          "text": "Comprehensive modern laboratory tests: general clinical, biochemical, hematological, coagulological, immunological, bacteriological, hormonal, molecular genetic tests, tumor markers, and more."
+        },
+        "ngs": {
+          "title": "NGS",
+          "text": "Full cycle of next-generation sequencing: targeted and whole-genome panels, exome and transcriptome sequencing, liquid biopsy, bioinformatic analysis, variant interpretation, and clinical reporting."
+        },
+        "pcr": {
+          "title": "RT-PCR",
+          "text": "Full cycle of real-time PCR diagnostics: quantitative and qualitative detection of mutations and translocations, gene expression analysis, minimal residual disease monitoring, infection/virus diagnostics, and quality control."
+        },
+        "cytogenetics": {
+          "title": "Cytogenetics and FISH",
+          "text": "Full cycle of cytogenetic diagnostics: classic karyotyping, FISH on native and paraffin-embedded samples, detection of chromosome translocations, deletions, and amplifications, and diagnostics of hematologic/solid tumors."
+        },
+        "cytometry": {
+          "title": "Flow Cytometry",
+          "text": "Full cycle of flow cytometry: immunophenotyping of hematological malignancies, minimal residual disease assessment, cell cycle and DNA ploidy analysis, leukemia and lymphoma diagnostics, and multi-color panel testing."
+        }
+      }
+    },
+    "trust": {
+      "eyebrow": "Why IPSUM",
+      "title": "Accuracy, speed, and trust",
+      "text": "IPSUM Pathology integrates laboratory diagnostics, pathology, and advanced molecular methods to deliver results that are actionable for physicians and clear for patients.",
+      "cta": "Get consultation",
+      "f1_title": "Pathology & Diagnostics",
+      "f1_text": "Clinical, pathological, and molecular studies unified in one single system.",
+      "f2_title": "Modern Equipment",
+      "f2_text": "Laboratory environment engineered for consistent and reproducible results.",
+      "f3_title": "Quality Control",
+      "f3_text": "Strict attention to detail at every step: from specimen collection to final report delivery.",
+      "f4_title": "Patient Support",
+      "f4_text": "Clear booking, friendly administrative consultation, and quick access to test results."
+    },
+    "process": {
+      "eyebrow": "How It Works",
+      "title": "Testing made simple",
+      "subtitle": "From request to results — a clear, hassle-free path.",
+      "s1_title": "Submit a request",
+      "s1_text": "Choose a test or leave your contacts; our operator will clarify the details and convenient timing.",
+      "s2_title": "Provide sample",
+      "s2_text": "Visit our branch or schedule a specialist visit to your preferred address.",
+      "s3_title": "Get results",
+      "s3_text": "Your results are available online, in our Telegram bot, or directly at the branch."
+    },
+    "partners": {
+      "eyebrow": "Our Partners",
+      "title": "International expertise for accurate diagnostics",
+      "desc": "IPSUM Pathology collaborates with world-leading medical institutions, biotechnology firms, and laboratory diagnostics leaders. This ensures we implement advanced methods, maintain high diagnostic quality, and adopt best global practices.",
+      "mentionsTitle": "Expert Consultants",
+      "items": {
+        "cleveland": {
+          "name": "Cleveland Clinic",
+          "country": "USA",
+          "text": "One of the world's leading medical centers. Partnership provides access to cutting-edge diagnostic protocols and international medical practice standards."
+        },
+        "roche": {
+          "name": "Hoffmann-La Roche",
+          "country": "Switzerland",
+          "text": "Global leader in diagnostics and pharmaceuticals. Collaborative work helps develop immunohistochemical research and implement international quality standards."
+        },
+        "centogene": {
+          "name": "CENTOGENE",
+          "country": "Germany",
+          "text": "Expert in genetic diagnostics of rare diseases. Partnership strengthens our capabilities in molecular genetic analysis and rare pathologies."
+        },
+        "core": {
+          "name": "Core Diagnostics",
+          "country": "India",
+          "text": "Next-generation clinical laboratory. Knowledge exchange facilitates the implementation of modern diagnostic solutions and best Asian clinical practices."
+        },
+        "foundation": {
+          "name": "Foundation Medicine",
+          "country": "USA",
+          "text": "Leader in molecular oncology diagnostics. Collaboration enables comprehensive genomic profiling for personalized cancer therapies."
+        },
+        "onecell": {
+          "name": "OneCell",
+          "country": "USA",
+          "text": "Innovative single-cell analysis and liquid biopsy company, expanding opportunities for early cancer detection and monitoring."
+        },
+        "memorial": {
+          "name": "Memorial",
+          "country": "Turkey",
+          "text": "Leading network of medical centers in Turkey. Joint expertise in international-standard oncological diagnostics and treatment."
+        }
+      }
+    },
+    "gallery": {
+      "eyebrow": "Laboratory",
+      "title": "High-tech environment for precise laboratory diagnostics",
+      "desc": "Modern diagnostics requires meticulous handling of biological samples, rigorous quality control, and clear communication with patients.",
+      "i1_label": "Laboratory",
+      "i1_title": "Modern equipment",
+      "i2_label": "Location",
+      "i2_title": "IPSUM Pathomorphology Laboratory",
+      "i3_label": "Diagnostics",
+      "i3_title": "Process control",
+      "i4_label": "Patients",
+      "i4_title": "Patient care",
+      "i5_label": "Analysis",
+      "i5_title": "Accurate results"
+    }
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "title": "IPSUM PATHOLOGY",
+    "text": "We combine laboratory precision, technological infrastructure, and clear communication with patients.",
+    "mission": {
+      "eyebrow": "Mission",
+      "title": "Precision that guides medical decisions",
+      "text": "IPSUM Pathology was created for patients and physicians who demand reliable laboratory data, calm service, and fast access to results. We make the entire pathway clear and convenient.",
+      "h1": "Pathology and laboratory diagnostics",
+      "h2": "Modern equipment",
+      "h3": "Quality control at every step",
+      "h4": "Fast patient communication"
+    },
+    "corporate": {
+      "s1_eyebrow": "Service",
+      "s1_title": "Patients experience a clear pathway from first contact",
+      "s1_text": "We focus not only on testing, but also on communication: our administrators assist with scheduling, test prep, and convenient report delivery.",
+      "s2_eyebrow": "Laboratory",
+      "s2_title": "High-tech environment for dependable diagnostics",
+      "s2_text": "Testing takes place in a state-of-the-art laboratory environment where order, rigor, and attentive specialist work are paramount."
+    },
+    "stats": {
+      "s1_label": "satisfied patients",
+      "s2_label": "diagnostic specialties",
+      "s3_label": "access to results",
+      "s4_label": "clear steps to results"
+    },
+    "values": {
+      "eyebrow": "Our Approach",
+      "title": "The pillars of our trust",
+      "v1_title": "Precision",
+      "v1_text": "We operate laboratory workflows where control, reproducibility, and attention to detail are critical.",
+      "v2_title": "Care",
+      "v2_text": "Patients receive a straightforward pathway: appointment, sample collection, and convenient results delivery.",
+      "v3_title": "Innovation",
+      "v3_text": "We leverage a cutting-edge laboratory environment for clinical, molecular, and pathological testing."
+    },
+    "route": {
+      "eyebrow": "How We Operate",
+      "title": "From appointment to results without unnecessary complexity",
+      "desc": "We build our service around a patient-first experience: minimal uncertainty, responsive communication, and transparent testing stages.",
+      "step1_title": "Patient Pathway",
+      "step1_text": "Administrators help select the right direction, collection format, and convenient time.",
+      "step2_title": "Laboratory Processing",
+      "step2_text": "Biomaterials undergo preparation and examination in a strictly controlled environment.",
+      "step3_title": "Clear Results",
+      "step3_text": "Reports are delivered online or at the branch so doctors and patients can act quickly."
+    },
+    "licenses": {
+      "eyebrow": "Documents",
+      "title": "Licenses and Certificates",
+      "desc": "IPSUM Pathology is fully licensed. We regularly undergo external quality control evaluations to verify testing accuracy.",
+      "l1_title": "State Medical License",
+      "l1_desc": "Ministry of Health of the Republic of Uzbekistan license for medical activity",
+      "l2_title": "State Registration Certificate",
+      "l2_desc": "Certificate of state registration of a legal entity",
+      "l3_title": "Certificate of Conformity",
+      "l3_desc": "Certificate of conformity with ISO quality management standards",
+      "prev": "Previous",
+      "next": "Next",
+      "close": "Close"
+    },
+    "cta": {
+      "eyebrow": "Booking",
+      "title": "Ready to take your test?",
+      "btn": "Book now"
+    }
+  },
+  "education": {
+    "eyebrow": "Education",
+    "title": "Clinical Residency Program",
+    "text": "Clinical residency program in 'Pathological Anatomy' for the 2026/2027 academic year.",
+    "intro": {
+      "eyebrow": "IPSUM PATHOLOGY",
+      "title": "Training specialists for precision laboratory diagnostics",
+      "desc": "The program is designed for physicians who want to master modern laboratory methods, clinical data interpretation, and advanced hands-on pathomorphology diagnostic skills."
+    },
+    "features": {
+      "f1": "Hands-on training under the guidance of experienced pathomorphologists",
+      "f2": "Immunohistochemistry, molecular diagnostics, and digital pathology",
+      "f3": "Interdisciplinary teamwork with clinicians across multiple specialties"
+    },
+    "gallery": {
+      "eyebrow": "Hands-on Training",
+      "title": "Modern clinical and laboratory base",
+      "desc": "Residents participate in real clinical cases, mastering next-generation histology, IHC, and molecular diagnostic equipment.",
+      "g1": "Analysis of complex pathomorphological cases",
+      "g2": "Interdisciplinary specialist collaboration",
+      "g3": "Automated digital diagnostics"
+    },
+    "international": {
+      "title": "International Cooperation",
+      "desc": "Our laboratory collaborates with leading medical institutions and research centers in the USA, Turkey, and India in pathology, histology, and molecular diagnostics, offering residents world-class clinical knowledge."
+    },
+    "diploma": {
+      "title": "Diploma & Employment",
+      "desc": "Upon completion of the residency, a state-recognized diploma is issued. Graduates gain employment opportunities in leading national laboratories and international diagnostic centers."
+    },
+    "admission": {
+      "title": "Admission Terms",
+      "directionLabel": "Specialty: 'Pathological Anatomy' (2026/2027 academic year).",
+      "facultiesTitle": "Eligible applicants:",
+      "f1": "General Medicine",
+      "f2": "Professional Education (General Medicine)",
+      "f3": "Pediatrics",
+      "duration": "Duration",
+      "durationVal": "2 years",
+      "form": "Study format",
+      "formVal": "Full-time, contract-based",
+      "fee": "Tuition fee",
+      "feeVal": "30,000,000 UZS per academic year",
+      "stipend": "Stipend amount",
+      "stipendVal": "2,500,000 UZS"
+    },
+    "onlineApply": {
+      "title": "Online Application",
+      "desc": "Document submission is carried out independently online through the official portal:",
+      "btnText": "Go to medtoifa.ssv.uz",
+      "oneidNote": "OneID single sign-on system is used for portal authorization.",
+      "warning": "Important! Submitting applications to multiple residency specialties simultaneously is PROHIBITED.",
+      "deadline": "Application deadline: August 20, 2026, until 23:59"
+    },
+    "legalNote": "Admission is conducted in accordance with Resolution No. 319 of the Cabinet of Ministers of the Republic of Uzbekistan dated 18.12.2009 and Order No. 232 of the Ministry of Health dated 20.07.2026.",
+    "exam": {
+      "eyebrow": "Examination",
+      "title": "Exam Format and Program",
+      "duration": "50 minutes",
+      "questions": "50 questions",
+      "passScore": "Passing score: from 30% (16.5 pts)",
+      "periodLabel": "Testing period:",
+      "periodVal": "August 25 to 30, 2026 (single-stage testing)",
+      "locationLabel": "Location:",
+      "locationVal": "Center for Assessment of Medical Qualifications and its branches",
+      "idLabel": "Required documents:",
+      "idVal": "Passport / ID card / Foreign passport / Driver's license",
+      "table1Title": "1. Subject complex for 'General Medicine' and 'Professional Education (General Medicine)'",
+      "table2Title": "2. Subject complex for 'Pediatrics'",
+      "colSubject": "Subject name",
+      "colTasks": "Number of questions",
+      "colCriteria": "Scoring criteria",
+      "colMax": "Maximum score",
+      "therapy": "Therapy",
+      "surgery": "Surgery",
+      "obstetrics": "Obstetrics & Gynecology",
+      "pediatrics": "Pediatrics",
+      "pediatricSurgery": "Pediatric Surgery",
+      "pointsUnit": "1.1 points",
+      "totalLabel": "Total",
+      "totalQuestions": "50 questions",
+      "totalPoints": "55.0 points (100%)"
+    },
+    "contact": {
+      "eyebrow": "Admissions Committee",
+      "title": "Admissions Call Center",
+      "hours": "Working hours: Monday – Saturday (09:00 – 18:00), lunch: 13:00 – 14:00"
+    }
+  },
+  "services": {
+    "eyebrow": "Services",
+    "heroTitle": "Laboratory Services",
+    "heroText": "Select a diagnostic specialty, check preparation requirements, and book at your convenience.",
+    "loading": "Loading catalog...",
+    "searchPlaceholder": "Search by name, code or specimen…",
+    "clearSearch": "Clear search",
+    "filtersBtn": "Filters",
+    "allDirections": "All Directions",
+    "sidebarTitle": "Directions",
+    "resetAll": "Reset all",
+    "removeFilter": "Remove filter",
+    "catalogEyebrow": "Laboratory Catalog",
+    "defaultResultsTitle": "All Tests",
+    "fallbackResultsTitle": "Tests",
+    "totalCountUnit": "{count} services",
+    "add": "Add",
+    "added": "Added",
+    "addAria": "Add to request",
+    "removeAria": "Remove from request",
+    "paginationInfo": "{from}–{to} of {total}",
+    "prevPage": "Previous page",
+    "nextPage": "Next page",
+    "pageAria": "Page {page}",
+    "emptyTitle": "Nothing found",
+    "emptyText": "Try modifying your search query or reset filters",
+    "resetFilters": "Reset filters",
+    "errorText": "Failed to load catalog.",
+    "retry": "Try again",
+    "selectedCount": "Selected services: {count}",
+    "selectionHint": "Operator will confirm details",
+    "selectionClear": "Clear",
+    "selectionApply": "Submit request"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heroTitle": "Contact IPSUM PATHOLOGY",
+    "heroText": "Book a test, inquire about a service, or ask our administrator any question.",
+    "emailLabel": "Email us",
+    "emailAction": "Send email",
+    "phoneLabel": "Call us",
+    "phoneAction": "Call now",
+    "telegramLabel": "Telegram bot",
+    "telegramAction": "Open bot",
+    "addressLabel": "Visit our center",
+    "formEyebrow": "Feedback Form",
+    "formTitle": "Leave a request",
+    "formDesc": "We will contact you to clarify the diagnostic direction and convenient time for your test.",
+    "formName": "Full Name",
+    "formNamePlaceholder": "Your name",
+    "formPhone": "Phone Number",
+    "formEmail": "Email",
+    "formEmailPlaceholder": "name@example.com",
+    "formService": "Service",
+    "formServiceSelect": "Select service",
+    "serviceOptions": {
+      "clinical": "Clinical Analysis",
+      "biochemistry": "Biochemistry",
+      "genetics": "Molecular Genetics",
+      "pathology": "Pathomorphology",
+      "mobile": "On-site Sample Collection"
+    },
+    "formMessage": "Message",
+    "formMessagePlaceholder": "Write your question or preferred time to contact",
+    "formSubmit": "Submit",
+    "formSending": "Submitting...",
+    "formSuccessToast": "Request submitted. Our administrator will contact you shortly.",
+    "formErrorToast": "Failed to submit request. Please check your data and try again.",
+    "branchesEyebrow": "Branches",
+    "branchesTitle": "Our Medical Centers",
+    "branchesDesc": "IPSUM Pathology operates across two specialized medical centers in Tashkent, providing high-quality laboratory diagnostics.",
+    "showOnMap": "Show on map",
+    "branch1_name": "Tashkent City Branch",
+    "branch1_fullName": "Republican Specialized Scientific and Practical Medical Center of Oncology and Radiology",
+    "branch1_address": "1 Bogiston St., Chilanzar District, Tashkent",
+    "branch2_name": "Scientific and Practical Medical Center",
+    "branch2_fullName": "of Pediatric Oncology, Hematology and Immunology",
+    "branch2_address": "17 Arnasay St., Chilanzar District, Tashkent"
+  },
+  "appointment": {
+    "eyebrow": "IPSUM PATHOLOGY",
+    "title": "Book a laboratory test",
+    "desc": "Leave your details, and our administrator will assist you in choosing the test, branch, or mobile collection.",
+    "selectedServices": "Selected services: {count}",
+    "moreServices": "and {count} more",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Your name",
+    "phoneLabel": "Phone Number",
+    "commentLabel": "Comment",
+    "commentPlaceholder": "Preferred time or questions regarding test preparation",
+    "submitBtn": "Submit Request",
+    "sendingBtn": "Submitting...",
+    "successToast": "Request successfully sent! Our administrator will contact you soon.",
+    "errorToast": "Failed to submit. Please check your data and try again.",
+    "closeAria": "Close dialog",
+    "defaultTriggerLabel": "Book now"
+  }
+}

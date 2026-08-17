@@ -1,16 +1,26 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { Menu, Phone, X } from 'lucide-react';
 import { useState } from 'react';
-import { contactInfo, navigation } from '../_data/content';
+import { useTranslations } from 'next-intl';
+import { contactInfo } from '../_data/content';
 import { AppointmentDialog } from './appointment-dialog';
+import { LanguageSwitcher } from './language-switcher';
 
 export function SiteHeader() {
+  const t = useTranslations('common');
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navigationItems = [
+    { label: t('navigation.home'), href: '/' },
+    { label: t('navigation.about'), href: '/about' },
+    { label: t('navigation.education'), href: '/education' },
+    { label: t('navigation.services'), href: '/services' },
+    { label: t('navigation.contact'), href: '/contact' },
+  ];
 
   return (
     <header className="site-header">
@@ -32,6 +42,7 @@ export function SiteHeader() {
             />
           </Link>
 
+          {/* Desktop Actions */}
           <div className="header-actions">
             <a className="phone-link" href={contactInfo.phoneHref}>
               <Phone aria-hidden="true" size={18} strokeWidth={2.4} />
@@ -40,29 +51,35 @@ export function SiteHeader() {
             <AppointmentDialog
               className="header-callback"
               icon="message"
-              label="Вам перезвонить?"
+              label={t('header.callback')}
               variant="ghost"
             />
+            <LanguageSwitcher />
           </div>
 
-          <button
-            aria-expanded={isMenuOpen}
-            aria-label={isMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
-            className="mobile-menu-toggle"
-            type="button"
-            onClick={() => setIsMenuOpen((current) => !current)}
-          >
-            {isMenuOpen ? (
-              <X aria-hidden="true" size={22} strokeWidth={2.6} />
-            ) : (
-              <Menu aria-hidden="true" size={22} strokeWidth={2.6} />
-            )}
-          </button>
+          {/* Mobile / Tablet Controls */}
+          <div className="header-mobile-controls">
+            <LanguageSwitcher />
+            <button
+              aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
+              className="mobile-menu-toggle"
+              type="button"
+              onClick={() => setIsMenuOpen((current) => !current)}
+            >
+              {isMenuOpen ? (
+                <X aria-hidden="true" size={22} strokeWidth={2.6} />
+              ) : (
+                <Menu aria-hidden="true" size={22} strokeWidth={2.6} />
+              )}
+            </button>
+          </div>
         </div>
 
+        {/* Navigation Menu */}
         <div className={`header-menu${isMenuOpen ? ' open' : ''}`}>
-          <nav aria-label="Основная навигация" className="desktop-nav">
-            {navigation.map((item) => {
+          <nav aria-label={t('header.mainNav')} className="desktop-nav">
+            {navigationItems.map((item) => {
               const isHashLink = item.href.includes('#');
               const isActive =
                 !isHashLink &&

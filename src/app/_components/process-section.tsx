@@ -1,18 +1,40 @@
+'use client';
+
 import { ClipboardList, FileCheck2, MapPin } from 'lucide-react';
-import { processSteps } from '../_data/content';
+import { useTranslations } from 'next-intl';
 
 const stepIcons = [ClipboardList, MapPin, FileCheck2];
 
 export function ProcessSection() {
+  const t = useTranslations('home');
+
+  const processSteps = [
+    {
+      number: '01',
+      title: t('process.s1_title'),
+      text: t('process.s1_text'),
+    },
+    {
+      number: '02',
+      title: t('process.s2_title'),
+      text: t('process.s2_text'),
+    },
+    {
+      number: '03',
+      title: t('process.s3_title'),
+      text: t('process.s3_text'),
+    },
+  ];
+
   return (
     <section className="section process-section" id="process">
       <div className="process-decoration top-left" aria-hidden="true" />
       <div className="process-decoration bottom-right" aria-hidden="true" />
       <div className="container">
         <div className="section-heading process-heading" data-aos="fade-up">
-          <p className="eyebrow">Как это работает</p>
-          <h2>Сдать анализы просто</h2>
-          <p>От заявки до результата - понятный путь без лишних действий.</p>
+          <p className="eyebrow">{t('process.eyebrow')}</p>
+          <h2>{t('process.title')}</h2>
+          <p>{t('process.subtitle')}</p>
         </div>
         <div className="steps-grid">
           {processSteps.map((step, index) => {

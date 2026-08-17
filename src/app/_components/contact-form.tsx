@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { Send } from 'lucide-react';
 import { toast } from 'sonner';
+import { useTranslations } from 'next-intl';
 import { publicApi } from '@/lib/api/services';
 
 export function ContactForm() {
+  const t = useTranslations('contact');
   const [status, setStatus] = useState<'idle' | 'sending'>('idle');
 
   return (
@@ -28,16 +30,16 @@ export function ContactForm() {
             phone,
             message: [
               email ? `Email: ${email}` : '',
-              service ? `Услуга: ${service}` : '',
-              message ? `Сообщение: ${message}` : '',
+              service ? `${t('formService')}: ${service}` : '',
+              message ? `${t('formMessage')}: ${message}` : '',
             ]
               .filter(Boolean)
               .join('\n'),
           });
-          toast.success('Заявка отправлена. Администратор свяжется с вами.');
+          toast.success(t('formSuccessToast'));
           form.reset();
         } catch {
-          toast.error('Не удалось отправить заявку. Проверьте данные и повторите.');
+          toast.error(t('formErrorToast'));
         } finally {
           setStatus('idle');
         }
@@ -45,37 +47,38 @@ export function ContactForm() {
     >
       <div className="form-grid">
         <label>
-          <span>ФИО</span>
-          <input name="name" placeholder="Ваше имя" type="text" required minLength={2} />
+          <span>{t('formName')}</span>
+          <input name="name" placeholder={t('formNamePlaceholder')} type="text" required minLength={2} />
         </label>
         <label>
-          <span>Телефон</span>
+          <span>{t('formPhone')}</span>
           <input name="phone" placeholder="+998 (__) ___-__-__" type="tel" required minLength={7} />
         </label>
       </div>
       <div className="form-grid">
         <label>
-          <span>Email</span>
-          <input name="email" placeholder="name@example.com" type="email" />
+          <span>{t('formEmail')}</span>
+          <input name="email" placeholder={t('formEmailPlaceholder')} type="email" />
         </label>
         <label>
-          <span>Услуга</span>
+          <span>{t('formService')}</span>
           <select name="service" defaultValue="">
             <option disabled value="">
-              Выберите услугу
+              {t('formServiceSelect')}
             </option>
-            <option>Клинические анализы</option>
-            <option>Биохимия</option>
-            <option>Молекулярная генетика</option>
-            <option>Выездной забор</option>
+            <option value="clinical">{t('serviceOptions.clinical')}</option>
+            <option value="biochemistry">{t('serviceOptions.biochemistry')}</option>
+            <option value="genetics">{t('serviceOptions.genetics')}</option>
+            <option value="pathology">{t('serviceOptions.pathology')}</option>
+            <option value="mobile">{t('serviceOptions.mobile')}</option>
           </select>
         </label>
       </div>
       <label>
-        <span>Сообщение</span>
+        <span>{t('formMessage')}</span>
         <textarea
           name="message"
-          placeholder="Напишите вопрос или удобное время для связи"
+          placeholder={t('formMessagePlaceholder')}
           rows={5}
         />
       </label>
@@ -83,7 +86,7 @@ export function ContactForm() {
         <span className="button-icon" aria-hidden="true">
           <Send size={15} strokeWidth={2.6} />
         </span>
-        <span>{status === 'sending' ? 'Отправляем...' : 'Отправить'}</span>
+        <span>{status === 'sending' ? t('formSending') : t('formSubmit')}</span>
       </button>
     </form>
   );

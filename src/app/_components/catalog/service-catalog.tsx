@@ -5,7 +5,6 @@ import {
   ChevronRight,
   Clock,
   Dna,
-  Filter,
   FlaskConical,
   LayoutGrid,
   LayoutList,
@@ -16,8 +15,10 @@ import {
   TestTube,
   X,
 } from 'lucide-react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { usePathname, useRouter } from '@/i18n/navigation';
+import { useSearchParams } from 'next/navigation';
+import { useCallback, useMemo, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { usePublicCatalog, usePublicServices } from '@/lib/api/public-hooks';
 import { useSelectionStore } from '@/lib/store/selection-store';
 import { AppointmentDialog } from '../appointment-dialog';
@@ -43,22 +44,22 @@ function SkeletonCard() {
 function Pagination({
   page,
   pages,
-  total,
-  limit,
   onChange,
+  infoText,
+  prevAria,
+  nextAria,
+  pageAria,
 }: {
   page: number;
   pages: number;
-  total: number;
-  limit: number;
   onChange: (p: number) => void;
+  infoText: string;
+  prevAria: string;
+  nextAria: string;
+  pageAria: (p: number) => string;
 }) {
   if (pages <= 1) return null;
 
-  const from = (page - 1) * limit + 1;
-  const to = Math.min(page * limit, total);
-
-  // Build page number list with ellipsis
   const getPages = () => {
     const result: (number | '...')[] = [];
     if (pages <= 7) {
@@ -77,15 +78,13 @@ function Pagination({
 
   return (
     <div className="svc-pagination">
-      <span className="svc-pagination-info">
-        {from}–{to} из {total}
-      </span>
+      <span className="svc-pagination-info">{infoText}</span>
       <div className="svc-pagination-controls">
         <button
           className="svc-page-btn svc-page-nav"
           disabled={page === 1}
           onClick={() => onChange(page - 1)}
-          aria-label="Предыдущая страница"
+          aria-label={prevAria}
         >
           <ChevronLeft size={16} />
         </button>
@@ -98,7 +97,7 @@ function Pagination({
               key={p}
               className={`svc-page-btn${page === p ? ' active' : ''}`}
               onClick={() => onChange(p)}
-              aria-label={`Страница ${p}`}
+              aria-label={pageAria(p)}
               aria-current={page === p ? 'page' : undefined}
             >
               {p}
@@ -110,7 +109,7 @@ function Pagination({
           className="svc-page-btn svc-page-nav"
           disabled={page === pages}
           onClick={() => onChange(page + 1)}
-          aria-label="Следующая страница"
+          aria-label={nextAria}
         >
           <ChevronRight size={16} />
         </button>
@@ -121,29 +120,23 @@ function Pagination({
 
 /* ── Main component ───────────────────────────────────────── */
 export function ServiceCatalog() {
+  const t = useTranslations('services');
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const [query, setQuery] = useState(() => searchParams.get('search') || '');
-  const [directionId, setDirectionId] = useState(() => searchParams.get('directionId') || '');
-  const [categoryId, setCategoryId] = useState(() => searchParams.get('categoryId') || '');
-  const [page, setPage] = useState(() => Number(searchParams.get('page') || '1'));
+  const query = searchParams?.get('search') || '';
+  const directionId = searchParams?.get('directionId') || '';
+  const categoryId = searchParams?.get('categoryId') || '';
+  const page = Number(searchParams?.get('page') || '1');
+
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
   const selection = useSelectionStore();
 
-  // Sync state with URL searchParams on navigation
-  useEffect(() => {
-    setQuery(searchParams.get('search') || '');
-    setDirectionId(searchParams.get('directionId') || '');
-    setCategoryId(searchParams.get('categoryId') || '');
-    setPage(Number(searchParams.get('page') || '1'));
-  }, [searchParams]);
-
   const setUrlParams = useCallback(
     (updates: Record<string, string | undefined>) => {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = new URLSearchParams(searchParams ? searchParams.toString() : '');
       Object.entries(updates).forEach(([key, value]) => {
         if (value) params.set(key, value);
         else params.delete(key);
@@ -196,18 +189,17 @@ export function ServiceCatalog() {
   const hasActiveFilter = !!(directionId || categoryId || query);
 
   const clearFilters = () => {
-    setDirectionId('');
-    setCategoryId('');
-    setPage(1);
-    setUrlParams({ directionId: undefined, categoryId: undefined, page: undefined });
+    setUrlParams({ directionId: undefined, categoryId: undefined, search: undefined, page: undefined });
     setFiltersOpen(false);
   };
 
   const handlePageChange = (p: number) => {
-    setPage(p);
     setUrlParams({ page: p > 1 ? String(p) : undefined });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const from = (page - 1) * PAGE_SIZE + 1;
+  const to = Math.min(page * PAGE_SIZE, totalServices);
 
   return (
     <div className="svc-shell">
@@ -218,19 +210,17 @@ export function ServiceCatalog() {
           <input
             value={query}
             onChange={(e) => {
-              setQuery(e.target.value);
               setUrlParams({ search: e.target.value || undefined, page: undefined });
             }}
-            placeholder="Поиск по названию, коду или биоматериалу…"
+            placeholder={t('searchPlaceholder')}
           />
           {query && (
             <button
               className="svc-search-clear"
               onClick={() => {
-                setQuery('');
                 setUrlParams({ search: undefined, page: undefined });
               }}
-              aria-label="Очистить поиск"
+              aria-label={t('clearSearch')}
             >
               <X size={15} />
             </button>
@@ -242,16 +232,16 @@ export function ServiceCatalog() {
             <button
               className={viewMode === 'list' ? 'active' : ''}
               onClick={() => setViewMode('list')}
-              aria-label="Список"
-              title="Список"
+              aria-label="List view"
+              title="List view"
             >
               <LayoutList size={17} />
             </button>
             <button
               className={viewMode === 'grid' ? 'active' : ''}
               onClick={() => setViewMode('grid')}
-              aria-label="Сетка"
-              title="Сетка"
+              aria-label="Grid view"
+              title="Grid view"
             >
               <LayoutGrid size={17} />
             </button>
@@ -260,10 +250,10 @@ export function ServiceCatalog() {
             id="svc-filter-btn"
             className={`svc-filter-btn${hasActiveFilter ? ' has-filter' : ''}`}
             onClick={() => setFiltersOpen(true)}
-            aria-label="Открыть фильтры"
+            aria-label={t('filtersBtn')}
           >
             <SlidersHorizontal size={18} />
-            <span>Фильтры</span>
+            <span>{t('filtersBtn')}</span>
             {hasActiveFilter && <span className="svc-filter-dot" />}
           </button>
         </div>
@@ -275,7 +265,7 @@ export function ServiceCatalog() {
           {activeDirection && !activeCategory && (
             <span className="svc-chip">
               {activeDirection.name}
-              <button onClick={clearFilters} aria-label="Убрать фильтр">
+              <button onClick={() => setUrlParams({ directionId: undefined, page: undefined })} aria-label={t('removeFilter')}>
                 <X size={12} />
               </button>
             </span>
@@ -283,7 +273,7 @@ export function ServiceCatalog() {
           {activeCategory && (
             <span className="svc-chip">
               {activeCategory.name}
-              <button onClick={clearFilters} aria-label="Убрать фильтр">
+              <button onClick={() => setUrlParams({ categoryId: undefined, page: undefined })} aria-label={t('removeFilter')}>
                 <X size={12} />
               </button>
             </span>
@@ -293,17 +283,16 @@ export function ServiceCatalog() {
               «{query}»
               <button
                 onClick={() => {
-                  setQuery('');
                   setUrlParams({ search: undefined, page: undefined });
                 }}
-                aria-label="Убрать поиск"
+                aria-label={t('clearSearch')}
               >
                 <X size={12} />
               </button>
             </span>
           )}
           <button className="svc-chip-clear" onClick={clearFilters}>
-            Сбросить всё
+            {t('resetAll')}
           </button>
         </div>
       )}
@@ -320,12 +309,12 @@ export function ServiceCatalog() {
           <div className="svc-sidebar-head">
             <div className="svc-sidebar-title">
               <SlidersHorizontal size={16} />
-              <strong>Направления</strong>
+              <strong>{t('sidebarTitle')}</strong>
             </div>
             <button
               className="svc-sidebar-close"
               onClick={() => setFiltersOpen(false)}
-              aria-label="Закрыть"
+              aria-label="Close"
             >
               <X size={16} />
             </button>
@@ -335,12 +324,12 @@ export function ServiceCatalog() {
             <button
               className={`svc-dir-btn${!directionId ? ' active' : ''}`}
               onClick={clearFilters}
-              data-tooltip="Все направления"
+              data-tooltip={t('allDirections')}
             >
               <span className="svc-dir-icon">
                 <Microscope size={14} />
               </span>
-              <span className="svc-dir-label">Все направления</span>
+              <span className="svc-dir-label">{t('allDirections')}</span>
             </button>
 
             {visibleDirections.map((direction) => {
@@ -352,9 +341,6 @@ export function ServiceCatalog() {
                     className={`svc-dir-btn${isActive ? ' active' : ''}`}
                     data-tooltip={direction.name}
                     onClick={() => {
-                      setDirectionId(direction._id);
-                      setCategoryId('');
-                      setPage(1);
                       setUrlParams({
                         directionId: direction._id,
                         categoryId: undefined,
@@ -380,9 +366,6 @@ export function ServiceCatalog() {
                           key={category._id}
                           className={`svc-cat-btn${categoryId === category._id ? ' active' : ''}`}
                           onClick={() => {
-                            setDirectionId(direction._id);
-                            setCategoryId(category._id);
-                            setPage(1);
                             setUrlParams({
                               directionId: direction._id,
                               categoryId: category._id,
@@ -408,19 +391,18 @@ export function ServiceCatalog() {
         <section className="svc-results">
           <div className="svc-results-head">
             <div>
-              <p className="svc-eyebrow">Лабораторный каталог</p>
+              <p className="svc-eyebrow">{t('catalogEyebrow')}</p>
               <h2 className="svc-results-title">
                 {categoryId
                   ? categories.find((c) => c._id === categoryId)?.name
                   : directionId
-                    ? (activeDirection?.name ?? 'Исследования')
-                    : 'Все исследования'}
+                    ? (activeDirection?.name ?? t('fallbackResultsTitle'))
+                    : t('defaultResultsTitle')}
               </h2>
             </div>
             {!servicesQuery.isLoading && (
               <span className="svc-results-count">
-                {totalServices}{' '}
-                {totalServices === 1 ? 'услуга' : totalServices < 5 ? 'услуги' : 'услуг'}
+                {t('totalCountUnit', { count: totalServices })}
               </span>
             )}
           </div>
@@ -435,9 +417,9 @@ export function ServiceCatalog() {
           ) : servicesQuery.isError ? (
             <div className="svc-empty svc-empty--error">
               <FlaskConical size={40} />
-              <p>Не удалось загрузить каталог.</p>
+              <p>{t('errorText')}</p>
               <button className="svc-retry" onClick={() => servicesQuery.refetch()}>
-                Попробовать снова
+                {t('retry')}
               </button>
             </div>
           ) : services.length ? (
@@ -460,19 +442,19 @@ export function ServiceCatalog() {
                         <h3 className="svc-card-name">{service.name}</h3>
                         <div className="svc-card-meta">
                           {service.biomaterial && (
-                            <span className="svc-meta-tag" title="Биоматериал">
+                            <span className="svc-meta-tag" title="Biomaterial">
                               <TestTube size={12} />
                               {service.biomaterial}
                             </span>
                           )}
                           {service.method && (
-                            <span className="svc-meta-tag" title="Метод">
+                            <span className="svc-meta-tag" title="Method">
                               <Dna size={12} />
                               {service.method}
                             </span>
                           )}
                           {service.duration && (
-                            <span className="svc-meta-tag svc-meta-tag--time" title="Срок">
+                            <span className="svc-meta-tag svc-meta-tag--time" title="Duration">
                               <Clock size={12} />
                               {service.duration}
                             </span>
@@ -482,14 +464,14 @@ export function ServiceCatalog() {
                       <button
                         className={`svc-card-btn${added ? ' added' : ''}`}
                         onClick={() => selection.toggle(service)}
-                        aria-label={added ? 'Убрать из заявки' : 'Добавить в заявку'}
+                        aria-label={added ? t('removeAria') : t('addAria')}
                       >
                         {added ? (
                           <Check size={16} strokeWidth={2.5} />
                         ) : (
                           <Plus size={16} strokeWidth={2.5} />
                         )}
-                        <span>{added ? 'Добавлено' : 'Добавить'}</span>
+                        <span>{added ? t('added') : t('add')}</span>
                       </button>
                     </article>
                   );
@@ -500,19 +482,21 @@ export function ServiceCatalog() {
               <Pagination
                 page={page}
                 pages={totalPages}
-                total={totalServices}
-                limit={PAGE_SIZE}
                 onChange={handlePageChange}
+                infoText={t('paginationInfo', { from, to, total: totalServices })}
+                prevAria={t('prevPage')}
+                nextAria={t('nextPage')}
+                pageAria={(p) => t('pageAria', { page: p })}
               />
             </>
           ) : (
             <div className="svc-empty">
               <Search size={40} />
-              <strong>Ничего не найдено</strong>
-              <p>Попробуйте изменить запрос или сбросить фильтры</p>
+              <strong>{t('emptyTitle')}</strong>
+              <p>{t('emptyText')}</p>
               {hasActiveFilter && (
                 <button className="svc-retry" onClick={clearFilters}>
-                  Сбросить фильтры
+                  {t('resetFilters')}
                 </button>
               )}
             </div>
@@ -526,17 +510,17 @@ export function ServiceCatalog() {
           <div className="svc-selection-info">
             <span className="svc-selection-badge">{selection.items.length}</span>
             <div>
-              <strong>Выбрано услуг</strong>
-              <span className="svc-selection-hint">Оператор уточнит стоимость</span>
+              <strong>{t('selectedCount', { count: selection.items.length })}</strong>
+              <span className="svc-selection-hint">{t('selectionHint')}</span>
             </div>
           </div>
           <div className="svc-selection-actions">
             <button className="svc-selection-clear" onClick={selection.clear}>
               <X size={14} />
-              Очистить
+              {t('selectionClear')}
             </button>
             <AppointmentDialog
-              label="Оставить заявку"
+              label={t('selectionApply')}
               icon="message"
               selectedServices={selection.items}
             />

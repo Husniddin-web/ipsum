@@ -1,71 +1,88 @@
 import type { Metadata } from 'next';
 import { Mail, MapPin, Phone, Building2, Send } from 'lucide-react';
-import { ContactForm } from '../_components/contact-form';
-import { PageShell } from '../_components/page-shell';
-import { contactInfo } from '../_data/content';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { ContactForm } from '../../_components/contact-form';
+import { PageShell } from '../../_components/page-shell';
+import { contactInfo } from '../../_data/content';
 
-export const metadata: Metadata = {
-  title: 'Контакты | IPSUM Pathology',
-  description: 'Свяжитесь с IPSUM Pathology: телефон, email, адрес, форма записи и карта.',
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'contact' });
+  return {
+    title: `${t('eyebrow')} | IPSUM Pathology`,
+    description: t('heroText'),
+  };
+}
 
-const contactCards = [
-  {
-    icon: Mail,
-    label: 'Напишите нам',
-    value: contactInfo.email,
-    action: 'Отправить email',
-    href: contactInfo.emailHref,
-  },
-  {
-    icon: Phone,
-    label: 'Позвоните нам',
-    value: contactInfo.phone,
-    action: 'Позвонить',
-    href: contactInfo.phoneHref,
-  },
-  {
-    icon: Send,
-    label: 'Telegram бот',
-    value: '@ipsumuz_bot',
-    action: 'Написать в бот',
-    href: 'https://t.me/ipsumuz_bot',
-  },
-  {
-    icon: MapPin,
-    label: 'Приезжайте к нам',
-    value: contactInfo.address,
-    action: contactInfo.hours,
-  },
-];
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('contact');
+  const tCommon = await getTranslations('common');
 
-const branches = [
-  {
-    name: 'Ташкентский городской филиал',
-    fullName:
-      'Республиканского специализированного научно-практического медицинского центра онкологии и радиологии',
-    address: 'г. Ташкент, Чиланзарский район, ул. Богистон, 1',
-    phones: ['+998 (71) 203-93-00', '+998 (95) 199-93-01'],
-    email: 'info@ipsumpathology.uz',
-    mapQuery: 'Богистон 1, Ташкент',
-  },
-  {
-    name: 'Научно-практический медицинский центр',
-    fullName: 'детской онкологии, гематологии и иммунологии',
-    address: 'г. Ташкент, Чиланзарский район, ул. Арнасай, 17',
-    phones: ['+998 (95) 199-93-01', '+998 (95) 199-93-04'],
-    email: 'info@ipsumpathology.uz',
-    mapQuery: 'Арнасай 17, Ташкент',
-  },
-];
+  const contactCards = [
+    {
+      icon: Mail,
+      label: t('emailLabel'),
+      value: contactInfo.email,
+      action: t('emailAction'),
+      href: contactInfo.emailHref,
+    },
+    {
+      icon: Phone,
+      label: t('phoneLabel'),
+      value: contactInfo.phone,
+      action: t('phoneAction'),
+      href: contactInfo.phoneHref,
+    },
+    {
+      icon: Send,
+      label: t('telegramLabel'),
+      value: '@ipsumuz_bot',
+      action: t('telegramAction'),
+      href: 'https://t.me/ipsumuz_bot',
+    },
+    {
+      icon: MapPin,
+      label: t('addressLabel'),
+      value: tCommon('contactInfo.address'),
+      action: tCommon('contactInfo.hours'),
+    },
+  ];
 
-export default function ContactPage() {
+  const branches = [
+    {
+      name: t('branch1_name'),
+      fullName: t('branch1_fullName'),
+      address: t('branch1_address'),
+      phones: ['+998 (71) 203-93-00', '+998 (95) 199-93-01'],
+      email: 'info@ipsumpathology.uz',
+      mapQuery: 'Богистон 1, Ташкент',
+    },
+    {
+      name: t('branch2_name'),
+      fullName: t('branch2_fullName'),
+      address: t('branch2_address'),
+      phones: ['+998 (95) 199-93-01', '+998 (95) 199-93-04'],
+      email: 'info@ipsumpathology.uz',
+      mapQuery: 'Арнасай 17, Ташкент',
+    },
+  ];
+
   return (
     <PageShell
-      eyebrow="Контакты"
+      eyebrow={t('eyebrow')}
       heroVariant="contact"
-      text="Запишитесь на анализ, уточните услугу или задайте вопрос администратору."
-      title="Свяжитесь с IPSUM PATHOLOGY"
+      text={t('heroText')}
+      title={t('heroTitle')}
     >
       <section className="section contact-page-section">
         <div className="container contact-stack">
@@ -98,12 +115,9 @@ export default function ContactPage() {
           <div className="contact-main-grid">
             <div className="contact-form-card">
               <div className="form-heading">
-                <p className="eyebrow">Форма связи</p>
-                <h2>Оставьте заявку</h2>
-                <p>
-                  Мы свяжемся с вами, уточним направление диагностики и удобное время для сдачи
-                  анализа.
-                </p>
+                <p className="eyebrow">{t('formEyebrow')}</p>
+                <h2>{t('formTitle')}</h2>
+                <p>{t('formDesc')}</p>
               </div>
               <ContactForm />
             </div>
@@ -122,16 +136,12 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Branches / Filiallar Section */}
       <section className="section contact-branches-section">
         <div className="container">
           <div className="section-heading" data-aos="fade-up">
-            <p className="eyebrow">Филиалы</p>
-            <h2>Наши медицинские центры</h2>
-            <p>
-              IPSUM Pathology работает в двух специализированных медицинских центрах Ташкента,
-              обеспечивая высококачественную лабораторную диагностику.
-            </p>
+            <p className="eyebrow">{t('branchesEyebrow')}</p>
+            <h2>{t('branchesTitle')}</h2>
+            <p>{t('branchesDesc')}</p>
           </div>
 
           <div className="branches-grid">
@@ -183,7 +193,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Показать на карте
+                  {t('showOnMap')}
                 </a>
               </article>
             ))}
