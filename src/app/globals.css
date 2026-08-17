@@ -2120,16 +2120,20 @@ h3 {
 
 .partner-logo-wrap {
   position: relative;
-  aspect-ratio: 945 / 592;
+  aspect-ratio: 16 / 10;
   width: 100%;
   margin: 0;
   overflow: hidden;
   border-radius: 18px 18px 0 0;
-  background: var(--ipsum-soft);
+  background: #f8f9fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .partner-logo {
-  object-fit: cover;
+  object-fit: contain !important;
+  padding: 16px;
 }
 
 .partner-card-body {
