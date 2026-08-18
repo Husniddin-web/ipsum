@@ -119,6 +119,29 @@ function Pagination({
 }
 
 /* ── Main component ───────────────────────────────────────── */
+function localizeDirectionName(name: string, t: (key: string) => string): string {
+  const lower = (name || '').toLowerCase();
+  if (lower.includes('патоморфолог') || lower.includes('pathomorph') || lower.includes('patomorfolog')) {
+    return t('catalogDirections.pathomorphology');
+  }
+  if (lower.includes('клиник') || lower.includes('clinic') || lower.includes('klinik')) {
+    return t('catalogDirections.clinical');
+  }
+  if (lower.includes('ngs')) {
+    return t('catalogDirections.ngs');
+  }
+  if (lower.includes('пцр') || lower.includes('pcr') || lower.includes('pzr')) {
+    return t('catalogDirections.pcr');
+  }
+  if (lower.includes('цитогенет') || lower.includes('cytogenet') || lower.includes('fish') || lower.includes('sitogenet')) {
+    return t('catalogDirections.cytogenetics');
+  }
+  if (lower.includes('цитометр') || lower.includes('cytometr') || lower.includes('sitometr')) {
+    return t('catalogDirections.cytometry');
+  }
+  return name;
+}
+
 export function ServiceCatalog() {
   const t = useTranslations('services');
   const router = useRouter();
@@ -335,11 +358,12 @@ export function ServiceCatalog() {
             {visibleDirections.map((direction) => {
               const isActive = directionId === direction._id;
               const totalCount = direction.categories.length;
+              const dirName = localizeDirectionName(direction.name, t);
               return (
                 <div key={direction._id} className="svc-dir-group">
                   <button
                     className={`svc-dir-btn${isActive ? ' active' : ''}`}
-                    data-tooltip={direction.name}
+                    data-tooltip={dirName}
                     onClick={() => {
                       setUrlParams({
                         directionId: direction._id,
@@ -351,7 +375,7 @@ export function ServiceCatalog() {
                     <span className="svc-dir-icon">
                       <FlaskConical size={14} />
                     </span>
-                    <span className="svc-dir-label">{direction.name}</span>
+                    <span className="svc-dir-label">{dirName}</span>
                     <span className="svc-dir-count">{totalCount}</span>
                     <ChevronRight
                       size={14}
@@ -396,7 +420,7 @@ export function ServiceCatalog() {
                 {categoryId
                   ? categories.find((c) => c._id === categoryId)?.name
                   : directionId
-                    ? (activeDirection?.name ?? t('fallbackResultsTitle'))
+                    ? (activeDirection ? localizeDirectionName(activeDirection.name, t) : t('fallbackResultsTitle'))
                     : t('defaultResultsTitle')}
               </h2>
             </div>

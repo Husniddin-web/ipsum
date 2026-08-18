@@ -76,7 +76,7 @@
       "eyebrow": "Why IPSUM Pathology",
       "title": "Precision, speed, and uncompromising quality",
       "text": "IPSUM Pathology unifies laboratory medicine, pathomorphology, and molecular diagnostics under rigorous quality standards, delivering clear and actionable answers for physicians and patients.",
-      "cta": "Get consultation",
+      "cta": "Expert Consultation",
       "f1_title": "Pathology & Diagnostics",
       "f1_text": "Clinical, pathological, and molecular testing consolidated into a single unified system.",
       "f2_title": "State-of-the-Art Technology",
@@ -181,7 +181,7 @@
       "s1_label": "satisfied patients",
       "s2_label": "diagnostic specialties",
       "s3_label": "online results availability",
-      "s4_label": "clear steps to results"
+      "s4_label": "simple steps to results"
     },
     "values": {
       "eyebrow": "Our Core Values",
@@ -221,7 +221,7 @@
     "cta": {
       "eyebrow": "Diagnostic Booking",
       "title": "Ready to schedule your diagnostic test?",
-      "btn": "Book an appointment"
+      "btn": "Leave a request"
     }
   },
   "education": {
@@ -324,6 +324,14 @@
     "filtersBtn": "Filters",
     "allDirections": "All Specialties",
     "sidebarTitle": "Specialties",
+    "catalogDirections": {
+      "pathomorphology": "Pathomorphology Laboratory",
+      "clinical": "Clinical Diagnostic Laboratory",
+      "ngs": "NGS (Next-Generation Sequencing)",
+      "pcr": "RT-PCR (Real-Time PCR)",
+      "cytogenetics": "Cytogenetics & FISH",
+      "cytometry": "Flow Cytometry"
+    },
     "resetAll": "Reset filters",
     "removeFilter": "Remove filter",
     "catalogEyebrow": "Laboratory Catalog",
@@ -377,7 +385,7 @@
       "mobile": "Mobile Specimen Collection"
     },
     "formMessage": "Message or Comments",
-    "formMessagePlaceholder": "Write your inquiry or indicate your preferred time for a callback",
+    "formMessagePlaceholder": "Write your inquiry or indicate your preferred time to be contacted",
     "formSubmit": "Submit Request",
     "formSending": "Submitting...",
     "formSuccessToast": "Request successfully submitted! Our administrator will contact you shortly.",
@@ -409,6 +417,6 @@
     "successToast": "Request successfully sent! Our administrator will contact you shortly.",
     "errorToast": "Failed to submit request. Please check your data and try again.",
     "closeAria": "Close modal",
-    "defaultTriggerLabel": "Book now"
+    "defaultTriggerLabel": "Leave a request"
   }
 }

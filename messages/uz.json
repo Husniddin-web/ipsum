@@ -55,7 +55,7 @@
           "text": "Keng qamrovli laboratoriya tahlillari: umumiy klinik, biokimyoviy, gematologik, koagulologik, immunologik, mikrobiologik, gormonal va molekulyar-genetik tekshiruvlar hamda onkomarkerlar."
         },
         "ngs": {
-          "title": "NGS (Yangi avlod sekvenirlashi)",
+          "title": "NGS (Yangi avlod sekvenatsiyasi)",
           "text": "Yuqori unumdorlikdagi sekvenirlash: maqsadli va to'liq genomli panellar, ekzom va transkriptom tahlili, suyuqlik biopsiyasi hamda bioinformatik xulosalar."
         },
         "pcr": {
@@ -181,7 +181,7 @@
       "s1_label": "mamnun bemorlar",
       "s2_label": "diagnostika yo'nalishlari",
       "s3_label": "natijalarni onlayn olish imkoniyati",
-      "s4_label": "natijagacha bo'lgan aniq bosqich"
+      "s4_label": "natijagacha oddiy qadam"
     },
     "values": {
       "eyebrow": "Bizning qadriyatlarimiz",
@@ -289,7 +289,7 @@
       "periodVal": "2026-yil 25-avgustdan 30-avgustgacha (bir bosqichli test)",
       "locationLabel": "Imtihon o'tkaziladigan joy:",
       "locationVal": "Tibbiyot xodimlarining kasbiy malakasini baholash markazi va uning filiallari",
-      "idLabel": "O'zingiz bilan olib kelishingiz lozim:",
+      "idLabel": "Taqdim etiladigan hujjatlar:",
       "idVal": "Pasport / ID-karta / Xorijga chiqish pasporti / Haydovchilik guvohnomasi",
       "table1Title": "1. «Davolash ishi» va «Kasbiy ta'lim (Davolash ishi)» fakultetlari uchun fanlar majmuasi",
       "table2Title": "2. «Pediatriya ishi» fakulteti uchun fanlar majmuasi",
@@ -324,6 +324,14 @@
     "filtersBtn": "Filtrlar",
     "allDirections": "Barcha yo'nalishlar",
     "sidebarTitle": "Yo'nalishlar",
+    "catalogDirections": {
+      "pathomorphology": "Patomorfologiya laboratoriyasi",
+      "clinical": "Klinik-diagnostika laboratoriyasi",
+      "ngs": "NGS (Yangi avlod sekvenatsiyasi)",
+      "pcr": "RT-PCR (Real vaqt rejimidagi PZR)",
+      "cytogenetics": "Sitogenetika va FISH",
+      "cytometry": "Oqimli sitometriya"
+    },
     "resetAll": "Filtrlarni tozalash",
     "removeFilter": "Filtrni olib tashlash",
     "catalogEyebrow": "Laboratoriya katalogi",
