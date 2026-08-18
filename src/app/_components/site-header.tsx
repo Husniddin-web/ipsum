@@ -25,56 +25,22 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <div className="header-bar">
-          <Link
-            aria-label="IPSUM Pathology home"
-            className="logo-link"
-            href="/"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <Image
-              alt="IPSUM Pathology"
-              className="logo-image"
-              height={48}
-              priority
-              src="/logo.png"
-              width={190}
-            />
-          </Link>
-
-          {/* Desktop Actions */}
-          <div className="header-actions">
-            <a className="phone-link" href={contactInfo.phoneHref}>
-              <Phone aria-hidden="true" size={18} strokeWidth={2.4} />
-              {contactInfo.phone}
-            </a>
-            <AppointmentDialog
-              className="header-callback"
-              icon="message"
-              label={t('header.callback')}
-              variant="ghost"
-            />
-            <LanguageSwitcher />
-          </div>
-
-          {/* Mobile / Tablet Controls */}
-          <div className="header-mobile-controls">
-            <LanguageSwitcher />
-            <button
-              aria-expanded={isMenuOpen}
-              aria-label={isMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
-              className="mobile-menu-toggle"
-              type="button"
-              onClick={() => setIsMenuOpen((current) => !current)}
-            >
-              {isMenuOpen ? (
-                <X aria-hidden="true" size={22} strokeWidth={2.6} />
-              ) : (
-                <Menu aria-hidden="true" size={22} strokeWidth={2.6} />
-              )}
-            </button>
-          </div>
-        </div>
+        {/* Brand Logo */}
+        <Link
+          aria-label="IPSUM Pathology home"
+          className="logo-link"
+          href="/"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <Image
+            alt="IPSUM Pathology"
+            className="logo-image"
+            height={46}
+            priority
+            src="/logo.png"
+            width={170}
+          />
+        </Link>
 
         {/* Navigation Menu */}
         <div className={`header-menu${isMenuOpen ? ' open' : ''}`}>
@@ -97,6 +63,39 @@ export function SiteHeader() {
               );
             })}
           </nav>
+        </div>
+
+        {/* Desktop Actions */}
+        <div className="header-actions">
+          <a className="phone-link" href={contactInfo.phoneHref} title={contactInfo.phone}>
+            <Phone aria-hidden="true" size={17} strokeWidth={2.4} />
+            <span className="phone-text">{contactInfo.phone}</span>
+          </a>
+          <AppointmentDialog
+            className="header-callback"
+            icon="message"
+            label={t('header.callback')}
+            variant="ghost"
+          />
+          <LanguageSwitcher />
+        </div>
+
+        {/* Mobile / Tablet Controls */}
+        <div className="header-mobile-controls">
+          <LanguageSwitcher />
+          <button
+            aria-expanded={isMenuOpen}
+            aria-label={isMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
+            className="mobile-menu-toggle"
+            type="button"
+            onClick={() => setIsMenuOpen((current) => !current)}
+          >
+            {isMenuOpen ? (
+              <X aria-hidden="true" size={22} strokeWidth={2.6} />
+            ) : (
+              <Menu aria-hidden="true" size={22} strokeWidth={2.6} />
+            )}
+          </button>
         </div>
       </div>
     </header>

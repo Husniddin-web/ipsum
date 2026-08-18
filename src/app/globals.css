@@ -1040,63 +1040,47 @@ button {
 }
 
 .header-inner {
-  display: grid;
-  grid-template-columns: 168px minmax(0, 1fr) auto;
+  display: flex;
   align-items: center;
-  gap: 22px;
-  min-height: 84px;
-}
-
-.header-bar {
-  display: contents;
-}
-
-.header-menu {
-  display: block;
-  grid-column: 2;
-  grid-row: 1;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 80px;
 }
 
 .logo-link {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   width: fit-content;
 }
 
 .logo-image {
-  width: 154px;
+  width: 148px;
   height: auto;
 }
 
-.desktop-nav,
-.header-actions,
-.footer-bottom {
+.header-menu {
   display: flex;
   align-items: center;
-}
-
-.header-mobile-controls,
-.mobile-menu-toggle {
-  display: none;
-}
-
-.header-menu {
-  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
 }
 
 .desktop-nav {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 26px;
+  gap: clamp(8px, 1.4vw, 22px);
   color: var(--ipsum-ink);
-  font-size: 15px;
+  font-size: clamp(13px, 0.95vw, 15px);
   font-weight: 800;
 }
 
 .desktop-nav a {
   position: relative;
   border-radius: var(--radius);
-  padding-inline: 10px;
-  padding-block: 10px;
+  padding-inline: clamp(6px, 0.7vw, 10px);
+  padding-block: 8px;
   white-space: nowrap;
   transition:
     background 180ms ease,
@@ -1128,24 +1112,38 @@ button {
 }
 
 .header-actions {
-  grid-column: 3;
-  grid-row: 1;
+  display: flex;
+  align-items: center;
   justify-content: flex-end;
-  gap: 16px;
+  flex-shrink: 0;
+  gap: clamp(8px, 1vw, 14px);
 }
 
 .phone-link {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   color: var(--ipsum-ink);
-  font-size: 14px;
+  font-size: clamp(12px, 0.85vw, 14px);
   font-weight: 800;
   white-space: nowrap;
 }
 
 .phone-link svg {
   color: var(--ipsum-red);
+  flex-shrink: 0;
+}
+
+.header-callback {
+  min-height: 38px;
+  padding-inline: 12px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.header-mobile-controls,
+.mobile-menu-toggle {
+  display: none;
 }
 
 .button {
@@ -5187,35 +5185,31 @@ h3 {
   color: #ffffff;
 }
 
-/* Responsive Header & Language Switcher Adjustments */
-@media (max-width: 1240px) {
+/* Responsive Header Adjustments for Compact Desktops (1141px - 1280px) */
+@media (max-width: 1280px) and (min-width: 1141px) {
   .header-inner {
-    grid-template-columns: 140px minmax(0, 1fr) auto;
-    gap: 14px;
-  }
-  .desktop-nav {
-    gap: 12px;
-    font-size: 14px;
-  }
-  .desktop-nav a {
-    padding-inline: 6px;
-  }
-  .header-actions {
     gap: 10px;
   }
+  .logo-image {
+    width: 138px;
+  }
+  .desktop-nav {
+    gap: 10px;
+    font-size: 13.5px;
+  }
+  .desktop-nav a {
+    padding-inline: 5px;
+  }
+  .header-actions {
+    gap: 8px;
+  }
   .header-actions .phone-link {
-    font-size: 13px;
+    font-size: 12.5px;
   }
   .header-callback {
-    min-height: 40px;
-    padding: 0 12px;
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 1080px) and (min-width: 1041px) {
-  .header-actions .phone-link {
-    display: none;
+    min-height: 36px;
+    padding-inline: 10px;
+    font-size: 12.5px;
   }
 }
 
