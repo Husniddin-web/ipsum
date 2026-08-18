@@ -9,7 +9,7 @@
       "contact": "Aloqa"
     },
     "header": {
-      "callback": "Qo'ng'iroqqa buyurtma",
+      "callback": "Ariza qoldirish",
       "openMenu": "Menyuni ochish",
       "closeMenu": "Menyuni yopish",
       "mainNav": "Asosiy menyu",
@@ -221,7 +221,7 @@
     "cta": {
       "eyebrow": "Tahlilga yozilish",
       "title": "Tahlil topshirishga tayyormisiz?",
-      "btn": "Yozilish"
+      "btn": "Ariza qoldirish"
     }
   },
   "education": {
@@ -409,6 +409,6 @@
     "successToast": "Arizangiz muvaffaqiyatli yuborildi! Administrator tez orada siz bilan bog'lanadi.",
     "errorToast": "Arizani yuborib bo'lmadi. Ma'lumotlarni tekshiring va qayta urinib ko'ring.",
     "closeAria": "Oynani yopish",
-    "defaultTriggerLabel": "Yozilish"
+    "defaultTriggerLabel": "Ariza qoldirish"
   }
 }

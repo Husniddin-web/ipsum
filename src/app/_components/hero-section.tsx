@@ -16,6 +16,54 @@ function formatImageUrl(imagePath?: string | null, fallbackPath?: string): strin
   return src;
 }
 
+function getLocalizedDirection(
+  name: string,
+  shortDesc: string | undefined,
+  t: (key: string) => string
+): { title: string; text: string } {
+  const lower = (name || '').toLowerCase();
+  if (lower.includes('патоморфолог') || lower.includes('pathomorph') || lower.includes('patomorfolog')) {
+    return {
+      title: t('hero.defaultDirections.pathomorphology.title'),
+      text: t('hero.defaultDirections.pathomorphology.text'),
+    };
+  }
+  if (lower.includes('клиник') || lower.includes('clinic') || lower.includes('klinik')) {
+    return {
+      title: t('hero.defaultDirections.clinical.title'),
+      text: t('hero.defaultDirections.clinical.text'),
+    };
+  }
+  if (lower.includes('ngs')) {
+    return {
+      title: t('hero.defaultDirections.ngs.title'),
+      text: t('hero.defaultDirections.ngs.text'),
+    };
+  }
+  if (lower.includes('пцр') || lower.includes('pcr') || lower.includes('pzr')) {
+    return {
+      title: t('hero.defaultDirections.pcr.title'),
+      text: t('hero.defaultDirections.pcr.text'),
+    };
+  }
+  if (lower.includes('цитогенет') || lower.includes('cytogenet') || lower.includes('fish') || lower.includes('sitogenet')) {
+    return {
+      title: t('hero.defaultDirections.cytogenetics.title'),
+      text: t('hero.defaultDirections.cytogenetics.text'),
+    };
+  }
+  if (lower.includes('цитометр') || lower.includes('cytometr') || lower.includes('sitometr')) {
+    return {
+      title: t('hero.defaultDirections.cytometry.title'),
+      text: t('hero.defaultDirections.cytometry.text'),
+    };
+  }
+  return {
+    title: name,
+    text: shortDesc || '',
+  };
+}
+
 export function HeroSection() {
   const t = useTranslations('home');
   const { data: catalogData } = usePublicCatalog();
@@ -55,13 +103,16 @@ export function HeroSection() {
 
   const heroDirections =
     catalogData && catalogData.length > 0
-      ? catalogData.map((item, index) => ({
-          id: item._id,
-          title: item.name,
-          text: item.shortDescription || item.description || '',
-          image: formatImageUrl(item.image, defaultDirections[index % defaultDirections.length].image),
-          href: `/services?directionId=${item._id}`,
-        }))
+      ? catalogData.map((item, index) => {
+          const localized = getLocalizedDirection(item.name, item.shortDescription || item.description, t);
+          return {
+            id: item._id,
+            title: localized.title,
+            text: localized.text || item.shortDescription || item.description || '',
+            image: formatImageUrl(item.image, defaultDirections[index % defaultDirections.length].image),
+            href: `/services?directionId=${item._id}`,
+          };
+        })
       : defaultDirections.map((dir) => ({
           ...dir,
           href: `/services?search=${encodeURIComponent(dir.title)}`,
