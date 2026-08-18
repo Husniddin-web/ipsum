@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import { Link, usePathname } from '@/i18n/navigation';
-import { Menu, Phone, X } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, Phone, X, Clock } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { contactInfo } from '../_data/content';
 import { AppointmentDialog } from './appointment-dialog';
@@ -21,6 +21,18 @@ export function SiteHeader() {
     { label: t('navigation.services'), href: '/services' },
     { label: t('navigation.contact'), href: '/contact' },
   ];
+
+  // Lock body scroll when drawer is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="site-header">
@@ -42,9 +54,9 @@ export function SiteHeader() {
           />
         </Link>
 
-        {/* Navigation Menu */}
-        <div className={`header-menu${isMenuOpen ? ' open' : ''}`}>
-          <nav aria-label={t('header.mainNav')} className="desktop-nav">
+        {/* Desktop Navigation Menu */}
+        <nav aria-label={t('header.mainNav')} className="desktop-nav-wrap">
+          <div className="desktop-nav">
             {navigationItems.map((item) => {
               const isHashLink = item.href.includes('#');
               const isActive =
@@ -56,14 +68,13 @@ export function SiteHeader() {
                   className={isActive ? 'active' : undefined}
                   href={item.href}
                   key={item.href}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </Link>
               );
             })}
-          </nav>
-        </div>
+          </div>
+        </nav>
 
         {/* Desktop Actions */}
         <div className="header-actions">
@@ -88,16 +99,89 @@ export function SiteHeader() {
             aria-label={isMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
             className="mobile-menu-toggle"
             type="button"
-            onClick={() => setIsMenuOpen((current) => !current)}
+            onClick={() => setIsMenuOpen(true)}
           >
-            {isMenuOpen ? (
-              <X aria-hidden="true" size={22} strokeWidth={2.6} />
-            ) : (
-              <Menu aria-hidden="true" size={22} strokeWidth={2.6} />
-            )}
+            <Menu aria-hidden="true" size={22} strokeWidth={2.6} />
           </button>
         </div>
       </div>
+
+      {/* Mobile Drawer Backdrop */}
+      <div
+        aria-hidden="true"
+        className={`mobile-drawer-backdrop${isMenuOpen ? ' open' : ''}`}
+        onClick={() => setIsMenuOpen(false)}
+      />
+
+      {/* Mobile Offcanvas Drawer (Slides from Left) */}
+      <aside
+        aria-label="Mobile Navigation"
+        className={`mobile-drawer${isMenuOpen ? ' open' : ''}`}
+      >
+        <div className="mobile-drawer-header">
+          <Link
+            aria-label="IPSUM Pathology home"
+            className="drawer-logo-link"
+            href="/"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Image
+              alt="IPSUM Pathology"
+              className="drawer-logo-image"
+              height={38}
+              src="/logo.png"
+              width={140}
+            />
+          </Link>
+          <button
+            aria-label={t('header.closeMenu')}
+            className="drawer-close-btn"
+            type="button"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <X aria-hidden="true" size={20} strokeWidth={2.6} />
+          </button>
+        </div>
+
+        <nav className="mobile-drawer-nav">
+          {navigationItems.map((item) => {
+            const isHashLink = item.href.includes('#');
+            const isActive =
+              !isHashLink &&
+              (item.href === '/' ? pathname === '/' : pathname.startsWith(item.href));
+
+            return (
+              <Link
+                className={`drawer-nav-item${isActive ? ' active' : ''}`}
+                href={item.href}
+                key={item.href}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span>{item.label}</span>
+              </Link>
+            );
+          })}
+        </nav>
+
+        <div className="mobile-drawer-footer">
+          <a className="drawer-phone-link" href={contactInfo.phoneHref}>
+            <Phone aria-hidden="true" size={17} strokeWidth={2.4} />
+            <span>{contactInfo.phone}</span>
+          </a>
+
+          <div className="drawer-hours">
+            <Clock aria-hidden="true" size={15} />
+            <span>{contactInfo.hours}</span>
+          </div>
+
+          <AppointmentDialog
+            className="drawer-callback-btn"
+            icon="message"
+            label={t('header.callback')}
+            variant="primary"
+          />
+        </div>
+      </aside>
     </header>
   );
 }
