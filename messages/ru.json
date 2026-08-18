@@ -302,7 +302,8 @@
       "obstetrics": "Акушерство и гинекология",
       "pediatrics": "Педиатрия",
       "pediatricSurgery": "Детская хирургия",
-      "pointsUnit": "1,1 балла",
+      "pointsUnit": "балла",
+      "scrollHint": "Сдвиньте таблицу вправо для просмотра всех колонок",
       "totalLabel": "Итого",
       "totalQuestions": "50 вопросов",
       "totalPoints": "55,0 баллов (100%)"

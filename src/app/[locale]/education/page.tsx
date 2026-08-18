@@ -163,7 +163,7 @@ export default async function EducationPage({
           </div>
 
           <div className="education-two-col">
-            <article className="education-panel" data-aos="fade-right">
+            <article className="education-panel" data-aos="fade-up">
               <span className="education-panel-icon">
                 <GraduationCap size={24} />
               </span>
@@ -192,7 +192,7 @@ export default async function EducationPage({
               </div>
             </article>
 
-            <article className="education-panel education-panel-red" data-aos="fade-left">
+            <article className="education-panel education-panel-red" data-aos="fade-up" data-aos-delay="100">
               <span className="education-panel-icon">
                 <FileText size={24} />
               </span>
@@ -274,10 +274,13 @@ export default async function EducationPage({
             </div>
 
             <div className="education-table-section">
-              <h3 className="education-table-title">
-                <FileCheck2 size={20} />
-                <span>{t('exam.table1Title')}</span>
-              </h3>
+              <div className="education-table-header-row">
+                <h3 className="education-table-title">
+                  <FileCheck2 size={20} />
+                  <span>{t('exam.table1Title')}</span>
+                </h3>
+                <span className="education-table-scroll-hint">{t('exam.scrollHint')}</span>
+              </div>
               <div className="education-table-wrap">
                 <table className="education-table">
                   <thead>
@@ -309,10 +312,13 @@ export default async function EducationPage({
             </div>
 
             <div className="education-table-section">
-              <h3 className="education-table-title">
-                <FileCheck2 size={20} />
-                <span>{t('exam.table2Title')}</span>
-              </h3>
+              <div className="education-table-header-row">
+                <h3 className="education-table-title">
+                  <FileCheck2 size={20} />
+                  <span>{t('exam.table2Title')}</span>
+                </h3>
+                <span className="education-table-scroll-hint">{t('exam.scrollHint')}</span>
+              </div>
               <div className="education-table-wrap">
                 <table className="education-table">
                   <thead>

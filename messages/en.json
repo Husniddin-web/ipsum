@@ -302,7 +302,8 @@
       "obstetrics": "Obstetrics & Gynecology",
       "pediatrics": "Pediatrics",
       "pediatricSurgery": "Pediatric Surgery",
-      "pointsUnit": "1.1 points",
+      "pointsUnit": "points",
+      "scrollHint": "Scroll right to view all columns",
       "totalLabel": "Total",
       "totalQuestions": "50 questions",
       "totalPoints": "55.0 points (100%)"

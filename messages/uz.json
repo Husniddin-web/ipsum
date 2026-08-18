@@ -302,7 +302,8 @@
       "obstetrics": "Akusherlik va ginekologiya",
       "pediatrics": "Pediatriya",
       "pediatricSurgery": "Bolalar xirurgiyasi",
-      "pointsUnit": "1,1 ball",
+      "pointsUnit": "ball",
+      "scrollHint": "To'liq jadvalni ko'rish uchun o'ngga suring",
       "totalLabel": "Jami",
       "totalQuestions": "50 ta savol",
       "totalPoints": "55,0 ball (100%)"
