@@ -5437,139 +5437,324 @@ h3 {
 
 /* ─── Contact Branches Section ─── */
 .contact-branches-section {
-  background: #f8f9fb;
+  background:
+    radial-gradient(circle at 12% 16%, rgba(237, 50, 55, 0.06), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+  border-top: 1px solid var(--line);
 }
 
 .branches-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
-  margin-top: 48px;
+  margin-top: 40px;
 }
 
 .branch-card {
   background: #ffffff;
-  border-radius: 24px;
-  border: 1px solid rgba(13, 34, 64, 0.08);
-  padding: 32px;
-  box-shadow: 0 8px 32px rgba(13, 34, 64, 0.06);
+  border-radius: 22px;
+  border: 1px solid rgba(13, 34, 64, 0.09);
+  padding: clamp(22px, 3vw, 32px);
+  box-shadow: 0 16px 44px rgba(13, 34, 64, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  gap: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
 }
 
 .branch-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(13, 34, 64, 0.1);
+  border-color: rgba(237, 50, 55, 0.2);
+  box-shadow: 0 24px 54px rgba(13, 34, 64, 0.09);
 }
 
-.branch-card-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.branch-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(200, 16, 46, 0.08);
-  color: var(--ipsum-red, #c8102e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.branch-card-header h3 {
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--ipsum-navy, #0d2240);
-  line-height: 1.3;
-  margin: 0 0 4px;
-}
-
-.branch-subtitle {
-  font-size: 13px;
-  color: #6b7a93;
-  line-height: 1.4;
-  margin: 0;
-}
-
-.branch-card-body {
+.branch-card-top {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.branch-info-row {
+.branch-card-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.branch-number-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(237, 50, 55, 0.09);
+  color: var(--ipsum-red);
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.branch-hours-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.branch-card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.branch-avatar {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(237, 50, 55, 0.12), rgba(237, 50, 55, 0.04));
+  color: var(--ipsum-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(237, 50, 55, 0.15);
+}
+
+.branch-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ipsum-navy, #0d2240);
+  line-height: 1.25;
+  margin: 0 0 6px;
+  word-break: break-word;
+}
+
+.branch-subtitle {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0;
+  word-break: break-word;
+}
+
+.branch-address-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.branch-address-content {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 14px;
-  color: var(--ipsum-navy, #0d2240);
-  line-height: 1.5;
-}
-
-.branch-info-row svg {
-  flex-shrink: 0;
-  margin-top: 2px;
-  color: var(--ipsum-red, #c8102e);
-}
-
-.branch-phones {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.branch-phone-link,
-.branch-email-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
   color: var(--ipsum-navy, #0d2240);
-  text-decoration: none;
-  transition: color 0.2s;
+  line-height: 1.45;
 }
 
-.branch-phone-link:hover,
-.branch-email-link:hover {
-  color: var(--ipsum-red, #c8102e);
+.branch-address-icon {
+  flex-shrink: 0;
+  color: var(--ipsum-red);
+  margin-top: 2px;
 }
 
-.branch-phone-link svg,
-.branch-email-link svg {
-  color: var(--ipsum-red, #c8102e);
+.branch-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
   flex-shrink: 0;
 }
 
-.branch-map-btn {
+.branch-copy-btn:hover {
+  background: #f1f5f9;
+  color: var(--ipsum-navy, #0d2240);
+  border-color: #94a3b8;
+}
+
+.branch-copy-btn.copied {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+
+.branch-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.branch-group-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.branch-phone-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.branch-phone-chip,
+.branch-email-chip {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: var(--ipsum-navy, #0d2240);
-  color: #ffffff;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: var(--ipsum-navy, #0d2240);
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
-  transition: background 0.2s, transform 0.2s;
+  transition: all 0.2s;
+  word-break: break-all;
+}
+
+.branch-phone-chip:hover,
+.branch-email-chip:hover {
+  border-color: var(--ipsum-red);
+  color: var(--ipsum-red);
+  background: rgba(237, 50, 55, 0.04);
+}
+
+.branch-phone-chip svg,
+.branch-email-chip svg {
+  color: var(--ipsum-red);
+  flex-shrink: 0;
+}
+
+.branch-navigators-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-top: auto;
-  align-self: flex-start;
+  padding-top: 14px;
+  border-top: 1px dashed #e2e8f0;
 }
 
-.branch-map-btn:hover {
-  background: var(--ipsum-red, #c8102e);
-  transform: translateY(-1px);
+.branch-nav-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
 }
 
-@media (max-width: 900px) {
+.branch-navigators-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.branch-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 8px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: var(--ipsum-navy, #0d2240);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.nav-brand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.nav-brand-dot.yandex {
+  background: #fc3f1d;
+}
+
+.nav-brand-dot.dgis {
+  background: #00be64;
+}
+
+.nav-brand-dot.google {
+  background: #4285f4;
+}
+
+.branch-nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.branch-nav-btn.nav-yandex:hover {
+  border-color: #fc3f1d;
+  color: #fc3f1d;
+}
+
+.branch-nav-btn.nav-2gis:hover {
+  border-color: #00be64;
+  color: #00994f;
+}
+
+.branch-nav-btn.nav-google:hover {
+  border-color: #4285f4;
+  color: #1a73e8;
+}
+
+@media (max-width: 960px) {
   .branches-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .branch-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .branch-address-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .branch-copy-btn {
+    align-self: flex-start;
+  }
+
+  .branch-navigators-row {
     grid-template-columns: 1fr;
   }
 }

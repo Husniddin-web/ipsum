@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Mail, MapPin, Phone, Building2, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { ContactForm } from '../../_components/contact-form';
 import { PageShell } from '../../_components/page-shell';
+import { BranchCards } from '../../_components/branch-cards';
 import { contactInfo } from '../../_data/content';
 
 export async function generateMetadata({
@@ -60,20 +61,30 @@ export default async function ContactPage({
 
   const branches = [
     {
+      id: 'branch-1',
+      badge: t('branch1_badge'),
       name: t('branch1_name'),
       fullName: t('branch1_fullName'),
       address: t('branch1_address'),
+      hours: tCommon('contactInfo.hours'),
       phones: ['+998 (71) 203-93-00', '+998 (95) 199-93-01'],
       email: 'info@ipsumpathology.uz',
-      mapQuery: 'Богистон 1, Ташкент',
+      mapQuery: 'Ташкент, ул. Богистон, 1',
+      yandexQuery: 'Ташкент, Чиланзарский район, улица Богистон, 1',
+      gisQuery: 'Ташкент, Богистон, 1',
     },
     {
+      id: 'branch-2',
+      badge: t('branch2_badge'),
       name: t('branch2_name'),
       fullName: t('branch2_fullName'),
       address: t('branch2_address'),
+      hours: tCommon('contactInfo.hours'),
       phones: ['+998 (95) 199-93-01', '+998 (95) 199-93-04'],
       email: 'info@ipsumpathology.uz',
-      mapQuery: 'Арнасай 17, Ташкент',
+      mapQuery: 'Ташкент, ул. Арнасай, 17',
+      yandexQuery: 'Ташкент, Чиланзарский район, улица Арнасай, 17',
+      gisQuery: 'Ташкент, Арнасай, 17',
     },
   ];
 
@@ -92,7 +103,7 @@ export default async function ContactPage({
               const content = (
                 <>
                   <span aria-hidden="true">
-                    <Icon size={23} strokeWidth={2.2} />
+                     <Icon size={23} strokeWidth={2.2} />
                   </span>
                   <p>{card.label}</p>
                   <strong>{card.value}</strong>
@@ -144,60 +155,7 @@ export default async function ContactPage({
             <p>{t('branchesDesc')}</p>
           </div>
 
-          <div className="branches-grid">
-            {branches.map((branch, index) => (
-              <article
-                className="branch-card"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-                key={branch.name}
-              >
-                <div className="branch-card-header">
-                  <span className="branch-icon">
-                    <Building2 size={22} strokeWidth={2} />
-                  </span>
-                  <div>
-                    <h3>{branch.name}</h3>
-                    <p className="branch-subtitle">{branch.fullName}</p>
-                  </div>
-                </div>
-
-                <div className="branch-card-body">
-                  <div className="branch-info-row">
-                    <MapPin size={16} strokeWidth={2} />
-                    <span>{branch.address}</span>
-                  </div>
-
-                  <div className="branch-phones">
-                    {branch.phones.map((phone) => (
-                      <a
-                        className="branch-phone-link"
-                        href={`tel:${phone.replace(/[^+\d]/g, '')}`}
-                        key={phone}
-                      >
-                        <Phone size={15} strokeWidth={2} />
-                        {phone}
-                      </a>
-                    ))}
-                  </div>
-
-                  <a className="branch-email-link" href={`mailto:${branch.email}`}>
-                    <Mail size={15} strokeWidth={2} />
-                    {branch.email}
-                  </a>
-                </div>
-
-                <a
-                  className="branch-map-btn"
-                  href={`https://maps.google.com/?q=${encodeURIComponent(branch.mapQuery)}`}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  {t('showOnMap')}
-                </a>
-              </article>
-            ))}
-          </div>
+          <BranchCards branches={branches} />
         </div>
       </section>
     </PageShell>
