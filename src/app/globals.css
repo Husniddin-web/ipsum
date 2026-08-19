@@ -5616,14 +5616,16 @@ h3 {
   margin-bottom: 8px;
 }
 
-.branch-phone-chips {
+.branch-phone-chips,
+.branch-channel-chips {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
 .branch-phone-chip,
-.branch-email-chip {
+.branch-email-chip,
+.branch-telegram-chip {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -5646,9 +5648,20 @@ h3 {
   background: rgba(237, 50, 55, 0.04);
 }
 
+.branch-telegram-chip:hover {
+  border-color: #229ed9;
+  color: #0088cc;
+  background: rgba(34, 158, 217, 0.06);
+}
+
 .branch-phone-chip svg,
 .branch-email-chip svg {
   color: var(--ipsum-red);
+  flex-shrink: 0;
+}
+
+.branch-telegram-chip svg {
+  color: #229ed9;
   flex-shrink: 0;
 }
 

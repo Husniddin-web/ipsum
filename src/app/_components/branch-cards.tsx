@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Building2, Clock, Copy, Check, MapPin, Phone, Mail, Navigation, ExternalLink } from 'lucide-react';
+import { Building2, Clock, Copy, Check, MapPin, Phone, Mail, Navigation, ExternalLink, Send } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export type BranchItem = {
@@ -13,6 +13,8 @@ export type BranchItem = {
   hours: string;
   phones: string[];
   email: string;
+  telegram?: string;
+  telegramHref?: string;
   mapQuery: string;
   yandexQuery: string;
 };
@@ -80,7 +82,7 @@ export function BranchCards({ branches }: { branches: BranchItem[] }) {
               </button>
             </div>
 
-            {/* Contact Details (Phones & Email) */}
+            {/* Contact Details (Phones & Channels) */}
             <div className="branch-details-grid">
               <div className="branch-phones-group">
                 <span className="branch-group-label">{t('phonesLabel')}</span>
@@ -99,11 +101,22 @@ export function BranchCards({ branches }: { branches: BranchItem[] }) {
               </div>
 
               <div className="branch-email-group">
-                <span className="branch-group-label">{t('emailLabel')}</span>
-                <a className="branch-email-chip" href={`mailto:${branch.email}`}>
-                  <Mail size={13} strokeWidth={2.4} />
-                  <span>{branch.email}</span>
-                </a>
+                <span className="branch-group-label">{t('channelsLabel')}</span>
+                <div className="branch-channel-chips">
+                  <a className="branch-email-chip" href={`mailto:${branch.email}`}>
+                    <Mail size={13} strokeWidth={2.4} />
+                    <span>{branch.email}</span>
+                  </a>
+                  <a
+                    className="branch-telegram-chip"
+                    href={branch.telegramHref || 'https://t.me/ipsumuz_bot'}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <Send size={13} strokeWidth={2.4} />
+                    <span>{branch.telegram || '@ipsumuz_bot'}</span>
+                  </a>
+                </div>
               </div>
             </div>
 
