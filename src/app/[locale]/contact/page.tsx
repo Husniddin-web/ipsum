@@ -71,7 +71,6 @@ export default async function ContactPage({
       email: 'info@ipsumpathology.uz',
       mapQuery: 'Ташкент, ул. Богистон, 1',
       yandexQuery: 'Ташкент, Чиланзарский район, улица Богистон, 1',
-      gisQuery: 'Ташкент, Богистон, 1',
     },
     {
       id: 'branch-2',
@@ -84,7 +83,6 @@ export default async function ContactPage({
       email: 'info@ipsumpathology.uz',
       mapQuery: 'Ташкент, ул. Арнасай, 17',
       yandexQuery: 'Ташкент, Чиланзарский район, улица Арнасай, 17',
-      gisQuery: 'Ташкент, Арнасай, 17',
     },
   ];
 
@@ -95,6 +93,20 @@ export default async function ContactPage({
       text={t('heroText')}
       title={t('heroTitle')}
     >
+      {/* ── 1. Branches Section (First) ── */}
+      <section className="section contact-branches-section">
+        <div className="container">
+          <div className="section-heading" data-aos="fade-up">
+            <p className="eyebrow">{t('branchesEyebrow')}</p>
+            <h2>{t('branchesTitle')}</h2>
+            <p>{t('branchesDesc')}</p>
+          </div>
+
+          <BranchCards branches={branches} />
+        </div>
+      </section>
+
+      {/* ── 2. Contact Form & Map Section (Second) ── */}
       <section className="section contact-page-section">
         <div className="container contact-stack">
           <div className="contact-info-grid">
@@ -144,18 +156,6 @@ export default async function ContactPage({
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="section contact-branches-section">
-        <div className="container">
-          <div className="section-heading" data-aos="fade-up">
-            <p className="eyebrow">{t('branchesEyebrow')}</p>
-            <h2>{t('branchesTitle')}</h2>
-            <p>{t('branchesDesc')}</p>
-          </div>
-
-          <BranchCards branches={branches} />
         </div>
       </section>
     </PageShell>

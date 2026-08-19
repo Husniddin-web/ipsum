@@ -15,7 +15,6 @@ export type BranchItem = {
   email: string;
   mapQuery: string;
   yandexQuery: string;
-  gisQuery: string;
 };
 
 export function BranchCards({ branches }: { branches: BranchItem[] }) {
@@ -123,17 +122,6 @@ export function BranchCards({ branches }: { branches: BranchItem[] }) {
                 >
                   <span className="nav-brand-dot yandex" />
                   <span>Yandex Maps</span>
-                  <ExternalLink size={12} strokeWidth={2.2} />
-                </a>
-
-                <a
-                  className="branch-nav-btn nav-2gis"
-                  href={`https://2gis.uz/tashkent/search/${encodeURIComponent(branch.gisQuery)}`}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <span className="nav-brand-dot dgis" />
-                  <span>2GIS</span>
                   <ExternalLink size={12} strokeWidth={2.2} />
                 </a>
 

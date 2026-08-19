@@ -5672,21 +5672,21 @@ h3 {
 
 .branch-navigators-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .branch-nav-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 10px 8px;
+  gap: 8px;
+  padding: 12px 14px;
   border-radius: 12px;
   border: 1px solid #e2e8f0;
   background: #ffffff;
   color: var(--ipsum-navy, #0d2240);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -5694,18 +5694,14 @@ h3 {
 }
 
 .nav-brand-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .nav-brand-dot.yandex {
   background: #fc3f1d;
-}
-
-.nav-brand-dot.dgis {
-  background: #00be64;
 }
 
 .nav-brand-dot.google {
@@ -5720,11 +5716,6 @@ h3 {
 .branch-nav-btn.nav-yandex:hover {
   border-color: #fc3f1d;
   color: #fc3f1d;
-}
-
-.branch-nav-btn.nav-2gis:hover {
-  border-color: #00be64;
-  color: #00994f;
 }
 
 .branch-nav-btn.nav-google:hover {
